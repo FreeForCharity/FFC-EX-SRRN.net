@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Training and Events Calendar | Suicide Resource and Response</title>
+	<link rel="stylesheet" href="css/style.min.css">
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			margin: 0;
+			padding: 20px;
+			background-color: #f5f5f5;
+		}
+		.container {
+			max-width: 1200px;
+			margin: 0 auto;
+			background-color: #fff;
+			padding: 30px;
+			box-shadow: 0 0 10px rgba(0,0,0,0.1);
+		}
+		h1 {
+			color: #2c3e50;
+			border-bottom: 3px solid #3788d8;
+			padding-bottom: 15px;
+			margin-bottom: 30px;
+		}
+		.calendar-grid {
+			display: grid;
+			gap: 20px;
+		}
+		.event-card {
+			border: 1px solid #ddd;
+			border-left: 4px solid #3788d8;
+			padding: 20px;
+			background-color: #fff;
+			transition: box-shadow 0.3s ease;
+		}
+		.event-card:hover {
+			box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+		}
+		.event-date {
+			font-size: 24px;
+			font-weight: bold;
+			color: #3788d8;
+			margin-bottom: 10px;
+		}
+		.event-time {
+			font-size: 16px;
+			color: #666;
+			margin-bottom: 15px;
+		}
+		.event-title {
+			font-size: 20px;
+			font-weight: bold;
+			color: #2c3e50;
+			margin-bottom: 10px;
+		}
+		.event-description {
+			color: #555;
+			line-height: 1.6;
+			margin-bottom: 15px;
+		}
+		.event-flyer {
+			margin-top: 15px;
+		}
+		.event-flyer a {
+			display: inline-block;
+			padding: 10px 20px;
+			background-color: #3788d8;
+			color: #fff;
+			text-decoration: none;
+			border-radius: 4px;
+			transition: background-color 0.3s ease;
+		}
+		.event-flyer a:hover {
+			background-color: #2c6eb8;
+		}
+		.back-link {
+			display: inline-block;
+			margin-bottom: 20px;
+			color: #3788d8;
+			text-decoration: none;
+		}
+		.back-link:hover {
+			text-decoration: underline;
+		}
+		.month-section {
+			margin-bottom: 40px;
+		}
+		.month-title {
+			font-size: 28px;
+			color: #2c3e50;
+			margin-bottom: 20px;
+			padding-bottom: 10px;
+			border-bottom: 2px solid #e0e0e0;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<a href="index.html" class="back-link">← Back to Home</a>
+		
+		<h1>Training and Events Calendar</h1>
+		
+		<div class="calendar-grid">
+			<!-- January 2025 Events -->
+			<div class="month-section">
+				<h2 class="month-title">January 2025</h2>
+				
+				<div class="event-card">
+					<div class="event-date">Thursday, January 16, 2025</div>
+					<div class="event-time">9:00 AM - 12:00 PM</div>
+					<div class="event-title">safeTALK Training</div>
+					<div class="event-description">
+						<p>safeTALK is a half-day alertness training that prepares anyone over the age of 15 to become a suicide-alert helper. Most people with thoughts of suicide don't truly want to die, but are struggling with the pain in their lives. Through their words and actions, they invite help to stay alive. Suicide-alert helpers are those who learn to recognize these invitations and take action by connecting them with life-saving resources.</p>
+						<p>safeTALK-trained helpers can make a difference in their communities by:
+						<ul>
+							<li>Recognizing situations where a person may have thoughts of suicide</li>
+							<li>Moving beyond common tendencies to miss, dismiss, or avoid suicide</li>
+							<li>Applying the TALK steps (Tell, Ask, Listen, KeepSafe) to connect persons with thoughts of suicide to life-saving resources</li>
+						</ul>
+						</p>
+						<p><strong>Location:</strong> Saginaw Valley State University (SVSU)</p>
+						<p><strong>Registration:</strong> Please contact us to register for this training session.</p>
+					</div>
+					<div class="event-flyer">
+						<a href="https://github.com/user-attachments/files/24293934/SVSU.safeTALKs.Flyer.pdf" target="_blank">View Event Flyer (PDF)</a>
+					</div>
+				</div>
+			</div>
+			
+			<!-- Placeholder for future events -->
+			<div class="month-section">
+				<h2 class="month-title">Upcoming Events</h2>
+				<p style="color: #666; font-style: italic;">More training events will be added as they are scheduled. Check back soon for updates!</p>
+			</div>
+		</div>
+		
+		<div style="margin-top: 40px; padding-top: 20px; border-top: 1px solid #ddd; color: #666; font-size: 14px;">
+			<p>For more information about our training programs or to request a custom training session, please visit our <a href="index.html" style="color: #3788d8;">main website</a> or contact us directly.</p>
+		</div>
+	</div>
+</body>
+</html>
