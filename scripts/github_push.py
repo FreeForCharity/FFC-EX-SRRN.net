@@ -15,6 +15,7 @@ import sys
 import json
 import subprocess
 import time
+import shlex
 from pathlib import Path
 from urllib.parse import quote
 
@@ -35,6 +36,26 @@ def print_success(text):
 def print_info(text):
     """Print an info message"""
     print(f"ℹ️  {text}")
+
+def validate_repo_name(repo_name):
+    """Validate repository name format and characters"""
+    import re
+    if not repo_name or '/' not in repo_name:
+        return False
+    
+    parts = repo_name.split('/')
+    if len(parts) != 2:
+        return False
+    
+    owner, repo = parts
+    # GitHub allows alphanumeric, hyphens, underscores
+    # Owner and repo names must match GitHub's rules
+    pattern = r'^[a-zA-Z0-9]([a-zA-Z0-9-_]){0,38}[a-zA-Z0-9]$|^[a-zA-Z0-9]$'
+    
+    if not re.match(pattern, owner) or not re.match(pattern, repo):
+        return False
+    
+    return True
 
 def run_command(cmd, cwd=None, check=True):
     """Run a shell command and return the result"""
@@ -90,12 +111,16 @@ def create_repo_with_gh_cli(repo_name, description):
     """Create repository using GitHub CLI"""
     print_info("Creating repository using GitHub CLI...")
     
+    # Sanitize inputs
+    repo_name_safe = shlex.quote(repo_name)
+    description_safe = shlex.quote(description)
+    
     # Parse org/repo or user/repo
     if '/' in repo_name:
         org, repo = repo_name.split('/', 1)
-        cmd = f'gh repo create {repo_name} --public --description "{description}"'
+        cmd = f'gh repo create {repo_name_safe} --public --description {description_safe}'
     else:
-        cmd = f'gh repo create {repo_name} --public --description "{description}"'
+        cmd = f'gh repo create {repo_name_safe} --public --description {description_safe}'
     
     result = run_command(cmd, check=False)
     
@@ -186,18 +211,44 @@ def push_to_github(site_dir, repo_name):
     """Push to GitHub repository"""
     print_info("Pushing to GitHub...")
     
-    # Set remote
+    # Validate and sanitize repo_name to prevent command injection
+    # repo_name format should be owner/repo
+    if not repo_name or '/' not in repo_name:
+        print_error("Invalid repository name format")
+        return False
+    
+    # Set remote (no user input in URL, safe to use)
     remote_url = f'https://github.com/{repo_name}.git'
     
     # Check if remote already exists
     result = run_command('git remote', cwd=site_dir, check=False)
     if 'origin' in result.stdout:
-        run_command(f'git remote set-url origin {remote_url}', cwd=site_dir)
+        # Use list form to avoid shell injection
+        result = subprocess.run(
+            ['git', 'remote', 'set-url', 'origin', remote_url],
+            cwd=site_dir,
+            capture_output=True,
+            text=True,
+            check=False
+        )
     else:
-        run_command(f'git remote add origin {remote_url}', cwd=site_dir)
+        # Use list form to avoid shell injection
+        result = subprocess.run(
+            ['git', 'remote', 'add', 'origin', remote_url],
+            cwd=site_dir,
+            capture_output=True,
+            text=True,
+            check=False
+        )
     
     # Push to main
-    result = run_command('git push -u origin main --force', cwd=site_dir, check=False)
+    result = subprocess.run(
+        ['git', 'push', '-u', 'origin', 'main', '--force'],
+        cwd=site_dir,
+        capture_output=True,
+        text=True,
+        check=False
+    )
     
     if result.returncode == 0:
         print_success("Code pushed to GitHub")
@@ -212,7 +263,9 @@ def enable_github_pages(repo_name, token):
     
     # Try with GitHub CLI first
     if check_gh_cli():
-        cmd = f'gh api repos/{repo_name}/pages -X POST -f source[branch]=main -f source[path]=/'
+        # Sanitize repo_name
+        repo_name_safe = shlex.quote(repo_name)
+        cmd = f'gh api repos/{repo_name_safe}/pages -X POST -f source[branch]=main -f source[path]=/'
         result = run_command(cmd, check=False)
         
         if result.returncode == 0:
@@ -271,8 +324,10 @@ def main():
         sys.exit(1)
     
     # Validate repo name format
-    if '/' not in repo_name:
-        print_error("Repository name must be in format: owner/repo-name")
+    if not validate_repo_name(repo_name):
+        print_error("Invalid repository name format")
+        print_info("Repository name must be in format: owner/repo-name")
+        print_info("Only alphanumeric characters, hyphens, and underscores are allowed")
         sys.exit(1)
     
     print_header("GitHub Deployment Tool")
