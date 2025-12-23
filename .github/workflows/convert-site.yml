@@ -1,0 +1,76 @@
+name: Static Site Conversion
+
+on:
+  workflow_dispatch:
+    inputs:
+      source_url:
+        description: 'Website URL to convert (e.g., https://example.com)'
+        required: true
+        type: string
+      target_repo:
+        description: 'Target GitHub repository (e.g., owner/repo-name)'
+        required: true
+        type: string
+      output_dir:
+        description: 'Output directory for scraped files'
+        required: false
+        default: './dist'
+        type: string
+
+jobs:
+  convert-site:
+    runs-on: ubuntu-latest
+    
+    permissions:
+      contents: write
+      pages: write
+      id-token: write
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+      
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      
+      - name: Install dependencies
+        run: |
+          npm install
+      
+      - name: Step 1 - Scrape website
+        run: |
+          echo "🔍 Scraping website: ${{ inputs.source_url }}"
+          node ./scripts/identify_and_scrape.js "${{ inputs.source_url }}" "${{ inputs.output_dir }}"
+      
+      - name: Step 2 - Repair site
+        run: |
+          echo "🔧 Repairing site..."
+          node ./scripts/repair_site.js "${{ inputs.output_dir }}"
+      
+      - name: Step 3 - Deploy to GitHub
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          echo "🚀 Deploying to GitHub..."
+          python3 ./scripts/github_push.py "${{ inputs.output_dir }}" "${{ inputs.target_repo }}"
+      
+      - name: Summary
+        run: |
+          echo "## ✅ Site Conversion Completed!" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Source URL:** ${{ inputs.source_url }}" >> $GITHUB_STEP_SUMMARY
+          echo "**Target Repository:** ${{ inputs.target_repo }}" >> $GITHUB_STEP_SUMMARY
+          echo "**Output Directory:** ${{ inputs.output_dir }}" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### Next Steps:" >> $GITHUB_STEP_SUMMARY
+          echo "1. Visit https://github.com/${{ inputs.target_repo }}" >> $GITHUB_STEP_SUMMARY
+          echo "2. Check GitHub Pages is enabled in Settings > Pages" >> $GITHUB_STEP_SUMMARY
+          echo "3. Wait 2-5 minutes for deployment" >> $GITHUB_STEP_SUMMARY
+          echo "4. Access your site (URL will be shown in Pages settings)" >> $GITHUB_STEP_SUMMARY
