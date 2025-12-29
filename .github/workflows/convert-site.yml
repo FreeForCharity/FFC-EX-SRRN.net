@@ -1,4 +1,4 @@
-name: Static Site Conversion
+name: Static Site Conversion to GitHub Pages
 
 on:
   workflow_dispatch:
@@ -54,11 +54,11 @@ jobs:
           echo "🔧 Repairing site..."
           node ./scripts/repair_site.js "${{ inputs.output_dir }}"
       
-      - name: Step 3 - Deploy to GitHub
+      - name: Step 3 - Deploy to GitHub Pages
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          echo "🚀 Deploying to GitHub..."
+          echo "🚀 Deploying to GitHub Pages..."
           python3 ./scripts/github_push.py "${{ inputs.output_dir }}" "${{ inputs.target_repo }}"
       
       - name: Summary
@@ -71,6 +71,8 @@ jobs:
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "### Next Steps:" >> $GITHUB_STEP_SUMMARY
           echo "1. Visit https://github.com/${{ inputs.target_repo }}" >> $GITHUB_STEP_SUMMARY
-          echo "2. Check GitHub Pages is enabled in Settings > Pages" >> $GITHUB_STEP_SUMMARY
-          echo "3. Wait 2-5 minutes for deployment" >> $GITHUB_STEP_SUMMARY
-          echo "4. Access your site (URL will be shown in Pages settings)" >> $GITHUB_STEP_SUMMARY
+          echo "2. Verify GitHub Pages is enabled in Settings > Pages" >> $GITHUB_STEP_SUMMARY
+          echo "3. Wait 2-5 minutes for GitHub Pages deployment" >> $GITHUB_STEP_SUMMARY
+          echo "4. Access your site at the GitHub Pages URL (shown in Pages settings)" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Note:** GitHub Pages is the sole supported deployment method for this toolkit." >> $GITHUB_STEP_SUMMARY
