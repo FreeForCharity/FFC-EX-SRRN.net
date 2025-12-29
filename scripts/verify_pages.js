@@ -69,12 +69,12 @@ if (missingCount > 0) {
     console.log(`  ${index + 1}. ${page.name} (${page.file})`);
   });
   console.log('\nTo scrape missing pages, run:');
-  console.log('  node scripts/scrape_all_pages.js');
+  console.log('  npm run scrape:all');
   process.exit(1);
 } else {
   console.log('\n✅ All expected pages are present!');
   console.log('\nNext steps:');
-  console.log('  1. Run repair script: node scripts/repair_site.js .');
+  console.log('  1. Run repair script: npm run repair');
   console.log('  2. Test navigation between pages');
   console.log('  3. Verify responsive layout');
   console.log('  4. Deploy to GitHub Pages');

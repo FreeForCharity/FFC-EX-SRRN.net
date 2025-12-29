@@ -154,7 +154,7 @@ Next Steps:
     
     console.log('\n' + '='.repeat(70));
     console.log('Next step: Run repair script');
-    console.log('node ./scripts/repair_site.js "."');
+    console.log('npm run repair');
     console.log('='.repeat(70));
     
   } catch (error) {
