@@ -31,7 +31,7 @@ The template includes working examples of:
 - **Features**: 
   - Embeddable donation forms
   - One-time and recurring donations
-  - No platform fees or credit card processing fees
+  - No platform fees (Zeffy covers credit card processing fees)
   - Customizable branding
 - **Implementation**: Embed via iframe
 - **Template Reference**: See donate section in FFC-IN-Single_Page_Template_HTML

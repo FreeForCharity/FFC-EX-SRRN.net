@@ -309,7 +309,7 @@ The SRRN.net site includes features requiring special attention:
 - **Training Calendar Page** (`/training-calendar/`): Uses WordPress Modern Events Calendar Lite plugin
   - This plugin requires server-side processing and a database
   - **Recommended replacement**: Embed a Facebook Events widget (as demonstrated in the template) or use Google Calendar embed
-  - **Alternative**: Maintain a static HTML calendar that is manually updated
+  - **Alternative**: Maintain a static HTML calendar that is manually updated by editing the HTML file directly
   - **Template example**: See [FFC-IN-Single_Page_Template_HTML events section](https://github.com/FreeForCharity/FFC-IN-Single_Page_Template_HTML) for Facebook Events integration
 
 ## Advanced Usage

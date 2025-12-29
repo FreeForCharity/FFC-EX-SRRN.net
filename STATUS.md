@@ -156,7 +156,7 @@ After conversion, the following features need external service integration:
 1. **Training Calendar** - Replace WordPress Modern Events Calendar with:
    - Facebook Events widget (recommended, see template)
    - Google Calendar embed
-   - Or static HTML calendar
+   - Static HTML calendar (manually updated by editing HTML files)
 
 2. **Reference Template**: [FFC-IN-Single_Page_Template_HTML](https://github.com/FreeForCharity/FFC-IN-Single_Page_Template_HTML)
 
