@@ -96,6 +96,18 @@ function fixPaths(document, filePath) {
   const depth = getDepthFromRoot(filePath);
   const prefix = getPathPrefix(depth);
   
+  // Check if URL is from the original site
+  let originalSiteUrl = '';
+  const metadataPath = path.join(siteDir, '.scraper-metadata.json');
+  if (fs.existsSync(metadataPath)) {
+    try {
+      const metadata = JSON.parse(fs.readFileSync(metadataPath, 'utf8'));
+      originalSiteUrl = metadata.url;
+    } catch (error) {
+      // Ignore metadata errors
+    }
+  }
+  
   // Skip external URLs
   const isExternal = (url) => {
     if (!url) return false;
@@ -143,15 +155,33 @@ function fixPaths(document, filePath) {
       
       // Handle srcset separately (can have multiple URLs)
       if (attr === 'srcset') {
+        let modified = false;
         const parts = value.split(',').map(part => {
           const [url, ...descriptor] = part.trim().split(/\s+/);
+          
+          // Fix absolute paths starting with /
           if (url.startsWith('/') && !isExternal(url) && !shouldSkipPath(url)) {
             fixed++;
+            modified = true;
             return `${prefix}${url.substring(1)}${descriptor.length ? ' ' + descriptor.join(' ') : ''}`;
           }
+          
+          // Fix hardcoded original site URLs
+          if (originalSiteUrl && url.startsWith(originalSiteUrl)) {
+            const relativePath = url.substring(originalSiteUrl.length);
+            if (relativePath.startsWith('/')) {
+              fixed++;
+              modified = true;
+              return `${prefix}${relativePath.substring(1)}${descriptor.length ? ' ' + descriptor.join(' ') : ''}`;
+            }
+          }
+          
           return part.trim();
         });
-        element.setAttribute(attr, parts.join(', '));
+        
+        if (modified) {
+          element.setAttribute(attr, parts.join(', '));
+        }
         return;
       }
       
