@@ -1,0 +1,26 @@
+{
+  "name": "static-site-conversion-toolkit",
+  "version": "1.0.0",
+  "description": "Tools for converting dynamic websites to static sites hosted on GitHub Pages",
+  "scripts": {
+    "scrape": "node ./scripts/identify_and_scrape.js",
+    "repair": "node ./scripts/repair_site.js",
+    "deploy": "python3 ./scripts/github_push.py"
+  },
+  "keywords": [
+    "static-site",
+    "website-scraper",
+    "github-pages",
+    "wordpress",
+    "site-conversion"
+  ],
+  "author": "FreeForCharity",
+  "license": "MIT",
+  "dependencies": {
+    "website-scraper": "^5.3.1",
+    "jsdom": "^23.0.1"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
