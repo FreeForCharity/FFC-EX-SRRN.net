@@ -1,6 +1,6 @@
 # Static Site Conversion Workflow
 
-This repository contains tools and documentation for converting dynamic websites (e.g., WordPress, Joomla, Drupal) into high-fidelity static sites hosted on GitHub Pages.
+This repository contains tools and documentation for converting dynamic websites (e.g., WordPress, Joomla, Drupal) into high-fidelity static sites **deployed exclusively via GitHub Pages**.
 
 ## Overview
 
@@ -8,7 +8,11 @@ The conversion process consists of three main steps:
 
 1. **Scrape**: Download the dynamic website to a local directory
 2. **Repair**: Fix common layout issues and ensure proper rendering
-3. **Deploy**: Push the static site to GitHub and enable GitHub Pages
+3. **Deploy**: Push the static site to GitHub and enable GitHub Pages (the **sole supported deployment method**)
+
+### Deployment Method
+
+**GitHub Pages is the only supported deployment method** for sites converted using this toolkit. All deployment scripts, documentation, and workflows are designed specifically for GitHub Pages hosting.
 
 ## Prerequisites
 
@@ -106,9 +110,9 @@ node ./scripts/repair_site.js "./dist"
 - ✅ Responsive image sizing
 - ✅ Overflow-x prevention
 
-### Step 3: Deploy to GitHub
+### Step 3: Deploy to GitHub Pages
 
-Create a GitHub repository and push the static site:
+Create a GitHub repository and deploy to GitHub Pages (the **only supported deployment method**):
 
 ```bash
 python3 ./scripts/github_push.py "<SITE_DIR>" "<REPO_NAME>"
@@ -124,11 +128,17 @@ python3 ./scripts/github_push.py "./dist" "MyOrg/my-static-site"
 - Initializes git in the site directory
 - Commits all files
 - Pushes to GitHub
-- Enables GitHub Pages automatically
-- Provides the live URL
+- **Enables GitHub Pages automatically** (from main branch)
+- Provides the live GitHub Pages URL
 
 **Repository name format:**
 - Must be in format: `owner/repo-name`
+
+**GitHub Pages Deployment:**
+- Site will be available at: `https://owner.github.io/repo-name/`
+- Custom domains can be configured in repository Settings > Pages
+- SSL/HTTPS is automatically provided by GitHub
+- No server configuration or hosting costs required
 - Example: `FreeForCharity/example-static-site`
 
 ## Quick Start for SRRN.net Conversion
@@ -270,19 +280,37 @@ Static sites cannot replicate:
 - Database-driven content
 - Server-side search (consider using client-side search like Lunr.js)
 - Shopping carts (consider Snipcart, Shopify Buy Button)
+- **Event calendars with dynamic updates** (e.g., WordPress Modern Events Calendar plugin)
 
 ### Server-Side Plugins
 WordPress plugins that run server-side code will not work:
-- Donation buttons → Use Stripe, PayPal buttons
+- Donation buttons → Use Stripe, PayPal buttons, or **Zeffy** (zero-fee donations)
 - Newsletter signups → Use service APIs (Mailchimp, etc.)
 - Comments → Use Disqus or similar
 - Analytics → Use Google Analytics, Plausible
+- **Event calendars** → Use embedded widgets (Facebook Events, Google Calendar)
 
 ### Recommended Workarounds
-1. **Forms**: Integrate Formspree, Google Forms, or Netlify Forms
-2. **Search**: Add Lunr.js or Algolia DocSearch
-3. **Comments**: Add Disqus, Utterances, or giscus
-4. **E-commerce**: Use Snipcart or Shopify Buy Button
+
+For recommended external services and implementation patterns, see the **[FFC-IN-Single_Page_Template_HTML](https://github.com/FreeForCharity/FFC-IN-Single_Page_Template_HTML)** repository, which demonstrates best practices for:
+
+1. **Donation Forms**: [Zeffy](https://www.zeffy.com) embedded donation forms (zero-fee platform)
+2. **Event Calendars**: [SociableKit](https://www.sociablekit.com) Facebook Events widget for dynamic event listings
+3. **Analytics**: Google Analytics integration
+4. **Forms**: Integrate Formspree, Google Forms, or Netlify Forms
+5. **Search**: Add Lunr.js or Algolia DocSearch
+6. **Comments**: Add Disqus, Utterances, or giscus
+7. **E-commerce**: Use Snipcart or Shopify Buy Button
+
+### SRRN.net-Specific Considerations
+
+The SRRN.net site includes features requiring special attention:
+
+- **Training Calendar Page** (`/training-calendar/`): Uses WordPress Modern Events Calendar Lite plugin
+  - This plugin requires server-side processing and a database
+  - **Recommended replacement**: Embed a Facebook Events widget (as demonstrated in the template) or use Google Calendar embed
+  - **Alternative**: Maintain a static HTML calendar that is manually updated
+  - **Template example**: See [FFC-IN-Single_Page_Template_HTML events section](https://github.com/FreeForCharity/FFC-IN-Single_Page_Template_HTML) for Facebook Events integration
 
 ## Advanced Usage
 
@@ -326,6 +354,20 @@ Contributions are welcome! Please:
 3. Make your changes
 4. Submit a pull request
 
+See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed guidelines.
+
+## Documentation
+
+- **[README.md](README.md)** - This file (overview and quick start)
+- **[QUICKSTART.md](QUICKSTART.md)** - Get started in under 5 minutes
+- **[CONVERSION_GUIDE.md](CONVERSION_GUIDE.md)** - Complete conversion workflow
+- **[EXTERNAL_SERVICES.md](EXTERNAL_SERVICES.md)** - Recommended external services for dynamic features
+- **[MANUAL_STEPS.md](MANUAL_STEPS.md)** - Manual step-by-step instructions
+- **[IMPLEMENTATION_SUMMARY.md](IMPLEMENTATION_SUMMARY.md)** - Framework implementation status
+- **[STATUS.md](STATUS.md)** - Current conversion status
+- **[CONTRIBUTING.md](CONTRIBUTING.md)** - Contribution guidelines
+- **[FUTURE_ENHANCEMENTS.md](FUTURE_ENHANCEMENTS.md)** - Planned improvements
+
 ## License
 
 MIT License - see LICENSE file for details
@@ -336,6 +378,7 @@ For issues and questions:
 - Open an issue on GitHub
 - Check existing issues for solutions
 - Review the troubleshooting section above
+- See [EXTERNAL_SERVICES.md](EXTERNAL_SERVICES.md) for external service integration help
 
 ## Credits
 

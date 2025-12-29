@@ -2,7 +2,9 @@
 
 ## Overview
 
-This document provides instructions for completing the conversion of all pages from the SRRN.net live site to this static GitHub repository.
+This document provides instructions for completing the conversion of all pages from the SRRN.net live site to this static GitHub repository **for deployment via GitHub Pages** (the sole supported deployment method).
+
+For recommended external services and implementation patterns, see **[FFC-IN-Single_Page_Template_HTML](https://github.com/FreeForCharity/FFC-IN-Single_Page_Template_HTML)**.
 
 ## Current Status
 
@@ -154,8 +156,33 @@ If internal links don't work:
 1. **Test Locally**: Open index.html in a browser and test all navigation
 2. **Run Repair Script**: Apply responsive fixes with `node scripts/repair_site.js .`
 3. **Commit Changes**: Commit all downloaded pages to git
-4. **Deploy**: Push to GitHub and verify GitHub Pages is working
+4. **Deploy to GitHub Pages**: Push to GitHub and verify GitHub Pages is working
 5. **Validate**: Test the live GitHub Pages site thoroughly
+6. **Replace Dynamic Features**: Implement external service integrations (see below)
+
+## External Services for Dynamic Features
+
+The SRRN.net site includes features that require external services when converted to a static site hosted on GitHub Pages. See **[FFC-IN-Single_Page_Template_HTML](https://github.com/FreeForCharity/FFC-IN-Single_Page_Template_HTML)** for implementation examples.
+
+### Required Replacements
+
+1. **Training Calendar** (`/training-calendar/`)
+   - **Current**: WordPress Modern Events Calendar Lite plugin (requires database)
+   - **Recommended Replacement**: Facebook Events widget (via [SociableKit](https://www.sociablekit.com))
+   - **Alternative**: Google Calendar embed or static HTML calendar
+   - **Template Reference**: See events section in FFC-IN-Single_Page_Template_HTML
+
+2. **Donation Forms** (if present)
+   - **Recommended**: [Zeffy](https://www.zeffy.com) embedded donation forms (zero-fee platform)
+   - **Template Reference**: See donate section in FFC-IN-Single_Page_Template_HTML
+
+3. **Contact Forms** (if present)
+   - **Recommended**: Formspree, Google Forms, or Netlify Forms
+   - **Template Reference**: FFC-IN-Single_Page_Template_HTML examples
+
+4. **Analytics** (optional)
+   - **Recommended**: Google Analytics
+   - **Template Reference**: FFC-IN-Single_Page_Template_HTML implementation
 
 ## Tools Reference
 
@@ -163,7 +190,7 @@ If internal links don't work:
 - `scripts/discover_urls.js` - Discovers URLs from existing HTML
 - `scripts/identify_and_scrape.js` - Scrapes individual URLs
 - `scripts/repair_site.js` - Fixes common layout issues
-- `scripts/github_push.py` - Deploys to GitHub (if needed)
+- `scripts/github_push.py` - Deploys to GitHub Pages
 
 ## Contact
 

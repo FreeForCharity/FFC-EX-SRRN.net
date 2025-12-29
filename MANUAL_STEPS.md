@@ -2,7 +2,7 @@
 
 ## Prerequisites
 
-This document outlines the manual steps needed to complete the conversion when network access to srrn.net is available.
+This document outlines the manual steps needed to complete the conversion when network access to srrn.net is available. The converted site will be **deployed exclusively via GitHub Pages**.
 
 ## Problem
 
@@ -12,7 +12,7 @@ The live site https://srrn.net is currently not accessible from the automated en
 
 ## Solution
 
-The conversion must be completed manually or in an environment with proper network access.
+The conversion must be completed manually or in an environment with proper network access. Once complete, the site will be deployed to GitHub Pages (the sole supported deployment method).
 
 ## Step-by-Step Instructions
 

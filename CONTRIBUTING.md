@@ -2,6 +2,8 @@
 
 Thank you for your interest in contributing! This document provides guidelines for contributing to this project.
 
+**Note:** This toolkit is designed exclusively for deployment to **GitHub Pages**. Contributions should maintain compatibility with GitHub Pages hosting.
+
 ## How to Contribute
 
 ### Reporting Issues
