@@ -7,8 +7,10 @@
     "scrape:all": "node ./scripts/scrape_all_pages.js",
     "discover": "node ./scripts/discover_urls.js",
     "verify": "node ./scripts/verify_pages.js",
+    "placeholder": "node ./scripts/create_placeholders.js",
     "repair": "node ./scripts/repair_site.js",
     "deploy": "python3 ./scripts/github_push.py",
+    "serve": "python3 -m http.server 8000",
     "convert": "npm run scrape:all && npm run repair && npm run verify"
   },
   "keywords": [

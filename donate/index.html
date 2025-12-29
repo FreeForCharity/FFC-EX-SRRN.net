@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate | Suicide Resource and Response Network</title>
+    <meta name="description" content="Support our mission to provide suicide prevention resources">
+    <link rel="stylesheet" href="../css/style.min.css">
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+        .placeholder-container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 40px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .placeholder-header {
+            color: #0088aa;
+            border-bottom: 3px solid #0088aa;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+        }
+        .placeholder-notice {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        .placeholder-nav {
+            margin-top: 30px;
+        }
+        .placeholder-nav a {
+            color: #0088aa;
+            text-decoration: none;
+            margin-right: 15px;
+        }
+        .placeholder-nav a:hover {
+            text-decoration: underline;
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #0088aa;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+        .back-link:hover {
+            background-color: #006688;
+        }
+    </style>
+</head>
+<body>
+    <div class="placeholder-container">
+        <h1 class="placeholder-header">Donate</h1>
+        
+        <div class="placeholder-notice">
+            <strong>⚠️ Placeholder Page</strong><br>
+            This page is a placeholder and will be replaced with actual content from srrn.net once the site is accessible and scraped.
+        </div>
+        
+        <p>Support our mission to provide suicide prevention resources</p>
+        
+        <h2>What to Expect</h2>
+        <p>Once the full site scraping is complete, this page will contain the actual content from <code>https://srrn.net/donate/</code>, including:</p>
+        <ul>
+            <li>Complete page content and layout</li>
+            <li>All images and media</li>
+            <li>Proper styling and formatting</li>
+            <li>Interactive elements</li>
+        </ul>
+        
+        <h2>How to Complete Conversion</h2>
+        <p>To replace this placeholder with real content:</p>
+        <ol>
+            <li>Ensure you have network access to srrn.net</li>
+            <li>Run: <code>npm run scrape:all</code></li>
+            <li>Run: <code>npm run repair</code></li>
+            <li>Run: <code>npm run verify</code></li>
+        </ol>
+        
+        <p>See <a href="../MANUAL_STEPS.md">MANUAL_STEPS.md</a> for detailed instructions.</p>
+        
+        <a href="../" class="back-link">← Back to Home</a>
+        
+        <div class="placeholder-nav">
+            <h3>Navigation</h3>
+            <a href="../">Home</a> |
+            <a href="../about-us/">About Us</a> |
+            <a href="../donate/">Donate</a> |
+            <a href="../aftercare/">Aftercare</a> |
+            <a href="../events/">Events</a> |
+            <a href="../news/">News</a> |
+            <a href="../request-a-training/">Request Training</a> |
+            <a href="../talk-today/">Talk Today</a> |
+            <a href="../training-calendar/">Training Calendar</a> |
+            <a href="../training/">Training</a> |
+            <a href="../trainings-offered/">Trainings Offered</a>
+        </div>
+    </div>
+    
+    <script>
+        // Add warning if this is still a placeholder after some time
+        const createDate = new Date('2025-12-29');
+        const now = new Date();
+        const daysSinceCreation = Math.floor((now - createDate) / (1000 * 60 * 60 * 24));
+        
+        if (daysSinceCreation > 7) {
+            const notice = document.querySelector('.placeholder-notice');
+            notice.innerHTML += '<br><br><strong>Note:</strong> This placeholder was created ' + 
+                daysSinceCreation + ' days ago. Please check if the scraping has been completed.';
+        }
+    </script>
+</body>
+</html>
