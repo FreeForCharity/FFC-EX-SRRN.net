@@ -39,8 +39,8 @@ const urls = new Set();
 allLinks.forEach(link => {
   const href = link.getAttribute('href');
   
-  // Filter for srrn.net URLs
-  if (href && href.includes('srrn.net')) {
+  // Filter for srrn.net URLs, excluding mailto: links
+  if (href && href.includes('srrn.net') && !href.startsWith('mailto:')) {
     try {
       const url = new URL(href);
       // Remove query strings and fragments for cleaner URLs

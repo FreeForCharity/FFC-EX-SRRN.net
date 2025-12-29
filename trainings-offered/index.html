@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trainings Offered | Suicide Resource and Response Network</title>
     <meta name="description" content="Overview of our training programs">
+    <meta name="created" content="2025-12-29T18:33:03.609Z">
     <link rel="stylesheet" href="../css/style.min.css">
     <style>
         body {
@@ -111,14 +112,17 @@
     
     <script>
         // Add warning if this is still a placeholder after some time
-        const createDate = new Date('2025-12-29');
+        const createDate = new Date(document.querySelector('meta[name="created"]')?.content || new Date().toISOString());
         const now = new Date();
         const daysSinceCreation = Math.floor((now - createDate) / (1000 * 60 * 60 * 24));
         
         if (daysSinceCreation > 7) {
             const notice = document.querySelector('.placeholder-notice');
-            notice.innerHTML += '<br><br><strong>Note:</strong> This placeholder was created ' + 
-                daysSinceCreation + ' days ago. Please check if the scraping has been completed.';
+            const noteElement = document.createElement('div');
+            noteElement.innerHTML = '<br><br><strong>Note:</strong> This placeholder was created ';
+            const daysText = document.createTextNode(daysSinceCreation + ' days ago. Please check if the scraping has been completed.');
+            noteElement.appendChild(daysText);
+            notice.appendChild(noteElement);
         }
     </script>
 </body>

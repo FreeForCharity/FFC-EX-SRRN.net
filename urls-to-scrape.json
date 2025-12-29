@@ -1,8 +1,8 @@
 {
-  "discoveredAt": "2025-12-29T18:25:51.952Z",
+  "discoveredAt": "2025-12-29T18:32:43.238Z",
   "sourceFile": "./index.html",
   "baseUrl": "https://srrn.net",
-  "totalUrls": 12,
+  "totalUrls": 11,
   "uniquePaths": [
     "/",
     "/about-us/",
@@ -27,7 +27,6 @@
     "https://srrn.net/talk-today/",
     "https://srrn.net/training-calendar/",
     "https://srrn.net/training/",
-    "https://srrn.net/trainings-offered/",
-    "nullinfo@srrn.net"
+    "https://srrn.net/trainings-offered/"
   ]
 }

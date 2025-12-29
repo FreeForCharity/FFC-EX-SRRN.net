@@ -67,7 +67,7 @@ const PAGES = [
   }
 ];
 
-const PLACEHOLDER_TEMPLATE = (page) => `<!DOCTYPE html>
+const PLACEHOLDER_TEMPLATE = (page, createdDate) => `<!DOCTYPE html>
 <html lang="en-US">
 <head>
     <meta charset="UTF-8">
@@ -75,6 +75,7 @@ const PLACEHOLDER_TEMPLATE = (page) => `<!DOCTYPE html>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>${page.title} | Suicide Resource and Response Network</title>
     <meta name="description" content="${page.description}">
+    <meta name="created" content="${createdDate}">
     <link rel="stylesheet" href="../css/style.min.css">
     <style>
         body {
@@ -180,14 +181,17 @@ const PLACEHOLDER_TEMPLATE = (page) => `<!DOCTYPE html>
     
     <script>
         // Add warning if this is still a placeholder after some time
-        const createDate = new Date('2025-12-29');
+        const createDate = new Date(document.querySelector('meta[name="created"]')?.content || new Date().toISOString());
         const now = new Date();
         const daysSinceCreation = Math.floor((now - createDate) / (1000 * 60 * 60 * 24));
         
         if (daysSinceCreation > 7) {
             const notice = document.querySelector('.placeholder-notice');
-            notice.innerHTML += '<br><br><strong>Note:</strong> This placeholder was created ' + 
-                daysSinceCreation + ' days ago. Please check if the scraping has been completed.';
+            const noteElement = document.createElement('div');
+            noteElement.innerHTML = '<br><br><strong>Note:</strong> This placeholder was created ';
+            const daysText = document.createTextNode(daysSinceCreation + ' days ago. Please check if the scraping has been completed.');
+            noteElement.appendChild(daysText);
+            notice.appendChild(noteElement);
         }
     </script>
 </body>
@@ -202,6 +206,7 @@ console.log('while waiting for actual content to be scraped.\n');
 
 let created = 0;
 let skipped = 0;
+const createdDate = new Date().toISOString();
 
 PAGES.forEach(page => {
     const dir = path.join('.', page.dir);
@@ -214,7 +219,7 @@ PAGES.forEach(page => {
     
     // Only create if file doesn't exist
     if (!fs.existsSync(filePath)) {
-        fs.writeFileSync(filePath, PLACEHOLDER_TEMPLATE(page));
+        fs.writeFileSync(filePath, PLACEHOLDER_TEMPLATE(page, createdDate));
         console.log(`✅ Created: ${filePath}`);
         created++;
     } else {
