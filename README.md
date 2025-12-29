@@ -133,13 +133,13 @@ python3 ./scripts/github_push.py "./dist" "MyOrg/my-static-site"
 
 **Repository name format:**
 - Must be in format: `owner/repo-name`
+- Example: `FreeForCharity/example-static-site`
 
 **GitHub Pages Deployment:**
 - Site will be available at: `https://owner.github.io/repo-name/`
 - Custom domains can be configured in repository Settings > Pages
 - SSL/HTTPS is automatically provided by GitHub
 - No server configuration or hosting costs required
-- Example: `FreeForCharity/example-static-site`
 
 ## Quick Start for SRRN.net Conversion
 

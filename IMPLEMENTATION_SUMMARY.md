@@ -159,7 +159,6 @@ FFC-EX-SRRN.net/
 - [ ] Pushed to GitHub
 - [ ] **GitHub Pages enabled and active** (sole deployment method)
 - [ ] Live site verified at GitHub Pages URL
-- [ ] Live site verified
 
 **Current Status:** Phase 1 Complete (100%)
 

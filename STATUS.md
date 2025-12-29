@@ -145,9 +145,7 @@ Ping: No address associated with hostname
 
 - [ ] Set up automated scraping on schedule
 - [ ] Add broken link checker
-- [ ] Implement search functionality (Lunr.js)
 - [ ] Integrate external services per EXTERNAL_SERVICES.md
-- [ ] Set up analytics (Google Analytics)
 
 ## External Services Required
 
