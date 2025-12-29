@@ -188,9 +188,17 @@ const PLACEHOLDER_TEMPLATE = (page, createdDate) => `<!DOCTYPE html>
         if (daysSinceCreation > 7) {
             const notice = document.querySelector('.placeholder-notice');
             const noteElement = document.createElement('div');
-            noteElement.innerHTML = '<br><br><strong>Note:</strong> This placeholder was created ';
-            const daysText = document.createTextNode(daysSinceCreation + ' days ago. Please check if the scraping has been completed.');
-            noteElement.appendChild(daysText);
+            const brElement1 = document.createElement('br');
+            const brElement2 = document.createElement('br');
+            const strongElement = document.createElement('strong');
+            strongElement.textContent = 'Note:';
+            const messageText = document.createTextNode(' This placeholder was created ' + 
+                daysSinceCreation + ' days ago. Please check if the scraping has been completed.');
+            
+            noteElement.appendChild(brElement1);
+            noteElement.appendChild(brElement2);
+            noteElement.appendChild(strongElement);
+            noteElement.appendChild(messageText);
             notice.appendChild(noteElement);
         }
     </script>

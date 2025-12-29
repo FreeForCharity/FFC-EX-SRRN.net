@@ -73,10 +73,15 @@ const options = {
     // Only scrape URLs from the same domain
     const targetDomain = new URL(BASE_URL).hostname;
     try {
-      const urlDomain = new URL(url).hostname;
-      return urlDomain === targetDomain;
+      const urlObj = new URL(url);
+      // Strict hostname comparison to prevent subdomain attacks
+      return urlObj.hostname === targetDomain;
     } catch {
-      return true; // Relative URLs
+      // For relative URLs, validate they don't contain suspicious patterns
+      if (typeof url === 'string' && url.startsWith('/') && !url.includes('//')) {
+        return true;
+      }
+      return false;
     }
   },
   onResourceError: (resource, error) => {

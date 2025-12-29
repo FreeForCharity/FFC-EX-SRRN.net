@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Training Calendar | Suicide Resource and Response Network</title>
     <meta name="description" content="Upcoming training sessions and workshops">
-    <meta name="created" content="2025-12-29T18:33:03.609Z">
+    <meta name="created" content="2025-12-29T18:35:16.815Z">
     <link rel="stylesheet" href="../css/style.min.css">
     <style>
         body {
@@ -119,9 +119,17 @@
         if (daysSinceCreation > 7) {
             const notice = document.querySelector('.placeholder-notice');
             const noteElement = document.createElement('div');
-            noteElement.innerHTML = '<br><br><strong>Note:</strong> This placeholder was created ';
-            const daysText = document.createTextNode(daysSinceCreation + ' days ago. Please check if the scraping has been completed.');
-            noteElement.appendChild(daysText);
+            const brElement1 = document.createElement('br');
+            const brElement2 = document.createElement('br');
+            const strongElement = document.createElement('strong');
+            strongElement.textContent = 'Note:';
+            const messageText = document.createTextNode(' This placeholder was created ' + 
+                daysSinceCreation + ' days ago. Please check if the scraping has been completed.');
+            
+            noteElement.appendChild(brElement1);
+            noteElement.appendChild(brElement2);
+            noteElement.appendChild(strongElement);
+            noteElement.appendChild(messageText);
             notice.appendChild(noteElement);
         }
     </script>

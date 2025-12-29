@@ -40,12 +40,15 @@ allLinks.forEach(link => {
   const href = link.getAttribute('href');
   
   // Filter for srrn.net URLs, excluding mailto: links
-  if (href && href.includes('srrn.net') && !href.startsWith('mailto:')) {
+  if (href && !href.startsWith('mailto:') && !href.startsWith('javascript:')) {
     try {
       const url = new URL(href);
-      // Remove query strings and fragments for cleaner URLs
-      const cleanUrl = url.origin + url.pathname;
-      urls.add(cleanUrl);
+      // Strict hostname comparison to prevent subdomain attacks
+      if (url.hostname === 'srrn.net') {
+        // Remove query strings and fragments for cleaner URLs
+        const cleanUrl = url.origin + url.pathname;
+        urls.add(cleanUrl);
+      }
     } catch (e) {
       // Ignore invalid URLs
     }
