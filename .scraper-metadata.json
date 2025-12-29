@@ -1,1 +1,20 @@
-{"url":"https://srrn.net/","siteType":"WordPress","scrapedAt":"2025-12-20T23:39:09.543Z"}
+{
+  "url": "https://srrn.net",
+  "siteType": "WordPress",
+  "scrapedAt": "2025-12-29T18:47:23.222Z",
+  "pagesScraped": [
+    "/",
+    "/about-us/",
+    "/donate/",
+    "/aftercare/",
+    "/events/",
+    "/news/",
+    "/request-a-training/",
+    "/talk-today/",
+    "/training-calendar/",
+    "/training/",
+    "/trainings-offered/"
+  ],
+  "totalResources": 11,
+  "durationSeconds": 26.51
+}

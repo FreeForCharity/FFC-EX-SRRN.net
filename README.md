@@ -30,8 +30,8 @@ You need one of the following for deployment:
 
 1. Clone this repository:
 ```bash
-git clone https://github.com/FreeForCharity/FFC-EX-SSRN.net.git
-cd FFC-EX-SSRN.net
+git clone https://github.com/FreeForCharity/FFC-EX-SRRN.net.git
+cd FFC-EX-SRRN.net
 ```
 
 2. Install Node.js dependencies:
@@ -130,6 +130,26 @@ python3 ./scripts/github_push.py "./dist" "MyOrg/my-static-site"
 **Repository name format:**
 - Must be in format: `owner/repo-name`
 - Example: `FreeForCharity/example-static-site`
+
+## Quick Start for SRRN.net Conversion
+
+To complete the conversion of the remaining SRRN.net pages:
+
+```bash
+# Install dependencies
+npm install
+
+# Verify current status
+npm run verify
+
+# Scrape all missing pages (requires network access to srrn.net)
+npm run scrape:all
+
+# OR run the complete conversion workflow
+npm run convert
+```
+
+See [CONVERSION_GUIDE.md](CONVERSION_GUIDE.md) for detailed instructions.
 
 ## GitHub Copilot Prompt
 
@@ -326,4 +346,4 @@ For issues and questions:
 ---
 
 **Maintained by:** FreeForCharity  
-**Repository:** https://github.com/FreeForCharity/FFC-EX-SSRN.net
+**Repository:** https://github.com/FreeForCharity/FFC-EX-SRRN.net

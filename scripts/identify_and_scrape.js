@@ -10,7 +10,7 @@
  * Example: node identify_and_scrape.js "https://example.com" "./dist"
  */
 
-const scrape = require('website-scraper');
+const scrape = require('website-scraper').default || require('website-scraper');
 const fs = require('fs');
 const path = require('path');
 

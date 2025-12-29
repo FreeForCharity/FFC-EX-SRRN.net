@@ -1,0 +1,32 @@
+{
+  "discoveredAt": "2025-12-29T18:35:17.472Z",
+  "sourceFile": "./index.html",
+  "baseUrl": "https://srrn.net",
+  "totalUrls": 11,
+  "uniquePaths": [
+    "/",
+    "/about-us/",
+    "/aftercare/",
+    "/donate/",
+    "/events/",
+    "/news/",
+    "/request-a-training/",
+    "/talk-today/",
+    "/training-calendar/",
+    "/training/",
+    "/trainings-offered/"
+  ],
+  "fullUrls": [
+    "https://srrn.net/",
+    "https://srrn.net/about-us/",
+    "https://srrn.net/aftercare/",
+    "https://srrn.net/donate/",
+    "https://srrn.net/events/",
+    "https://srrn.net/news/",
+    "https://srrn.net/request-a-training/",
+    "https://srrn.net/talk-today/",
+    "https://srrn.net/training-calendar/",
+    "https://srrn.net/training/",
+    "https://srrn.net/trainings-offered/"
+  ]
+}

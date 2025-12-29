@@ -162,8 +162,8 @@ Here are areas where contributions are especially welcome:
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/FreeForCharity/FFC-EX-SSRN.net.git
-   cd FFC-EX-SSRN.net
+   git clone https://github.com/FreeForCharity/FFC-EX-SRRN.net.git
+   cd FFC-EX-SRRN.net
    ```
 
 2. **Install dependencies:**
