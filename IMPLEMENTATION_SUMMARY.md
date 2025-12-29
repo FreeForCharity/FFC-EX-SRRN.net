@@ -75,8 +75,8 @@ When you have network access to srrn.net:
 
 ```bash
 # 1. Clone and setup
-git clone https://github.com/FreeForCharity/FFC-EX-SSRN.net.git
-cd FFC-EX-SSRN.net
+git clone https://github.com/FreeForCharity/FFC-EX-SRRN.net.git
+cd FFC-EX-SRRN.net
 npm install
 
 # 2. Run complete conversion
@@ -100,7 +100,7 @@ That's it! The entire conversion can be completed in 5 commands.
 ## 📁 File Structure
 
 ```
-FFC-EX-SSRN.net/
+FFC-EX-SRRN.net/
 ├── index.html                      # ✅ Real (216 KB)
 ├── about-us/index.html             # 🔄 Placeholder
 ├── donate/index.html               # 🔄 Placeholder

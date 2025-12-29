@@ -9,7 +9,7 @@
  * Usage: node scrape_all_pages.js
  */
 
-const scrape = require('website-scraper');
+const scrape = require('website-scraper').default || require('website-scraper');
 const fs = require('fs');
 const path = require('path');
 
@@ -46,8 +46,13 @@ PAGES_TO_SCRAPE.forEach((page, index) => {
 });
 console.log('='.repeat(70));
 
-// Output directory (current directory - where all existing files are)
-const outputDir = '.';
+// Output directory - use a temporary directory for scraping
+const outputDir = path.join(process.cwd(), '.scrape-temp');
+
+// Clean up temp directory if it exists
+if (fs.existsSync(outputDir)) {
+  fs.rmSync(outputDir, { recursive: true, force: true });
+}
 
 // Scraper configuration
 const options = {
@@ -152,7 +157,49 @@ Next Steps:
     fs.writeFileSync(summaryPath, summary);
     console.log(`📄 Summary saved: ${summaryPath}`);
     
-    console.log('\n' + '='.repeat(70));
+    // Move files from temp directory to current directory
+    console.log('\n📦 Moving scraped files to repository...');
+    const targetDir = process.cwd();
+    
+    // website-scraper creates a subdirectory named after the hostname
+    // We need to move files from inside that subdirectory
+    const scrapedDir = path.join(outputDir, 'srrn.net');
+    
+    if (!fs.existsSync(scrapedDir)) {
+      console.error('Error: Scraped directory not found at:', scrapedDir);
+      console.log('Looking for files in:', outputDir);
+      console.log('Contents:', fs.readdirSync(outputDir));
+      throw new Error('Scraped directory structure unexpected');
+    }
+    
+    // Function to recursively copy files
+    function copyFiles(src, dest) {
+      const entries = fs.readdirSync(src, { withFileTypes: true });
+      
+      for (const entry of entries) {
+        const srcPath = path.join(src, entry.name);
+        const destPath = path.join(dest, entry.name);
+        
+        if (entry.isDirectory()) {
+          if (!fs.existsSync(destPath)) {
+            fs.mkdirSync(destPath, { recursive: true });
+          }
+          copyFiles(srcPath, destPath);
+        } else {
+          // Only copy if it's a new file or we're updating content
+          fs.copyFileSync(srcPath, destPath);
+          console.log(`  ✓ Copied: ${path.relative(targetDir, destPath)}`);
+        }
+      }
+    }
+    
+    copyFiles(scrapedDir, targetDir);
+    
+    // Clean up temp directory
+    fs.rmSync(outputDir, { recursive: true, force: true });
+    console.log('✅ Files moved successfully!\n');
+    
+    console.log('='.repeat(70));
     console.log('Next step: Run repair script');
     console.log('npm run repair');
     console.log('='.repeat(70));

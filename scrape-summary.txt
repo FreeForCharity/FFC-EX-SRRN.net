@@ -1,0 +1,33 @@
+
+SRRN.net Site Scrape Summary
+============================
+Date: 2025-12-29T18:47:23.222Z
+Base URL: https://srrn.net
+Pages Scraped: 11
+Total Resources: 11
+Duration: 26.51 seconds
+
+Pages:
+  1. /
+  2. /about-us/
+  3. /donate/
+  4. /aftercare/
+  5. /events/
+  6. /news/
+  7. /request-a-training/
+  8. /talk-today/
+  9. /training-calendar/
+  10. /training/
+  11. /trainings-offered/
+
+Next Steps:
+-----------
+1. Run the repair script:
+   node ./scripts/repair_site.js "."
+
+2. Verify all pages are working:
+   - Check each HTML file exists
+   - Verify navigation links work
+   - Test responsive layout
+
+3. Review the static site locally before deployment

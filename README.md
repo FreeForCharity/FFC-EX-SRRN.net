@@ -30,8 +30,8 @@ You need one of the following for deployment:
 
 1. Clone this repository:
 ```bash
-git clone https://github.com/FreeForCharity/FFC-EX-SSRN.net.git
-cd FFC-EX-SSRN.net
+git clone https://github.com/FreeForCharity/FFC-EX-SRRN.net.git
+cd FFC-EX-SRRN.net
 ```
 
 2. Install Node.js dependencies:
@@ -346,4 +346,4 @@ For issues and questions:
 ---
 
 **Maintained by:** FreeForCharity  
-**Repository:** https://github.com/FreeForCharity/FFC-EX-SSRN.net
+**Repository:** https://github.com/FreeForCharity/FFC-EX-SRRN.net

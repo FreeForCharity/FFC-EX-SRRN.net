@@ -29,6 +29,10 @@ Thumbs.db
 # Temporary files
 /tmp/
 *.tmp
+.scrape-temp/
+
+# Large media files (>100MB) - host separately or use Git LFS
+*.mp4
 
 # Git credentials (keep private)
 .git-credentials

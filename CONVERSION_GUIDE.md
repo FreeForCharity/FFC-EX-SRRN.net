@@ -33,7 +33,7 @@ If you have network access to https://srrn.net, use the automated scraping scrip
 
 ```bash
 # 1. Navigate to the repository root
-cd /path/to/FFC-EX-SSRN.net
+cd /path/to/FFC-EX-SRRN.net
 
 # 2. Ensure dependencies are installed
 npm install
@@ -96,7 +96,7 @@ After scraping, verify the following:
 After complete conversion, the repository should have:
 
 ```
-FFC-EX-SSRN.net/
+FFC-EX-SRRN.net/
 ├── index.html                  # Home page
 ├── about-us/
 │   └── index.html

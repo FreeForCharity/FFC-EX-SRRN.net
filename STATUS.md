@@ -187,8 +187,8 @@ Once real content is scraped:
 ## Resource URLs
 
 - Live Site: https://srrn.net (currently inaccessible)
-- Repository: https://github.com/FreeForCharity/FFC-EX-SSRN.net
-- Issue Tracker: https://github.com/FreeForCharity/FFC-EX-SSRN.net/issues
+- Repository: https://github.com/FreeForCharity/FFC-EX-SRRN.net
+- Issue Tracker: https://github.com/FreeForCharity/FFC-EX-SRRN.net/issues
 
 ## Support
 
