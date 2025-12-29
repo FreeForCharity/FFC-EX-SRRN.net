@@ -131,6 +131,26 @@ python3 ./scripts/github_push.py "./dist" "MyOrg/my-static-site"
 - Must be in format: `owner/repo-name`
 - Example: `FreeForCharity/example-static-site`
 
+## Quick Start for SRRN.net Conversion
+
+To complete the conversion of the remaining SRRN.net pages:
+
+```bash
+# Install dependencies
+npm install
+
+# Verify current status
+npm run verify
+
+# Scrape all missing pages (requires network access to srrn.net)
+npm run scrape:all
+
+# OR run the complete conversion workflow
+npm run convert
+```
+
+See [CONVERSION_GUIDE.md](CONVERSION_GUIDE.md) for detailed instructions.
+
 ## GitHub Copilot Prompt
 
 Use this prompt with GitHub Copilot to convert a new site:

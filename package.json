@@ -4,8 +4,12 @@
   "description": "Tools for converting dynamic websites to static sites hosted on GitHub Pages",
   "scripts": {
     "scrape": "node ./scripts/identify_and_scrape.js",
+    "scrape:all": "node ./scripts/scrape_all_pages.js",
+    "discover": "node ./scripts/discover_urls.js",
+    "verify": "node ./scripts/verify_pages.js",
     "repair": "node ./scripts/repair_site.js",
-    "deploy": "python3 ./scripts/github_push.py"
+    "deploy": "python3 ./scripts/github_push.py",
+    "convert": "npm run scrape:all && npm run repair && npm run verify"
   },
   "keywords": [
     "static-site",
