@@ -14,7 +14,7 @@ The **[FFC-IN-Single_Page_Template_HTML](https://github.com/FreeForCharity/FFC-I
 
 The template includes working examples of:
 
-1. **Donation Forms** - Zeffy integration (zero-fee platform)
+1. **Donation Forms** - Zeffy integration (zero platform fees for nonprofits)
 2. **Event Calendars** - Facebook Events widget via SociableKit
 3. **Analytics** - Google Analytics implementation
 4. **Social Media Integration** - Facebook, Twitter/X, Instagram links
@@ -154,12 +154,14 @@ Based on analysis of the SRRN.net WordPress site, the following features require
   - Complete control over design and layout
   - No third-party dependencies or iframe embeds
   - Consistent with static site architecture
-- **Implementation**: 
+- **Implementation** (suggested workflow): 
   1. Open an issue in this repository requesting calendar updates
-  2. Assign the issue to GitHub Copilot Pro Agent to create/update the HTML calendar
-  3. The agent will edit the HTML source files with event information and links
+  2. Assign the issue to GitHub Copilot Pro Agent (or manually edit HTML files)
+  3. Update the HTML source files with event information and links to external event pages
   4. Commit the changes to git and push to GitHub
   5. GitHub Pages will automatically rebuild and deploy the updated calendar
+  
+  **Note**: The GitHub Copilot Pro Agent workflow is a suggested approach that may require adaptation based on available tools. Manual HTML editing is always an option.
 
 ### 2. Potential Donation Features
 
