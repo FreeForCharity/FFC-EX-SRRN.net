@@ -284,7 +284,7 @@ Static sites cannot replicate:
 
 ### Server-Side Plugins
 WordPress plugins that run server-side code will not work:
-- Donation buttons → Use Stripe, PayPal buttons, or **Zeffy** (zero platform fees for nonprofits)
+- Donation buttons → Use **Zeffy** (zero platform fees for nonprofits), Stripe, or PayPal buttons
 - Newsletter signups → Use service APIs (Mailchimp, etc.)
 - Comments → Use Disqus or similar
 - Analytics → Use Google Analytics, Plausible
@@ -294,7 +294,7 @@ WordPress plugins that run server-side code will not work:
 
 For recommended external services and implementation patterns, see the **[FFC-IN-Single_Page_Template_HTML](https://github.com/FreeForCharity/FFC-IN-Single_Page_Template_HTML)** repository, which demonstrates best practices for:
 
-1. **Donation Forms**: [Zeffy](https://www.zeffy.com) embedded donation forms (zero platform fees for nonprofits)
+1. **Donation Forms**: [Zeffy](https://www.zeffy.com) embedded donation forms (zero platform fees for nonprofits; standard credit card processing fees apply and are typically covered by donors via optional tips)
 2. **Event Calendars**: Static HTML calendar with links to external events (preferred), or [SociableKit](https://www.sociablekit.com) Facebook Events widget for dynamic event listings
 3. **Analytics**: Google Analytics integration
 4. **Forms**: Integrate Zeffy Forms or Microsoft Forms

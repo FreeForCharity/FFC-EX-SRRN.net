@@ -136,19 +136,7 @@ Based on analysis of the SRRN.net WordPress site, the following features require
 - Requires: PHP, MySQL database, server-side processing
 - Features: Event creation, calendar views, filtering
 
-**Recommended Replacement Option 1**: Facebook Events Widget (SociableKit)
-- **Why**: Matches the pattern used in FFC-IN-Single_Page_Template_HTML
-- **Benefits**: 
-  - Automatically updates when events are added to Facebook
-  - No manual HTML updates required
-  - Professional appearance
-  - Mobile-responsive
-- **Implementation**: 
-  1. Create events on Facebook Page
-  2. Get SociableKit widget code
-  3. Embed in `/training-calendar/` page
-
-**Recommended Replacement Option 2**: Static HTML Calendar with External Event Links (Preferred for Full Control)
+**Preferred Replacement (Recommended)**: Static HTML Calendar with External Event Links
 - Create a custom calendar page in HTML that lists events with links to external event pages (e.g., Facebook events)
 - **Benefits**:
   - Complete control over design and layout
@@ -157,7 +145,7 @@ Based on analysis of the SRRN.net WordPress site, the following features require
 - **Implementation**: 
   
   **Option A - Using GitHub Copilot Pro Agent (if available)**:
-  1. Open an issue in this repository requesting calendar updates
+  1. Open an issue in the SRRN.net repository requesting calendar updates
   2. Assign the issue to GitHub Copilot Pro Agent
   3. The agent will create/update the HTML source files with event information and links
   4. Review the changes, then commit and push to GitHub
@@ -168,6 +156,18 @@ Based on analysis of the SRRN.net WordPress site, the following features require
   2. Add or update event information with links to external event pages (e.g., Facebook events)
   3. Commit the changes to git and push to GitHub
   4. GitHub Pages will automatically rebuild and deploy the updated calendar
+
+**Alternative Replacement**: Facebook Events Widget (SociableKit)
+- **Why**: Matches the pattern used in FFC-IN-Single_Page_Template_HTML
+- **Benefits**: 
+  - Automatically updates when events are added to Facebook
+  - No manual HTML updates required
+  - Professional appearance
+  - Mobile-responsive
+- **Implementation**: 
+  1. Create events on Facebook Page
+  2. Get SociableKit widget code
+  3. Embed in `/training-calendar/` page
 
 ### 2. Potential Donation Features
 

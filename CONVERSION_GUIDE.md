@@ -168,14 +168,14 @@ The SRRN.net site includes features that require external services when converte
 
 1. **Training Calendar** (`/training-calendar/`)
    - **Current**: WordPress Modern Events Calendar Lite plugin (requires database)
-   - **Recommended Replacement Option 1 (preferred)**: Static HTML calendar with links to external event pages (e.g., Facebook events). Create or update the calendar by:
+   - **Preferred Replacement (recommended)**: Static HTML calendar with links to external event pages (e.g., Facebook events). Create or update the calendar by:
      - Opening a GitHub issue (for example, titled **"Update training calendar"**), assigning it to the **GitHub Copilot Pro Agent**, and including:
        - Links to the existing calendar or event sources (e.g., Facebook page, legacy calendar)
        - The date range to include and any recurrence rules
        - Any layout/design constraints or examples to match
      - Ensuring the agent has access to this repository so it can read existing HTML and create or modify the calendar markup
-     - If the Copilot Pro Agent is not available, follow the manual static calendar workflow described in `EXTERNAL_SERVICES.md` (Option B - Manual HTML Editing, lines 166-170) to hand-edit the calendar HTML
-   - **Recommended Replacement Option 2**: Facebook Events widget (via [SociableKit](https://www.sociablekit.com))
+     - If the Copilot Pro Agent is not available, follow the manual static calendar workflow described in the **"Option B - Manual HTML Editing"** section of `EXTERNAL_SERVICES.md` to hand-edit the calendar HTML
+   - **Alternative Replacement**: Facebook Events widget (via [SociableKit](https://www.sociablekit.com))
    - **Template Reference**: See events section in FFC-IN-Single_Page_Template_HTML
 
 2. **Donation Forms** (if present)
