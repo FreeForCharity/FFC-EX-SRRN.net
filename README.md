@@ -312,12 +312,13 @@ The SRRN.net site includes features requiring special attention:
     - **Option A – Use GitHub Copilot Pro Agent (if available)**:
       1. Open a GitHub issue describing the required calendar changes (new events, dates, links, descriptions)
       2. Assign the issue to the Copilot Pro Agent and request it to create or update the HTML files in the `/training-calendar/` directory
-      3. Review the changes proposed by the agent and adjust as needed
+      3. Review the changes proposed by the agent, approve the pull request if created, or directly commit the changes
+      4. Push to GitHub to trigger the automatic GitHub Pages rebuild
     - **Option B – Manual HTML editing (use this if the agent is not available)**:
       1. Open the HTML files in the `/training-calendar/` directory in your editor
       2. Manually update event entries (dates, titles, locations, and links to external event pages such as Facebook events)
       3. Save the updated files
-    - For **both options**, commit your changes to git and push to GitHub to trigger the automatic GitHub Pages rebuild
+      4. Commit your changes to git and push to GitHub to trigger the automatic GitHub Pages rebuild
   - **Recommended replacement Option 2**: Embed a SociableKit-powered Facebook Events widget (as demonstrated in the template)
   - **Template example**: See [FFC-IN-Single_Page_Template_HTML events section](https://github.com/FreeForCharity/FFC-IN-Single_Page_Template_HTML) for Facebook Events widget integration
 

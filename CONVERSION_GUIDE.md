@@ -174,7 +174,7 @@ The SRRN.net site includes features that require external services when converte
        - The date range to include and any recurrence rules
        - Any layout/design constraints or examples to match
      - Ensuring the agent has access to this repository so it can read existing HTML and create or modify the calendar markup
-     - If the Copilot Pro Agent is not available, follow the manual static calendar workflow described in `EXTERNAL_SERVICES.md` (see the external services workflow section for static calendars) to hand-edit the calendar HTML
+     - If the Copilot Pro Agent is not available, follow the manual static calendar workflow described in `EXTERNAL_SERVICES.md` (Option B - Manual HTML Editing, lines 166-170) to hand-edit the calendar HTML
    - **Recommended Replacement Option 2**: Facebook Events widget (via [SociableKit](https://www.sociablekit.com))
    - **Template Reference**: See events section in FFC-IN-Single_Page_Template_HTML
 
