@@ -295,7 +295,7 @@ WordPress plugins that run server-side code will not work:
 For recommended external services and implementation patterns, see the **[FFC-IN-Single_Page_Template_HTML](https://github.com/FreeForCharity/FFC-IN-Single_Page_Template_HTML)** repository, which demonstrates best practices for:
 
 1. **Donation Forms**: [Zeffy](https://www.zeffy.com) embedded donation forms (zero platform fees for nonprofits)
-2. **Event Calendars**: [SociableKit](https://www.sociablekit.com) Facebook Events widget for dynamic event listings, or static HTML calendar with links to external events
+2. **Event Calendars**: Static HTML calendar with links to external events (preferred), or [SociableKit](https://www.sociablekit.com) Facebook Events widget for dynamic event listings
 3. **Analytics**: Google Analytics integration
 4. **Forms**: Integrate Zeffy Forms or Microsoft Forms
 5. **Search**: Add Lunr.js or Algolia DocSearch
@@ -308,11 +308,17 @@ The SRRN.net site includes features requiring special attention:
 
 - **Training Calendar Page** (`/training-calendar/`): Uses WordPress Modern Events Calendar Lite plugin
   - This plugin requires server-side processing and a database
-  - **Recommended replacement Option 1**: Embed a SociableKit-powered Facebook Events widget (as demonstrated in the template)
-  - **Recommended replacement Option 2 (preferred)**: Create a static HTML calendar with links to external event pages (e.g., Facebook events)
-    - **Using GitHub Copilot Pro Agent** (if available): Open an issue and assign to the agent to create/update HTML
-    - **Manual approach**: Directly edit HTML files in `/training-calendar/` directory
-    - Commit changes to git and push to GitHub to trigger automatic GitHub Pages rebuild
+  - **Recommended replacement Option 1 (preferred)**: Create a static HTML calendar with links to external event pages (e.g., Facebook events). You can do this in one of two ways:
+    - **Option A – Use GitHub Copilot Pro Agent (if available)**:
+      1. Open a GitHub issue describing the required calendar changes (new events, dates, links, descriptions)
+      2. Assign the issue to the Copilot Pro Agent and request it to create or update the HTML files in the `/training-calendar/` directory
+      3. Review the changes proposed by the agent and adjust as needed
+    - **Option B – Manual HTML editing (use this if the agent is not available)**:
+      1. Open the HTML files in the `/training-calendar/` directory in your editor
+      2. Manually update event entries (dates, titles, locations, and links to external event pages such as Facebook events)
+      3. Save the updated files
+    - For **both options**, commit your changes to git and push to GitHub to trigger the automatic GitHub Pages rebuild
+  - **Recommended replacement Option 2**: Embed a SociableKit-powered Facebook Events widget (as demonstrated in the template)
   - **Template example**: See [FFC-IN-Single_Page_Template_HTML events section](https://github.com/FreeForCharity/FFC-IN-Single_Page_Template_HTML) for Facebook Events widget integration
 
 ## Advanced Usage

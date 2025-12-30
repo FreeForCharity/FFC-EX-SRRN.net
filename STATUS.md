@@ -152,8 +152,8 @@ Ping: No address associated with hostname
 After conversion, the following features need external service integration:
 
 1. **Training Calendar** - Replace WordPress Modern Events Calendar with:
-   - Facebook Events widget (recommended, see template)
-   - Static HTML calendar with links to external events (preferred for full control - create/update by opening an issue and assigning to GitHub Copilot Pro Agent)
+   - Static HTML calendar with links to external events (preferred - create/update by opening an issue and assigning to GitHub Copilot Pro Agent, or manually edit HTML files)
+   - Facebook Events widget (alternative option, see template)
 
 2. **Reference Template**: [FFC-IN-Single_Page_Template_HTML](https://github.com/FreeForCharity/FFC-IN-Single_Page_Template_HTML)
 

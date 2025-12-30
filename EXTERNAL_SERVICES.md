@@ -190,7 +190,7 @@ When converting SRRN.net to static site:
 - [ ] Choose appropriate external services for each feature
 - [ ] Create accounts and configure services
 - [ ] Test integrations locally
-- [ ] Update documentation with service credentials/info
+- [ ] Document where and how to store service credentials securely (e.g., secret manager or environment variables); do not store secrets in this repo or its docs
 - [ ] Deploy to GitHub Pages
 - [ ] Verify all integrations work on live site
 - [ ] Set up monitoring/alerts for service status
