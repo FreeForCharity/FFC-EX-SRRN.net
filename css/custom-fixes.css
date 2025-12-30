@@ -51,11 +51,9 @@
 }
 
 /* Fix for invisible footer (white text on white background) */
-footer,
-#main-footer,
-.et_pb_section_footer,
-.et-l--footer,
-.et_pb_section_0_tb_footer {
+footer .et_pb_section,
+#main-footer .et_pb_section,
+.et-l--footer .et_pb_section {
     background-color: #2e3842 !important;
     /* Dark fallback */
     background-image: none !important;
@@ -65,15 +63,13 @@ footer,
 }
 
 /* Force inner containers to be transparent so section color shows */
-footer .et_pb_row,
-footer .et_pb_column,
-footer .et_pb_module,
-#main-footer .et_pb_row,
-#main-footer .et_pb_column,
-#main-footer .et_pb_module,
-.et_pb_section_footer .et_pb_row,
-.et_pb_section_footer .et_pb_column,
-.et_pb_section_0_tb_footer .et_pb_row,
-.et_pb_section_0_tb_footer .et_pb_column {
+footer .et_pb_section .et_pb_row,
+footer .et_pb_section .et_pb_column,
+footer .et_pb_section .et_pb_module,
+#main-footer .et_pb_section .et_pb_row,
+#main-footer .et_pb_section .et_pb_column,
+#main-footer .et_pb_section .et_pb_module,
+.et-l--footer .et_pb_section .et_pb_row,
+.et-l--footer .et_pb_section .et_pb_column {
     background-color: transparent !important;
 }
