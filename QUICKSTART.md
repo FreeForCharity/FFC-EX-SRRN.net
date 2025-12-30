@@ -158,10 +158,10 @@ Once your site is live:
    See **[FFC-IN-Single_Page_Template_HTML](https://github.com/FreeForCharity/FFC-IN-Single_Page_Template_HTML)** for implementation examples:
    
    - **Custom domain** (GitHub Pages settings)
-   - **Donation forms** ([Zeffy](https://www.zeffy.com) - zero-fee platform)
-   - **Event calendars** (Facebook Events widget via SociableKit)
+   - **Donation forms** ([Zeffy](https://www.zeffy.com) - zero platform fees for nonprofits)
+   - **Event calendars** (Facebook Events widget via SociableKit, or static HTML calendar)
    - **Analytics** (Google Analytics)
-   - **Contact forms** (Formspree, Google Forms)
+   - **Contact forms** (Zeffy Forms, Microsoft Forms)
    - **Comments** (Disqus, giscus)
 
 3. **Maintain:**

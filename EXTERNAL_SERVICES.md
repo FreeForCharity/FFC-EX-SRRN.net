@@ -27,11 +27,11 @@ The template includes working examples of:
 ### 1. Donation Forms
 
 **Service**: [Zeffy](https://www.zeffy.com)
-- **Cost**: Free (zero-fee platform)
+- **Cost**: Free (zero platform fees for nonprofits)
 - **Features**: 
   - Embeddable donation forms
   - One-time and recurring donations
-  - No platform fees (Zeffy covers credit card processing fees)
+  - No platform fees for nonprofits; standard credit card processing fees apply and are typically covered by donors via optional tips
   - Customizable branding
 - **Implementation**: Embed via iframe
 - **Template Reference**: See donate section in FFC-IN-Single_Page_Template_HTML
@@ -53,10 +53,8 @@ The template includes working examples of:
 - **Implementation**: Embed via iframe
 - **Template Reference**: See events section in FFC-IN-Single_Page_Template_HTML
 
-**Alternative Services**:
-- Google Calendar embed
-- Eventbrite widget
-- Static HTML calendar (manually updated)
+**Alternative**:
+- **Static HTML calendar** (recommended for full control): Create a custom calendar page in HTML with links to external event pages (e.g., Facebook events). To create or update the calendar, open an issue in this repository and assign it to GitHub Copilot Pro Agent to make the HTML changes and add them to the site. Edit the HTML source files in the repository, commit changes to git, and push to GitHub to trigger an automatic GitHub Pages rebuild and deployment.
 
 **SRRN.net Specific**: The Training Calendar page currently uses WordPress Modern Events Calendar Lite plugin, which requires a database. This should be replaced with one of the above options.
 
@@ -64,19 +62,15 @@ The template includes working examples of:
 
 **Recommended Services**:
 
-**Option A: Formspree**
-- **Cost**: Free tier available (50 submissions/month)
-- **Features**: Simple form backend, spam protection
-- **Implementation**: HTML form with action pointing to Formspree endpoint
+**Option A: Zeffy Forms**
+- **Cost**: Free (zero platform fees for nonprofits)
+- **Features**: Form builder, data collection, integrates with Zeffy donation platform
+- **Implementation**: Embed via iframe or use Zeffy form builder
 
-**Option B: Google Forms**
-- **Cost**: Free
-- **Features**: Built-in spam protection, data collection
-- **Implementation**: Embed via iframe or custom integration
-
-**Option C: Netlify Forms** (if deploying to Netlify in addition to GitHub Pages)
-- **Cost**: Free tier available
-- **Features**: Native form handling, spam filtering
+**Option B: Microsoft Forms**
+- **Cost**: Free (requires Microsoft account)
+- **Features**: Built-in spam protection, data collection, integration with Microsoft 365
+- **Implementation**: Create form in Microsoft Forms and embed via iframe
 
 ### 4. Analytics
 
@@ -142,7 +136,7 @@ Based on analysis of the SRRN.net WordPress site, the following features require
 - Requires: PHP, MySQL database, server-side processing
 - Features: Event creation, calendar views, filtering
 
-**Recommended Replacement**: Facebook Events Widget (SociableKit)
+**Recommended Replacement Option 1**: Facebook Events Widget (SociableKit)
 - **Why**: Matches the pattern used in FFC-IN-Single_Page_Template_HTML
 - **Benefits**: 
   - Automatically updates when events are added to Facebook
@@ -154,10 +148,18 @@ Based on analysis of the SRRN.net WordPress site, the following features require
   2. Get SociableKit widget code
   3. Embed in `/training-calendar/` page
 
-**Alternative**: Google Calendar Embed
-- Create events in Google Calendar
-- Use Google Calendar embed code
-- More technical but free and reliable
+**Recommended Replacement Option 2**: Static HTML Calendar with External Event Links (Preferred for Full Control)
+- Create a custom calendar page in HTML that lists events with links to external event pages (e.g., Facebook events)
+- **Benefits**:
+  - Complete control over design and layout
+  - No third-party dependencies or iframe embeds
+  - Consistent with static site architecture
+- **Implementation**: 
+  1. Open an issue in this repository requesting calendar updates
+  2. Assign the issue to GitHub Copilot Pro Agent to create/update the HTML calendar
+  3. The agent will edit the HTML source files with event information and links
+  4. Commit the changes to git and push to GitHub
+  5. GitHub Pages will automatically rebuild and deploy the updated calendar
 
 ### 2. Potential Donation Features
 
@@ -169,8 +171,8 @@ If SRRN.net has donation functionality:
 ### 3. Contact/Request Forms
 
 If SRRN.net has contact or training request forms:
-- **Recommended**: Formspree (simple setup) or Google Forms (free forever)
-- **Implementation**: Replace WordPress Contact Form 7 with external service
+- **Recommended**: Zeffy Forms or Microsoft Forms
+- **Implementation**: Replace WordPress Contact Form 7 with Zeffy Forms or Microsoft Forms embed
 
 ## Implementation Checklist
 
@@ -197,7 +199,7 @@ For complete implementation examples, see:
 - [GitHub Pages Documentation](https://docs.github.com/pages)
 - [Zeffy Documentation](https://zeffy.com/en-US/help)
 - [SociableKit Documentation](https://www.sociablekit.com/documentation)
-- [Formspree Documentation](https://help.formspree.io/)
+- [Microsoft Forms Documentation](https://support.microsoft.com/forms)
 - [Google Analytics Setup Guide](https://support.google.com/analytics)
 
 ## Support

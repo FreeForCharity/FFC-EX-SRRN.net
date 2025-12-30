@@ -275,7 +275,7 @@ When tracking a site conversion, use this issue template:
 
 ### Dynamic Features
 Static sites cannot replicate:
-- Contact forms (consider using services like Formspree, Netlify Forms)
+- Contact forms (consider using services like Zeffy Forms, Microsoft Forms)
 - User authentication
 - Database-driven content
 - Server-side search (consider using client-side search like Lunr.js)
@@ -284,20 +284,20 @@ Static sites cannot replicate:
 
 ### Server-Side Plugins
 WordPress plugins that run server-side code will not work:
-- Donation buttons → Use Stripe, PayPal buttons, or **Zeffy** (zero-fee donations)
+- Donation buttons → Use Stripe, PayPal buttons, or **Zeffy** (zero platform fees for nonprofits)
 - Newsletter signups → Use service APIs (Mailchimp, etc.)
 - Comments → Use Disqus or similar
 - Analytics → Use Google Analytics, Plausible
-- **Event calendars** → Use embedded widgets (Facebook Events, Google Calendar)
+- **Event calendars** → Use embedded Facebook Events widget or create static HTML calendar with links to external events
 
 ### Recommended Workarounds
 
 For recommended external services and implementation patterns, see the **[FFC-IN-Single_Page_Template_HTML](https://github.com/FreeForCharity/FFC-IN-Single_Page_Template_HTML)** repository, which demonstrates best practices for:
 
-1. **Donation Forms**: [Zeffy](https://www.zeffy.com) embedded donation forms (zero-fee platform)
-2. **Event Calendars**: [SociableKit](https://www.sociablekit.com) Facebook Events widget for dynamic event listings
+1. **Donation Forms**: [Zeffy](https://www.zeffy.com) embedded donation forms (zero platform fees for nonprofits)
+2. **Event Calendars**: [SociableKit](https://www.sociablekit.com) Facebook Events widget for dynamic event listings, or static HTML calendar with links to external events
 3. **Analytics**: Google Analytics integration
-4. **Forms**: Integrate Formspree, Google Forms, or Netlify Forms
+4. **Forms**: Integrate Zeffy Forms or Microsoft Forms
 5. **Search**: Add Lunr.js or Algolia DocSearch
 6. **Comments**: Add Disqus, Utterances, or giscus
 7. **E-commerce**: Use Snipcart or Shopify Buy Button
@@ -308,9 +308,9 @@ The SRRN.net site includes features requiring special attention:
 
 - **Training Calendar Page** (`/training-calendar/`): Uses WordPress Modern Events Calendar Lite plugin
   - This plugin requires server-side processing and a database
-  - **Recommended replacement**: Embed a Facebook Events widget (as demonstrated in the template) or use Google Calendar embed
-  - **Alternative**: Maintain a static HTML calendar that is manually updated by editing the HTML file directly
-  - **Template example**: See [FFC-IN-Single_Page_Template_HTML events section](https://github.com/FreeForCharity/FFC-IN-Single_Page_Template_HTML) for Facebook Events integration
+  - **Recommended replacement Option 1**: Embed a SociableKit-powered Facebook Events widget (as demonstrated in the template)
+  - **Recommended replacement Option 2 (preferred)**: Create a static HTML calendar with links to external event pages (e.g., Facebook events). To create or update, open an issue in this repository and assign it to GitHub Copilot Pro Agent to make the HTML changes. Edit the HTML source files in the repository, commit the changes to git, and push to GitHub to trigger an automatic GitHub Pages rebuild and deployment.
+  - **Template example**: See [FFC-IN-Single_Page_Template_HTML events section](https://github.com/FreeForCharity/FFC-IN-Single_Page_Template_HTML) for Facebook Events widget integration
 
 ## Advanced Usage
 

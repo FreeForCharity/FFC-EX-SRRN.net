@@ -168,16 +168,16 @@ The SRRN.net site includes features that require external services when converte
 
 1. **Training Calendar** (`/training-calendar/`)
    - **Current**: WordPress Modern Events Calendar Lite plugin (requires database)
-   - **Recommended Replacement**: Facebook Events widget (via [SociableKit](https://www.sociablekit.com))
-   - **Alternative**: Google Calendar embed or static HTML calendar
+   - **Recommended Replacement Option 1**: Facebook Events widget (via [SociableKit](https://www.sociablekit.com))
+   - **Recommended Replacement Option 2 (preferred)**: Static HTML calendar with links to external event pages (e.g., Facebook events). Create/update by opening an issue and assigning to GitHub Copilot Pro Agent.
    - **Template Reference**: See events section in FFC-IN-Single_Page_Template_HTML
 
 2. **Donation Forms** (if present)
-   - **Recommended**: [Zeffy](https://www.zeffy.com) embedded donation forms (zero-fee platform)
+   - **Recommended**: [Zeffy](https://www.zeffy.com) embedded donation forms (zero platform fees for nonprofits)
    - **Template Reference**: See donate section in FFC-IN-Single_Page_Template_HTML
 
 3. **Contact Forms** (if present)
-   - **Recommended**: Formspree, Google Forms, or Netlify Forms
+   - **Recommended**: Zeffy Forms or Microsoft Forms
    - **Template Reference**: FFC-IN-Single_Page_Template_HTML examples
 
 4. **Analytics** (optional)
