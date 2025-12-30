@@ -154,14 +154,20 @@ Based on analysis of the SRRN.net WordPress site, the following features require
   - Complete control over design and layout
   - No third-party dependencies or iframe embeds
   - Consistent with static site architecture
-- **Implementation** (suggested workflow): 
+- **Implementation**: 
+  
+  **Option A - Using GitHub Copilot Pro Agent (if available)**:
   1. Open an issue in this repository requesting calendar updates
-  2. Assign the issue to GitHub Copilot Pro Agent (or manually edit HTML files)
-  3. Update the HTML source files with event information and links to external event pages
-  4. Commit the changes to git and push to GitHub
+  2. Assign the issue to GitHub Copilot Pro Agent
+  3. The agent will create/update the HTML source files with event information and links
+  4. Review the changes, then commit and push to GitHub
   5. GitHub Pages will automatically rebuild and deploy the updated calendar
   
-  **Note**: The GitHub Copilot Pro Agent workflow is a suggested approach that may require adaptation based on available tools. Manual HTML editing is always an option.
+  **Option B - Manual HTML Editing**:
+  1. Directly edit the HTML source files in the repository (e.g., `/training-calendar/index.html`)
+  2. Add or update event information with links to external event pages (e.g., Facebook events)
+  3. Commit the changes to git and push to GitHub
+  4. GitHub Pages will automatically rebuild and deploy the updated calendar
 
 ### 2. Potential Donation Features
 

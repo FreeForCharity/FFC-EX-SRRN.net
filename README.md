@@ -310,9 +310,9 @@ The SRRN.net site includes features requiring special attention:
   - This plugin requires server-side processing and a database
   - **Recommended replacement Option 1**: Embed a SociableKit-powered Facebook Events widget (as demonstrated in the template)
   - **Recommended replacement Option 2 (preferred)**: Create a static HTML calendar with links to external event pages (e.g., Facebook events)
-    - To create or update: Open an issue in this repository and assign to GitHub Copilot Pro Agent (or manually edit HTML files)
-    - Edit the HTML source files in the repository
-    - Commit changes to git and push to GitHub to trigger automatic GitHub Pages rebuild and deployment
+    - **Using GitHub Copilot Pro Agent** (if available): Open an issue and assign to the agent to create/update HTML
+    - **Manual approach**: Directly edit HTML files in `/training-calendar/` directory
+    - Commit changes to git and push to GitHub to trigger automatic GitHub Pages rebuild
   - **Template example**: See [FFC-IN-Single_Page_Template_HTML events section](https://github.com/FreeForCharity/FFC-IN-Single_Page_Template_HTML) for Facebook Events widget integration
 
 ## Advanced Usage
