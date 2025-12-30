@@ -4,7 +4,8 @@
 
 ✅ **Framework Complete** - All automation tools and documentation are in place  
 ⚠️ **Content Pending** - Awaiting network access to srrn.net for actual page downloads  
-🔄 **Placeholders Active** - Temporary pages created to enable testing
+🔄 **Placeholders Active** - Temporary pages created to enable testing  
+📄 **Deployment Method** - GitHub Pages (sole supported deployment method)
 
 ## What Has Been Completed
 
@@ -51,6 +52,7 @@ All 10 missing pages have placeholder HTML files:
 |----------|---------|
 | `CONVERSION_GUIDE.md` | Complete conversion workflow |
 | `MANUAL_STEPS.md` | Step-by-step manual instructions |
+| `EXTERNAL_SERVICES.md` | Recommended external services guide |
 | `STATUS.md` | This status report |
 | `README.md` | Updated with quick start |
 | `urls-to-scrape.json` | Discovered URL list |
@@ -126,20 +128,36 @@ Ping: No address associated with hostname
    # Visit http://localhost:8000
    ```
 
-4. **Commit and Deploy**
+4. **Commit and Deploy to GitHub Pages**
    ```bash
    git add .
    git commit -m "Complete scraping of all SRRN.net pages"
    git push
    ```
 
+5. **Integrate External Services** (See [EXTERNAL_SERVICES.md](EXTERNAL_SERVICES.md))
+   - Replace Training Calendar with Facebook Events widget or static HTML calendar
+   - Add donation forms if needed (Zeffy recommended)
+   - Set up analytics (Google Analytics)
+   - Configure contact forms (Zeffy Forms or Microsoft Forms)
+
 ### Future Enhancements
 
 - [ ] Set up automated scraping on schedule
 - [ ] Add broken link checker
-- [ ] Implement search functionality
-- [ ] Add contact form integration
-- [ ] Set up analytics
+- [ ] Integrate external services per EXTERNAL_SERVICES.md
+
+## External Services Required
+
+After conversion, the following features need external service integration:
+
+1. **Training Calendar** - Replace WordPress Modern Events Calendar with:
+   - Static HTML calendar with links to external events (preferred - create/update by opening an issue and assigning to GitHub Copilot Pro Agent, or manually edit HTML files)
+   - Facebook Events widget (alternative option, see template)
+
+2. **Reference Template**: [FFC-IN-Single_Page_Template_HTML](https://github.com/FreeForCharity/FFC-IN-Single_Page_Template_HTML)
+
+See [EXTERNAL_SERVICES.md](EXTERNAL_SERVICES.md) for complete implementation guide.
 
 ## Testing Checklist
 

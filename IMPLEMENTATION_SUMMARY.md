@@ -2,7 +2,11 @@
 
 ## Overview
 
-This repository now contains a **complete, production-ready framework** for converting the SRRN.net WordPress site to a static GitHub Pages site. All tools, documentation, and infrastructure are in place.
+This repository now contains a **complete, production-ready framework** for converting the SRRN.net WordPress site to a static site **deployed exclusively via GitHub Pages**. All tools, documentation, and infrastructure are in place.
+
+## Deployment Method
+
+**GitHub Pages is the sole supported deployment method** for this toolkit. All scripts (`github_push.py`), GitHub Actions workflows, and documentation are designed specifically for GitHub Pages hosting.
 
 ## ✅ What's Complete
 
@@ -149,12 +153,12 @@ FFC-EX-SRRN.net/
 - [ ] Verification passes
 - [ ] Local testing successful
 
-### Phase 3: Deployment ⏳ PENDING
+### Phase 3: Deployment to GitHub Pages ⏳ PENDING
 - [ ] Repair script applied
 - [ ] Changes committed
 - [ ] Pushed to GitHub
-- [ ] GitHub Pages active
-- [ ] Live site verified
+- [ ] **GitHub Pages enabled and active** (sole deployment method)
+- [ ] Live site verified at GitHub Pages URL
 
 **Current Status:** Phase 1 Complete (100%)
 

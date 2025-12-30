@@ -1,6 +1,6 @@
 # Static Site Conversion Workflow
 
-This repository contains tools and documentation for converting dynamic websites (e.g., WordPress, Joomla, Drupal) into high-fidelity static sites hosted on GitHub Pages.
+This repository contains tools and documentation for converting dynamic websites (e.g., WordPress, Joomla, Drupal) into high-fidelity static sites **deployed exclusively via GitHub Pages**.
 
 ## Overview
 
@@ -8,7 +8,11 @@ The conversion process consists of three main steps:
 
 1. **Scrape**: Download the dynamic website to a local directory
 2. **Repair**: Fix common layout issues and ensure proper rendering
-3. **Deploy**: Push the static site to GitHub and enable GitHub Pages
+3. **Deploy**: Push the static site to GitHub and enable GitHub Pages (the **sole supported deployment method**)
+
+### Deployment Method
+
+**GitHub Pages is the only supported deployment method** for sites converted using this toolkit. All deployment scripts, documentation, and workflows are designed specifically for GitHub Pages hosting.
 
 ## Prerequisites
 
@@ -106,9 +110,9 @@ node ./scripts/repair_site.js "./dist"
 - ✅ Responsive image sizing
 - ✅ Overflow-x prevention
 
-### Step 3: Deploy to GitHub
+### Step 3: Deploy to GitHub Pages
 
-Create a GitHub repository and push the static site:
+Create a GitHub repository and deploy to GitHub Pages (the **only supported deployment method**):
 
 ```bash
 python3 ./scripts/github_push.py "<SITE_DIR>" "<REPO_NAME>"
@@ -124,12 +128,18 @@ python3 ./scripts/github_push.py "./dist" "MyOrg/my-static-site"
 - Initializes git in the site directory
 - Commits all files
 - Pushes to GitHub
-- Enables GitHub Pages automatically
-- Provides the live URL
+- **Enables GitHub Pages automatically** (from main branch)
+- Provides the live GitHub Pages URL
 
 **Repository name format:**
 - Must be in format: `owner/repo-name`
 - Example: `FreeForCharity/example-static-site`
+
+**GitHub Pages Deployment:**
+- Site will be available at: `https://owner.github.io/repo-name/`
+- Custom domains can be configured in repository Settings > Pages
+- SSL/HTTPS is automatically provided by GitHub
+- No server configuration or hosting costs required
 
 ## Quick Start for SRRN.net Conversion
 
@@ -265,24 +275,52 @@ When tracking a site conversion, use this issue template:
 
 ### Dynamic Features
 Static sites cannot replicate:
-- Contact forms (consider using services like Formspree, Netlify Forms)
+- Contact forms (consider using services like Zeffy Forms, Microsoft Forms)
 - User authentication
 - Database-driven content
 - Server-side search (consider using client-side search like Lunr.js)
 - Shopping carts (consider Snipcart, Shopify Buy Button)
+- **Event calendars with dynamic updates** (e.g., WordPress Modern Events Calendar plugin)
 
 ### Server-Side Plugins
 WordPress plugins that run server-side code will not work:
-- Donation buttons → Use Stripe, PayPal buttons
+- Donation buttons → Use **Zeffy** (zero platform fees for nonprofits), Stripe, or PayPal buttons
 - Newsletter signups → Use service APIs (Mailchimp, etc.)
 - Comments → Use Disqus or similar
 - Analytics → Use Google Analytics, Plausible
+- **Event calendars** → Use embedded Facebook Events widget or create static HTML calendar with links to external events
 
 ### Recommended Workarounds
-1. **Forms**: Integrate Formspree, Google Forms, or Netlify Forms
-2. **Search**: Add Lunr.js or Algolia DocSearch
-3. **Comments**: Add Disqus, Utterances, or giscus
-4. **E-commerce**: Use Snipcart or Shopify Buy Button
+
+For recommended external services and implementation patterns, see the **[FFC-IN-Single_Page_Template_HTML](https://github.com/FreeForCharity/FFC-IN-Single_Page_Template_HTML)** repository, which demonstrates best practices for:
+
+1. **Donation Forms**: [Zeffy](https://www.zeffy.com) embedded donation forms (zero platform fees for nonprofits; standard credit card processing fees apply and are typically covered by donors via optional tips)
+2. **Event Calendars**: Static HTML calendar with links to external events (preferred), or [SociableKit](https://www.sociablekit.com) Facebook Events widget for dynamic event listings
+3. **Analytics**: Google Analytics integration
+4. **Forms**: Integrate Zeffy Forms or Microsoft Forms
+5. **Search**: Add Lunr.js or Algolia DocSearch
+6. **Comments**: Add Disqus, Utterances, or giscus
+7. **E-commerce**: Use Snipcart or Shopify Buy Button
+
+### SRRN.net-Specific Considerations
+
+The SRRN.net site includes features requiring special attention:
+
+- **Training Calendar Page** (`/training-calendar/`): Uses WordPress Modern Events Calendar Lite plugin
+  - This plugin requires server-side processing and a database
+  - **Recommended replacement Option 1 (preferred)**: Create a static HTML calendar with links to external event pages (e.g., Facebook events). You can do this in one of two ways:
+    - **Option A – Use GitHub Copilot Pro Agent (if available)**:
+      1. Open a GitHub issue describing the required calendar changes (new events, dates, links, descriptions)
+      2. Assign the issue to the Copilot Pro Agent and request it to create or update the HTML files in the `/training-calendar/` directory
+      3. Review the changes proposed by the agent, approve the pull request if created, or directly commit the changes
+      4. Push to GitHub to trigger the automatic GitHub Pages rebuild
+    - **Option B – Manual HTML editing (use this if the agent is not available)**:
+      1. Open the HTML files in the `/training-calendar/` directory in your editor
+      2. Manually update event entries (dates, titles, locations, and links to external event pages such as Facebook events)
+      3. Save the updated files
+      4. Commit your changes to git and push to GitHub to trigger the automatic GitHub Pages rebuild
+  - **Recommended replacement Option 2**: Embed a SociableKit-powered Facebook Events widget (as demonstrated in the template)
+  - **Template example**: See [FFC-IN-Single_Page_Template_HTML events section](https://github.com/FreeForCharity/FFC-IN-Single_Page_Template_HTML) for Facebook Events widget integration
 
 ## Advanced Usage
 
@@ -326,6 +364,20 @@ Contributions are welcome! Please:
 3. Make your changes
 4. Submit a pull request
 
+See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed guidelines.
+
+## Documentation
+
+- **[README.md](README.md)** - This file (overview and quick start)
+- **[QUICKSTART.md](QUICKSTART.md)** - Get started in under 5 minutes
+- **[CONVERSION_GUIDE.md](CONVERSION_GUIDE.md)** - Complete conversion workflow
+- **[EXTERNAL_SERVICES.md](EXTERNAL_SERVICES.md)** - Recommended external services for dynamic features
+- **[MANUAL_STEPS.md](MANUAL_STEPS.md)** - Manual step-by-step instructions
+- **[IMPLEMENTATION_SUMMARY.md](IMPLEMENTATION_SUMMARY.md)** - Framework implementation status
+- **[STATUS.md](STATUS.md)** - Current conversion status
+- **[CONTRIBUTING.md](CONTRIBUTING.md)** - Contribution guidelines
+- **[FUTURE_ENHANCEMENTS.md](FUTURE_ENHANCEMENTS.md)** - Planned improvements
+
 ## License
 
 MIT License - see LICENSE file for details
@@ -336,6 +388,7 @@ For issues and questions:
 - Open an issue on GitHub
 - Check existing issues for solutions
 - Review the troubleshooting section above
+- See [EXTERNAL_SERVICES.md](EXTERNAL_SERVICES.md) for external service integration help
 
 ## Credits
 

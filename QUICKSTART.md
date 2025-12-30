@@ -1,6 +1,10 @@
 # Quick Start Guide
 
-Get started converting your first dynamic website to a static site in under 5 minutes!
+Get started converting your first dynamic website to a static site **deployed on GitHub Pages** in under 5 minutes!
+
+## Deployment Method
+
+**Important**: This toolkit is designed exclusively for deployment to **GitHub Pages**. All scripts, workflows, and documentation assume GitHub Pages as the hosting platform.
 
 ## Prerequisites Check
 
@@ -63,7 +67,7 @@ npm install
 
 ### Convert Your First Site
 
-Let's convert `example.com` to a static site:
+Let's convert `example.com` to a static site hosted on GitHub Pages:
 
 ```bash
 # Step 1: Scrape the website
@@ -72,11 +76,11 @@ node ./scripts/identify_and_scrape.js "https://example.com" "./my-site"
 # Step 2: Repair layout issues
 node ./scripts/repair_site.js "./my-site"
 
-# Step 3: Deploy to GitHub
+# Step 3: Deploy to GitHub Pages
 python3 ./scripts/github_push.py "./my-site" "YourGitHubUsername/example-static"
 ```
 
-**That's it!** Your site will be live at:
+**That's it!** Your site will be live on GitHub Pages at:
 `https://yourgithubusername.github.io/example-static/`
 
 (Wait 2-5 minutes for GitHub Pages to deploy)
@@ -110,8 +114,8 @@ python3 ./scripts/github_push.py "./blog-static" "myorg/blog-archive"
 ### 3. github_push.py
 - Creates GitHub repository
 - Pushes all files
-- Enables GitHub Pages
-- Provides live URL
+- **Enables GitHub Pages** (sole deployment method)
+- Provides live GitHub Pages URL
 - **Time:** 30 seconds to 2 minutes
 
 ## Common Issues & Solutions
@@ -149,11 +153,16 @@ Once your site is live:
    - Videos playing
    - Mobile responsiveness
 
-2. **Add features:**
-   - Custom domain (GitHub Pages settings)
-   - Google Analytics
-   - Contact forms (use Formspree)
-   - Comments (use Disqus)
+2. **Add features using recommended external services:**
+   
+   See **[FFC-IN-Single_Page_Template_HTML](https://github.com/FreeForCharity/FFC-IN-Single_Page_Template_HTML)** for implementation examples:
+   
+   - **Custom domain** (GitHub Pages settings)
+   - **Donation forms** ([Zeffy](https://www.zeffy.com) - zero platform fees for nonprofits; standard credit card processing fees apply and are typically covered by donors via optional tips)
+   - **Event calendars** (Facebook Events widget via SociableKit, or static HTML calendar)
+   - **Analytics** (Google Analytics)
+   - **Contact forms** (Zeffy Forms, Microsoft Forms)
+   - **Comments** (Disqus, giscus)
 
 3. **Maintain:**
    - Re-run conversion if source site changes
