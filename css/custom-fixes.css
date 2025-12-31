@@ -90,6 +90,13 @@ footer .et_pb_section .et_pb_module,
 }
 
 /* Fix Search Icon Visibility */
+.et_pb_menu__icon.et_pb_menu__search-button {
+    display: block !important;
+    /* Override custom-menu.css display:none */
+    opacity: 1 !important;
+    cursor: pointer;
+}
+
 .et_pb_menu__icon.et_pb_menu__search-button::before {
     content: '\55' !important;
     /* Divi search icon code */
