@@ -21,7 +21,7 @@
     display: block !important;
     width: 100% !important;
     position: relative;
-    padding-bottom: 56.25% !important;
+    padding: 0 0 56.25% 0 !important;
     /* Force 16:9 Aspect Ratio */
     height: 0 !important;
     /* Standard intrinsic ratio technique */
