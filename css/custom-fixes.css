@@ -27,6 +27,12 @@
     /* Height set to 0 so padding-bottom defines visible height/aspect ratio; iframe is absolutely positioned inside */
 }
 
+/* Specific Override for Hero Video (Ultra-wide) */
+.et_pb_fullwidth_code_0 .fluid-width-video-wrapper {
+    padding-bottom: 21.5% !important;
+    /* Approx 1920x412 ratio */
+}
+
 .et_pb_video_box iframe,
 .fluid-width-video-wrapper iframe {
     position: absolute !important;
@@ -60,4 +66,34 @@ footer .et_pb_section .et_pb_module,
 .et-l--footer .et_pb_section .et_pb_row,
 .et-l--footer .et_pb_section .et_pb_column {
     background-color: transparent !important;
+}
+
+/* Header Fixes - Prevent Menu Wrapping */
+.et_pb_menu__logo {
+    max-width: 250px !important;
+    /* Reduce logo size from 398px to allow menu space */
+    width: auto !important;
+}
+
+.et_pb_menu__logo img {
+    max-height: 80px !important;
+    /* Constrain height */
+    width: auto !important;
+}
+
+/* Ensure menu items fit on one line */
+.et_menu-nav li a {
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+    font-size: 14px !important;
+    /* Slight adjustments to ensure fit */
+}
+
+/* Fix Search Icon Visibility */
+.et_pb_menu__icon.et_pb_menu__search-button::before {
+    content: '\55' !important;
+    /* Divi search icon code */
+    font-family: 'ETmodules' !important;
+    color: #333;
+    font-weight: 900;
 }
