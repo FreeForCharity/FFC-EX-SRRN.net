@@ -61,19 +61,26 @@ def fix_html_files(root_dir):
                     # Inject before </head> is fine, or before custom-fixes
                     if "</head>" in content:
                         # Find where we just put the CSS, or just before head
-                        # Actually let's put it before the CSS if possible or just before head
                         content = content.replace("</head>", f"\t{js_script}\n</head>")
                         modified = True
                         print(f"Injecting JS into: {file_path}")
                 
-                # Fix Broken Asset Paths (wp-content -> assets)
-                # Many subpages point to ../wp-content/uploads/..., but the files are in assets/uploads/...
-                if "wp-content/uploads" in content:
-                    content = content.replace("wp-content/uploads", "assets/uploads")
-                    modified = True
-                    print(f"Fixed asset paths in: {file_path}")
+                # Fix Broken Asset Paths (Comprehensive wp-content -> assets)
+                # We need to handle uploads, plugins, themes, and et-cache
+                replacements = {
+                    "wp-content/uploads": "assets/uploads",
+                    "wp-content/plugins": "assets/plugins",
+                    "wp-content/themes": "assets/themes",
+                    "wp-content/et-cache": "assets/et-cache"
+                }
+
+                for old, new in replacements.items():
+                    if old in content:
+                        content = content.replace(old, new)
+                        modified = True
+                        print(f"Fixed {old} -> {new} in: {file_path}")
                 
-                # Fix specific double-slash issue seen in previous tasks if present globally
+                # Fix specific double-slash issue seen in previously
                 if "//assets" in content:
                     content = content.replace("//assets", "/assets")
                     modified = True
