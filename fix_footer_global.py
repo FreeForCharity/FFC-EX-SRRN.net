@@ -80,11 +80,49 @@ def fix_html_files(root_dir):
                         modified = True
                         print(f"Fixed {old} -> {new} in: {file_path}")
                 
+                # Fix Absolute URLs (CORS / Broken Paths)
+                # Previous run might have created //srrn.net/assets... or exists as //srrn.net/wp-content...
+                # We want to replace these with relative paths or root-relative
+                # Actually, using the calculated relative_path is best for portability (Github Pages subpath)
+                
+                # Calculate relative prefix for assets (remove ./ if distinct or ensure consistency)
+                # relative_path variable from above includes ./ or ../
+                # If relative_path is "./", we want just "assets/" or "./assets/"
+                
+                # Target: //srrn.net/assets -> {relative_path}assets
+                # Target: https://srrn.net/assets -> {relative_path}assets
+                
+                bad_tlds = ["//srrn.net/assets", "https://srrn.net/assets", "http://srrn.net/assets", "//srrn.net/wp-content", "https://srrn.net/wp-content"]
+                
+                for bad in bad_tlds:
+                    if bad in content:
+                        # If bad was wp-content, we map to assets. If it was assets, we keep assets.
+                        # But wait, earlier loop already replaced wp-content -> assets.
+                        # So //srrn.net/wp-content became //srrn.net/assets already.
+                        # So we primarily need to target //srrn.net/assets
+                        
+                        # Just in case some escaped detection
+                        if "wp-content" in bad:
+                             # This branch acts if the previous loop didn't catch it for some reason?
+                             # But simpler to just target the domain prefix + asset folder
+                             pass
+
+                        content = content.replace(bad, f"{prefix}assets")
+                        modified = True
+                        print(f"Fixed absolute URL {bad} -> {prefix}assets in: {file_path}")
+
+                # Clean up any potential double slashes from concatenation if relative_path ended in /
+                # (handled by relative_path construction usually)
+                
                 # Fix specific double-slash issue seen in previously
                 if "//assets" in content:
-                    content = content.replace("//assets", "/assets")
-                    modified = True
-                    print(f"Fixed double-slash paths in: {file_path}")
+                    # Be careful not to break https://assets (unlikely) or //assets if it's protocol relative validly?
+                    # valid protocol relative starts with //
+                    # We only want to fix paths that look like href="//assets" which is actually valid 
+                    # as protocol relative to domain root, but on GH pages with subpath it fails
+                    # We want relative paths.
+                    # This replace is risky. Let's rely on the domain replacements above.
+                    pass
 
                 if modified:
                     with open(file_path, 'w', encoding='utf-8') as f:
