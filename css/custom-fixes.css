@@ -21,9 +21,10 @@
     display: block !important;
     width: 100% !important;
     position: relative;
-    padding-bottom: 56.25%;
+    padding: 0 0 56.25% 0 !important;
     /* 16:9 Aspect Ratio hack for older browsers/containers */
-    height: 0; /* Height set to 0 so padding-bottom defines visible height/aspect ratio; iframe is absolutely positioned inside */
+    height: 0;
+    /* Height set to 0 so padding-bottom defines visible height/aspect ratio; iframe is absolutely positioned inside */
 }
 
 .et_pb_video_box iframe,
