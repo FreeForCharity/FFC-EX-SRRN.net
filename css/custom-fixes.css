@@ -25,6 +25,7 @@
     /* Force 16:9 Aspect Ratio */
     height: 0 !important;
     /* Standard intrinsic ratio technique */
+    /* Prevent content overflow in video container (standard aspect ratio hack) */
     overflow: hidden;
 }
 
