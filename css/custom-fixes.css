@@ -218,18 +218,26 @@ body #page-container .et_pb_number_counter .percent-value {
 /* Identified via verification as .et_pb_text_3 */
 body #page-container .et_pb_text_3 {
     border: 20px solid #1aa99e !important;
-    /* Teal Border */
     padding: 50px 30px !important;
     background-color: #ffffff !important;
     box-shadow: 0px 2px 18px 0px rgba(0, 0, 0, 0.3) !important;
-    /* Restore shadow */
     margin-top: 20px !important;
-    /* Ensure separation */
+    /* Force border visibility and box model */
+    display: block !important;
+    position: relative !important;
+    z-index: 10 !important;
+    border-radius: 0 !important;
+    /* Ensure square corners */
 }
 
+/* Fallback: Add pseudo-border via box-shadow just in case */
+/* Specific check: if border fails, this might show */
+/* body #page-container .et_pb_text_3 {
+    box-shadow: inset 0 0 0 20px #1aa99e !important;
+} */
+
 /* Cleanup - Remove border if it accidentally applied to 'Who We Are' (likely .et_pb_text_2) */
-/* We reset others just in case, assuming they shouldn't have THIS specific border */
 body #page-container .et_pb_text_2 {
     border: none !important;
-    /* Reset if it was the one leaking */
+    box-shadow: none !important;
 }
