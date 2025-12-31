@@ -232,20 +232,33 @@ body #page-container .et_pb_text_3 {
 
 /* 7. Fix Missing "Making a Difference" Teal Bar */
 /* Visual Audit revealed background was White (invisible white text) */
-body #page-container .et_pb_section_4,
-body #page-container .et_pb_fullwidth_header_0 {
+/* FORCEFUL Override using html specificity and background shorthand */
+html body #page-container .et_pb_section_4,
+html body #page-container .et_pb_fullwidth_header_0,
+html body #page-container .et_pb_fullwidth_header_0 .et_pb_fullwidth_header_container {
+    background: #1aa99e !important;
     background-color: #1aa99e !important;
     /* Teal Background */
     position: relative !important;
     z-index: 5 !important;
-    /* Ensure visibility */
     display: block !important;
+    visibility: visible !important;
 }
 
 /* Ensure text inside is visible */
-body #page-container .et_pb_fullwidth_header_0 .et_pb_module_header {
+html body #page-container .et_pb_fullwidth_header_0 h1,
+html body #page-container .et_pb_fullwidth_header_0 .et_pb_module_header {
     color: #ffffff !important;
+    display: block !important;
     text-align: center !important;
+    z-index: 10 !important;
+    position: relative !important;
+}
+
+/* Remove any masking or white overlays */
+html body #page-container .et_pb_section_4::before,
+html body #page-container .et_pb_section_4::after {
+    background: transparent !important;
 }
 
 /* Cleanup - Remove border if it accidentally applied to 'Who We Are' (likely .et_pb_text_2) */
