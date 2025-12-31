@@ -11,6 +11,16 @@
 const fs = require('fs');
 const path = require('path');
 
+// Regex patterns for finding old crisis helpline format
+// Pattern 1: Single-line format (most common)
+const SINGLE_LINE_PATTERN = /Call <u>988 <\/u>or text&nbsp;<a href="https:\/\/crisistextline\.org\/" target="_blank" rel="noopener noreferrer" style="color: #000000;"><span style="text-decoration: underline;">TALK to 741741<\/span><\/a>/g;
+
+// Pattern 2: Multi-line format (handles whitespace and line breaks)
+const MULTI_LINE_PATTERN = /Call <u>988 <\/u>or\s+text&nbsp;<a href="https:\/\/crisistextline\.org\/"\s+target="_blank"\s+rel="noopener noreferrer"\s+style="color: #000000;"><span\s+style="text-decoration: underline;">TALK to\s+741741<\/span><\/a>/g;
+
+// Replacement with TEL and SMS links
+const REPLACEMENT_TEXT = 'Call <a href="tel:988" style="color: #000000;"><u>988</u></a> or text <a href="sms:741741&body=TALK" style="color: #000000;"><span style="text-decoration: underline;">TALK to 741741</span></a>';
+
 // Statistics
 let filesProcessed = 0;
 let filesModified = 0;
@@ -47,25 +57,15 @@ function processHtmlFile(filePath) {
         let content = fs.readFileSync(filePath, 'utf8');
         const originalContent = content;
         
-        // Pattern 1: Single-line format (most common)
-        const pattern1 = /Call <u>988 <\/u>or text&nbsp;<a href="https:\/\/crisistextline\.org\/" target="_blank" rel="noopener noreferrer" style="color: #000000;"><span style="text-decoration: underline;">TALK to 741741<\/span><\/a>/g;
-        
-        // Pattern 2: Multi-line format (for index.html and similar files)
-        // This handles whitespace and line breaks between elements
-        const pattern2 = /Call <u>988 <\/u>or\s+text&nbsp;<a href="https:\/\/crisistextline\.org\/"\s+target="_blank"\s+rel="noopener noreferrer"\s+style="color: #000000;"><span\s+style="text-decoration: underline;">TALK to\s+741741<\/span><\/a>/g;
-        
-        // Replacement with TEL and SMS links
-        const replacement = 'Call <a href="tel:988" style="color: #000000;"><u>988</u></a> or text <a href="sms:741741&body=TALK" style="color: #000000;"><span style="text-decoration: underline;">TALK to 741741</span></a>';
-        
         // Count matches before replacement
-        const matches1 = content.match(pattern1);
-        const matches2 = content.match(pattern2);
+        const matches1 = content.match(SINGLE_LINE_PATTERN);
+        const matches2 = content.match(MULTI_LINE_PATTERN);
         const matchCount = (matches1 ? matches1.length : 0) + (matches2 ? matches2.length : 0);
         
         if (matchCount > 0) {
             // Apply both patterns
-            content = content.replace(pattern1, replacement);
-            content = content.replace(pattern2, replacement);
+            content = content.replace(SINGLE_LINE_PATTERN, REPLACEMENT_TEXT);
+            content = content.replace(MULTI_LINE_PATTERN, REPLACEMENT_TEXT);
             
             if (content !== originalContent) {
                 fs.writeFileSync(filePath, content, 'utf8');
@@ -87,8 +87,11 @@ function processHtmlFile(filePath) {
 function main() {
     console.log('🔍 Searching for HTML files with crisis helpline text...\n');
     
+    // Get the base directory from command line or use current working directory
+    const baseDir = process.argv[2] || process.cwd();
+    
     // Find all HTML files
-    const htmlFiles = findHtmlFiles('/home/runner/work/FFC-EX-SRRN.net/FFC-EX-SRRN.net');
+    const htmlFiles = findHtmlFiles(baseDir);
     
     console.log(`📁 Found ${htmlFiles.length} HTML files\n`);
     
