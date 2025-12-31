@@ -105,18 +105,39 @@ footer .et_pb_section .et_pb_module,
     font-weight: 900;
 }
 
-/* Force Social Icons to use ETmodules */
+/* Force Social Icons to use ETmodules and Brand Color */
 .et_pb_social_media_follow li a.icon,
 .et_pb_social_icon a.icon,
 .et-social-icon a.icon {
     font-family: 'ETmodules' !important;
     text-decoration: none !important;
+    color: #2ea3f2 !important;
+    /* Brand Blue to fix "muted" look on Homepage */
 }
 
-/* Ensure the ::before pseudo-element also uses it */
+/* Ensure the ::before pseudo-element also uses it and color */
 .et_pb_social_media_follow li a.icon::before,
 .et_pb_social_icon a.icon::before,
 .et-social-icon a.icon::before {
     font-family: 'ETmodules' !important;
     font-weight: 400 !important;
+    color: inherit !important;
+}
+
+/* Cleanup Footer Icons (Subpages vs Homepage Consistency) */
+.et_pb_social_media_follow li span {
+    display: none !important;
+    /* Hide "Follow" text */
+}
+
+.et_pb_social_media_follow li {
+    list-style: none !important;
+    /* Remove bullets */
+    display: inline-block !important;
+    margin: 0 5px !important;
+}
+
+.et_pb_social_media_follow {
+    text-align: center !important;
+    padding: 0 !important;
 }
