@@ -112,27 +112,31 @@ footer .et_pb_section .et_pb_module,
     font-family: 'ETmodules' !important;
     text-decoration: none !important;
     color: #2ea3f2 !important;
-    /* Brand Blue to fix "muted" look on Homepage */
+    /* Brand Blue */
 }
 
-/* Ensure the ::before pseudo-element also uses it and color */
+/* Ensure the ::before pseudo-element uses specific color (force override white) */
 .et_pb_social_media_follow li a.icon::before,
 .et_pb_social_icon a.icon::before,
 .et-social-icon a.icon::before {
     font-family: 'ETmodules' !important;
     font-weight: 400 !important;
-    color: inherit !important;
+    color: #2ea3f2 !important;
+    /* Force Brand Blue */
 }
 
 /* Cleanup Footer Icons (Subpages vs Homepage Consistency) */
-.et_pb_social_media_follow li span {
+/* Hide "Follow" text and any spans */
+.et_pb_social_media_follow li span,
+.et_pb_social_media_follow a span,
+.et_pb_social_icon span,
+.et-social-icon span {
     display: none !important;
-    /* Hide "Follow" text */
 }
 
-.et_pb_social_media_follow li {
+.et_pb_social_media_follow li,
+.et_pb_social_icon {
     list-style: none !important;
-    /* Remove bullets */
     display: inline-block !important;
     margin: 0 5px !important;
 }
