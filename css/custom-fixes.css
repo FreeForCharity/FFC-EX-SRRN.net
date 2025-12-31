@@ -105,43 +105,52 @@ footer .et_pb_section .et_pb_module,
     font-weight: 900;
 }
 
-/* Force Social Icons to use ETmodules and Brand Color */
-.et_pb_social_media_follow li a.icon,
-.et_pb_social_icon a.icon,
-.et-social-icon a.icon {
+/* FIX: Social Icons Unification (Blue, Clean, Centered) */
+/* Extreme Specificity to override Divi defaults */
+
+body #page-container .et_pb_social_media_follow li a.icon,
+body .et_pb_social_media_follow li a.icon,
+#main-footer .et_pb_social_media_follow li a.icon,
+.et_pb_social_media_follow li a.icon {
     font-family: 'ETmodules' !important;
     text-decoration: none !important;
     color: #2ea3f2 !important;
     /* Brand Blue */
 }
 
-/* Ensure the ::before pseudo-element uses specific color (force override white) */
-.et_pb_social_media_follow li a.icon::before,
-.et_pb_social_icon a.icon::before,
-.et-social-icon a.icon::before {
+/* Pseudo-element Override */
+body #page-container .et_pb_social_media_follow li a.icon::before,
+body .et_pb_social_media_follow li a.icon::before,
+#main-footer .et_pb_social_media_follow li a.icon::before,
+.et_pb_social_media_follow li a.icon::before {
     font-family: 'ETmodules' !important;
     font-weight: 400 !important;
     color: #2ea3f2 !important;
     /* Force Brand Blue */
 }
 
-/* Cleanup Footer Icons (Subpages vs Homepage Consistency) */
-/* Hide "Follow" text and any spans */
-.et_pb_social_media_follow li span,
-.et_pb_social_media_follow a span,
-.et_pb_social_icon span,
-.et-social-icon span {
+/* Hide Text and Bullets Aggressively */
+body #page-container .et_pb_social_media_follow li span,
+body .et_pb_social_media_follow li span,
+.et_pb_social_media_follow li span {
     display: none !important;
 }
 
-.et_pb_social_media_follow li,
-.et_pb_social_icon {
+/* Clean List Style */
+body #page-container .et_pb_social_media_follow li,
+body .et_pb_social_media_follow li,
+.et_pb_social_media_follow li {
     list-style: none !important;
     display: inline-block !important;
     margin: 0 5px !important;
+    padding: 0 !important;
 }
 
+/* Center Alignment */
+body #page-container .et_pb_social_media_follow,
+body .et_pb_social_media_follow,
 .et_pb_social_media_follow {
     text-align: center !important;
     padding: 0 !important;
+    margin: 0 auto !important;
 }
