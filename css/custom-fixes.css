@@ -104,3 +104,19 @@ footer .et_pb_section .et_pb_module,
     color: #333;
     font-weight: 900;
 }
+
+/* Force Social Icons to use ETmodules */
+.et_pb_social_media_follow li a.icon,
+.et_pb_social_icon a.icon,
+.et-social-icon a.icon {
+    font-family: 'ETmodules' !important;
+    text-decoration: none !important;
+}
+
+/* Ensure the ::before pseudo-element also uses it */
+.et_pb_social_media_follow li a.icon::before,
+.et_pb_social_icon a.icon::before,
+.et-social-icon a.icon::before {
+    font-family: 'ETmodules' !important;
+    font-weight: 400 !important;
+}
