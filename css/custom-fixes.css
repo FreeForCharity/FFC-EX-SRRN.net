@@ -21,9 +21,11 @@
     display: block !important;
     width: 100% !important;
     position: relative;
-    padding-bottom: 56.25%;
-    /* 16:9 Aspect Ratio hack for older browsers/containers */
-    height: 0;
+    padding-bottom: 56.25% !important;
+    /* Force 16:9 Aspect Ratio */
+    height: 0 !important;
+    /* Standard intrinsic ratio technique */
+    overflow: hidden;
 }
 
 .et_pb_video_box iframe,
