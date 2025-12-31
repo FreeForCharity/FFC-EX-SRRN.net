@@ -1,0 +1,62 @@
+/* Fix for 0-height YouTube iframes in Divi and generic embeds */
+.et_pb_video_box iframe,
+.et_pb_video_box embed,
+.et_pb_video_box object,
+.et_pb_module iframe,
+.wp-block-embed iframe,
+.fluid-width-video-wrapper iframe {
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 300px;
+    /* Fallback height */
+    aspect-ratio: 16 / 9;
+    /* Modern aspect ratio fix */
+    display: block !important;
+    visibility: visible !important;
+}
+
+/* Ensure the container itself has layout */
+.et_pb_video_box,
+.fluid-width-video-wrapper {
+    display: block !important;
+    width: 100% !important;
+    position: relative;
+    padding-bottom: 56.25%;
+    /* 16:9 Aspect Ratio hack for older browsers/containers */
+    height: 0; /* Height set to 0 so padding-bottom defines visible height/aspect ratio; iframe is absolutely positioned inside */
+}
+
+.et_pb_video_box iframe,
+.fluid-width-video-wrapper iframe {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+}
+
+/* Fix for invisible footer (white text on white background) */
+footer .et_pb_section,
+#main-footer .et_pb_section,
+.et-l--footer .et_pb_section {
+    background-color: #455a64 !important;
+    /* Lighter blue-grey fallback color */
+    color: #ffffff !important;
+    /* Ensure text is visible on dark background */
+    background-image: none !important;
+    /* Reset if broken image */
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+/* Force inner containers to be transparent so section color shows */
+footer .et_pb_section .et_pb_row,
+footer .et_pb_section .et_pb_column,
+footer .et_pb_section .et_pb_module,
+#main-footer .et_pb_section .et_pb_row,
+#main-footer .et_pb_section .et_pb_column,
+#main-footer .et_pb_section .et_pb_module,
+.et-l--footer .et_pb_section .et_pb_row,
+.et-l--footer .et_pb_section .et_pb_column {
+    background-color: transparent !important;
+}
