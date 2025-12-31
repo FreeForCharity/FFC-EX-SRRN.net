@@ -191,6 +191,7 @@ body .et_pb_social_media_follow,
 }
 
 /* 5. Fix Training Tracker (Number Counters) */
+/* Targeted fix for all number counters in this section */
 body #page-container .et_pb_number_counter {
     background-color: #f7f9f9 !important;
     padding: 0px 10px 40px !important;
@@ -209,30 +210,26 @@ body #page-container .et_pb_number_counter .et_pb_number_counter_title {
 /* Tracker Number Font Fix */
 body #page-container .et_pb_number_counter .percent-value {
     font-size: 50px !important;
-    /* Approximation of live site */
     font-weight: bold !important;
     color: #333 !important;
 }
 
-/* 6. Guiding Principles Box Fix */
-/* Attempt to restore specific teal border to the box containing the list */
-/* We target the et_pb_text module that *contains* the list (ul) */
-/* This is a heuristic fix: if a text module contains a UL, and we are not in the footer/menu... 
-   it's likely the Guiding Principles list or similar. */
-/* Also adding padding matching srrn.net */
-
-body #page-container .et_pb_text:has(ul) {
-    /* Only apply if it looks like the principles box - this selector is too broad might hit others */
-    /* Since standard CSS doesn't support 'has' reliably in all contexts yet (though widely supported now),
-       we'll try to use specificity. */
+/* 6. Guiding Principles Box Fix (Specific Module) */
+/* Identified via verification as .et_pb_text_3 */
+body #page-container .et_pb_text_3 {
+    border: 20px solid #1aa99e !important;
+    /* Teal Border */
+    padding: 50px 30px !important;
+    background-color: #ffffff !important;
+    box-shadow: 0px 2px 18px 0px rgba(0, 0, 0, 0.3) !important;
+    /* Restore shadow */
+    margin-top: 20px !important;
+    /* Ensure separation */
 }
 
-/* Let's try to target the section by order? No, too risky. */
-/* We'll use the border color observed on the live site to style *any* box that might be trying to be it. */
-
-/* Fix: The image showed the border on the "Who we are" text. 
-   We need to fix layout. Styling the list container directly. */
-.et_pb_column ul {
-    /* Guiding Principles likely inside a column */
-    /* No generic 'ul' styling, risk of breaking nav */
+/* Cleanup - Remove border if it accidentally applied to 'Who We Are' (likely .et_pb_text_2) */
+/* We reset others just in case, assuming they shouldn't have THIS specific border */
+body #page-container .et_pb_text_2 {
+    border: none !important;
+    /* Reset if it was the one leaking */
 }
