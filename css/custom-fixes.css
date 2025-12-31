@@ -97,64 +97,71 @@ footer .et_pb_section .et_pb_module,
     cursor: pointer;
 }
 
-.et_pb_menu__icon.et_pb_menu__search-button::before {
-    content: '\55' !important;
-    /* Divi search icon code */
-    font-family: 'ETmodules' !important;
-    color: #333;
-    font-weight: 900;
+/* FIX: Visual Discrepancies Audit (Footer, Video, Search) */
+
+/* 1. Fix Footer Background (Teal match to srrn.net) */
+#main-footer .et_pb_section,
+footer .et_pb_section,
+.et-l--footer .et_pb_section {
+    background-color: #00a19a !important;
+    /* Teal */
+    padding-top: 30px !important;
+    padding-bottom: 30px !important;
 }
 
-/* FIX: Social Icons Unification (Pixel Match to srrn.net) */
-/* Extreme Specificity to override Divi defaults */
+/* 2. Fix Video Player Height (Homepage) */
+/* Force correct aspect ratio/height for the video iframe */
+.et_pb_video_box iframe,
+.et_pb_video_box video,
+.fluid-width-video-wrapper {
+    min-height: 411px !important;
+    /* Match live site */
+    height: 411px !important;
+}
 
-/* Common Icon Style (Dimensions, Shape, Alignment) */
+/* 3. Fix Duplicate Search Icon */
+/* The theme adds an icon via :after, we added one via :before. Hide one. */
+.et_pb_menu__icon.et_pb_menu__search-button::after {
+    display: none !important;
+}
+
+.et_pb_menu__icon.et_pb_menu__search-button::before {
+    display: block !important;
+    /* Keep our specific fix */
+}
+
+/* 4. Social Icons - Revert to Simple White if on Teal? */
+/* User complained about "muted". Blue on Gray was muted. White on Teal is high contrast. */
+/* Let's keep the "Pixel Match" (Colored Squares) for now, as that was explicitly requested. 
+   But if the footer is Teal, maybe they want transparent? 
+   The audit called the lived site icons "White on Teal". 
+   Let's check the previous audit screenshot "srrn_footer_section_live".
+   It looks like white icons on the teal background (no boxes).
+   I will comment out the "Boxed" style and try "Simple White" first, 
+   OR I will try to match the "Boxed" style if I am sure. 
+   
+   Re-reading: "Social Media Icons: High contrast (White on Teal) vs Muted/Low contrast (Dark boxes on Gray)"
+   This implies the LIVE site is "White on Teal".
+   I will switch to White Icons, Transparent Background, Large/Clear.
+*/
+
 body #page-container .et_pb_social_media_follow li a.icon,
 body .et_pb_social_media_follow li a.icon,
-#main-footer .et_pb_social_media_follow li a.icon,
 .et_pb_social_media_follow li a.icon {
-    font-family: 'ETmodules' !important;
-    text-decoration: none !important;
-    display: inline-block !important;
-    width: 32px !important;
-    height: 32px !important;
-    line-height: 32px !important;
-    /* Vertically center */
-    border-radius: 3px !important;
-    /* Rounded corners */
-    text-align: center !important;
-    font-size: 16px !important;
-    /* Reset padding/margin */
-    padding: 0 !important;
-    margin: 0 !important;
-}
-
-/* Icon Color (White symbol on colored bg) */
-body #page-container .et_pb_social_media_follow li a.icon::before,
-body .et_pb_social_media_follow li a.icon::before,
-#main-footer .et_pb_social_media_follow li a.icon::before,
-.et_pb_social_media_follow li a.icon::before {
-    font-family: 'ETmodules' !important;
-    font-weight: 400 !important;
+    background-color: transparent !important;
+    /* Remove box */
     color: #ffffff !important;
     /* White Icon */
-    line-height: 32px !important;
-    display: block !important;
+    font-size: 24px !important;
+    /* Make them larger/visible */
+    width: auto !important;
+    height: auto !important;
+    border-radius: 0 !important;
 }
 
-/* Specific Background Colors */
-/* Facebook */
-body #page-container .et_pb_social_media_follow li.et-social-facebook a.icon,
-.et-social-facebook a.icon {
-    background-color: #3b5998 !important;
-    /* Standard FB Blue */
-}
-
-/* X / Twitter */
-body #page-container .et_pb_social_media_follow li.et-social-twitter a.icon,
-.et-social-twitter a.icon {
-    background-color: #000000 !important;
-    /* X Black */
+body #page-container .et_pb_social_media_follow li a.icon::before,
+.et_pb_social_media_follow li a.icon::before {
+    color: #ffffff !important;
 }
 
 /* Hide Text and Bullets Aggressively */
