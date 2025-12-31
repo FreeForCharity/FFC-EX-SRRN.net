@@ -21,12 +21,9 @@
     display: block !important;
     width: 100% !important;
     position: relative;
-    padding: 0 0 56.25% 0 !important;
-    /* Force 16:9 Aspect Ratio */
-    height: 0 !important;
-    /* Standard intrinsic ratio technique */
-    /* Prevent content overflow in video container (standard aspect ratio hack) */
-    overflow: hidden;
+    padding-bottom: 56.25%;
+    /* 16:9 Aspect Ratio hack for older browsers/containers */
+    height: 0; /* Height set to 0 so padding-bottom defines visible height/aspect ratio; iframe is absolutely positioned inside */
 }
 
 .et_pb_video_box iframe,
@@ -43,7 +40,7 @@ footer .et_pb_section,
 #main-footer .et_pb_section,
 .et-l--footer .et_pb_section {
     background-color: #455a64 !important;
-    /* Lighter Blue Grey fallback (Comment #2 addressed) */
+    /* Lighter blue-grey fallback color */
     color: #ffffff !important;
     /* Ensure text is visible on dark background */
     background-image: none !important;
