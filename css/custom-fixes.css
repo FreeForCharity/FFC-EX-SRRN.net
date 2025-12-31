@@ -159,6 +159,8 @@ body .et_pb_social_media_follow li a.icon,
 body #page-container .et_pb_social_media_follow li a.icon::before,
 .et_pb_social_media_follow li a.icon::before {
     color: #ffffff !important;
+    font-family: 'ETmodules' !important;
+    /* Force correct font */
 }
 
 /* Hide Text and Bullets Aggressively */
