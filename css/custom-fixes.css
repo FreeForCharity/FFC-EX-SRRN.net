@@ -97,12 +97,13 @@ footer .et_pb_section .et_pb_module,
     cursor: pointer;
 }
 
-/* FIX: Visual Discrepancies Audit (Footer, Video, Search) */
+/* FIX: Visual Discrepancies Audit (Refined) */
 
 /* 1. Fix Footer Background (Teal match to srrn.net) */
-#main-footer .et_pb_section,
-footer .et_pb_section,
-.et-l--footer .et_pb_section {
+/* Override previous #455a64 rule with higher specificity */
+body #page-container #main-footer .et_pb_section,
+body #page-container footer .et_pb_section,
+body #page-container .et-l--footer .et_pb_section {
     background-color: #00a19a !important;
     /* Teal */
     padding-top: 30px !important;
@@ -110,50 +111,46 @@ footer .et_pb_section,
 }
 
 /* 2. Fix Video Player Height (Homepage) */
-/* Force correct aspect ratio/height for the video iframe */
-.et_pb_video_box iframe,
-.et_pb_video_box video,
-.fluid-width-video-wrapper {
-    min-height: 411px !important;
-    /* Match live site */
+/* Force correct aspect ratio/height for the video iframe AND container */
+body #page-container .et_pb_video_box,
+body #page-container .fluid-width-video-wrapper {
+    padding-bottom: 0 !important;
+    /* Disable ratio padding hack */
     height: 411px !important;
+    min-height: 411px !important;
 }
 
-/* 3. Fix Duplicate Search Icon */
-/* The theme adds an icon via :after, we added one via :before. Hide one. */
+body #page-container .et_pb_video_box iframe,
+body #page-container .et_pb_video_box video,
+body #page-container .fluid-width-video-wrapper iframe {
+    position: relative !important;
+    /* Reset absolute */
+    height: 411px !important;
+    min-height: 411px !important;
+    width: 100% !important;
+}
+
+/* 3. Fix Duplicate Search Icon & Color */
+/* Hide the pseudo-element added by theme */
 .et_pb_menu__icon.et_pb_menu__search-button::after {
     display: none !important;
 }
 
+/* Style our custom icon to match live site Teal */
 .et_pb_menu__icon.et_pb_menu__search-button::before {
     display: block !important;
-    /* Keep our specific fix */
+    color: #7ebec5 !important;
+    /* Live site Teal rgb(126, 190, 197) */
+    font-weight: 900 !important;
 }
 
-/* 4. Social Icons - Revert to Simple White if on Teal? */
-/* User complained about "muted". Blue on Gray was muted. White on Teal is high contrast. */
-/* Let's keep the "Pixel Match" (Colored Squares) for now, as that was explicitly requested. 
-   But if the footer is Teal, maybe they want transparent? 
-   The audit called the lived site icons "White on Teal". 
-   Let's check the previous audit screenshot "srrn_footer_section_live".
-   It looks like white icons on the teal background (no boxes).
-   I will comment out the "Boxed" style and try "Simple White" first, 
-   OR I will try to match the "Boxed" style if I am sure. 
-   
-   Re-reading: "Social Media Icons: High contrast (White on Teal) vs Muted/Low contrast (Dark boxes on Gray)"
-   This implies the LIVE site is "White on Teal".
-   I will switch to White Icons, Transparent Background, Large/Clear.
-*/
-
+/* 4. Social Icons - Simple White on Transparent */
 body #page-container .et_pb_social_media_follow li a.icon,
 body .et_pb_social_media_follow li a.icon,
 .et_pb_social_media_follow li a.icon {
     background-color: transparent !important;
-    /* Remove box */
     color: #ffffff !important;
-    /* White Icon */
     font-size: 24px !important;
-    /* Make them larger/visible */
     width: auto !important;
     height: auto !important;
     border-radius: 0 !important;
