@@ -65,6 +65,19 @@ def fix_html_files(root_dir):
                         content = content.replace("</head>", f"\t{js_script}\n</head>")
                         modified = True
                         print(f"Injecting JS into: {file_path}")
+                
+                # Fix Broken Asset Paths (wp-content -> assets)
+                # Many subpages point to ../wp-content/uploads/..., but the files are in assets/uploads/...
+                if "wp-content/uploads" in content:
+                    content = content.replace("wp-content/uploads", "assets/uploads")
+                    modified = True
+                    print(f"Fixed asset paths in: {file_path}")
+                
+                # Fix specific double-slash issue seen in previous tasks if present globally
+                if "//assets" in content:
+                    content = content.replace("//assets", "/assets")
+                    modified = True
+                    print(f"Fixed double-slash paths in: {file_path}")
 
                 if modified:
                     with open(file_path, 'w', encoding='utf-8') as f:
