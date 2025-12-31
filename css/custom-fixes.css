@@ -40,7 +40,7 @@ footer .et_pb_section,
 #main-footer .et_pb_section,
 .et-l--footer .et_pb_section {
     background-color: #455a64 !important;
-    /* Lighter Blue Grey fallback (Comment #2 addressed) */
+    /* Lighter blue-grey fallback color */
     color: #ffffff !important;
     /* Ensure text is visible on dark background */
     background-image: none !important;
