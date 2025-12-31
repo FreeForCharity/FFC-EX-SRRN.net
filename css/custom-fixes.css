@@ -105,28 +105,56 @@ footer .et_pb_section .et_pb_module,
     font-weight: 900;
 }
 
-/* FIX: Social Icons Unification (Blue, Clean, Centered) */
+/* FIX: Social Icons Unification (Pixel Match to srrn.net) */
 /* Extreme Specificity to override Divi defaults */
 
+/* Common Icon Style (Dimensions, Shape, Alignment) */
 body #page-container .et_pb_social_media_follow li a.icon,
 body .et_pb_social_media_follow li a.icon,
 #main-footer .et_pb_social_media_follow li a.icon,
 .et_pb_social_media_follow li a.icon {
     font-family: 'ETmodules' !important;
     text-decoration: none !important;
-    color: #2ea3f2 !important;
-    /* Brand Blue */
+    display: inline-block !important;
+    width: 32px !important;
+    height: 32px !important;
+    line-height: 32px !important;
+    /* Vertically center */
+    border-radius: 3px !important;
+    /* Rounded corners */
+    text-align: center !important;
+    font-size: 16px !important;
+    /* Reset padding/margin */
+    padding: 0 !important;
+    margin: 0 !important;
 }
 
-/* Pseudo-element Override */
+/* Icon Color (White symbol on colored bg) */
 body #page-container .et_pb_social_media_follow li a.icon::before,
 body .et_pb_social_media_follow li a.icon::before,
 #main-footer .et_pb_social_media_follow li a.icon::before,
 .et_pb_social_media_follow li a.icon::before {
     font-family: 'ETmodules' !important;
     font-weight: 400 !important;
-    color: #2ea3f2 !important;
-    /* Force Brand Blue */
+    color: #ffffff !important;
+    /* White Icon */
+    line-height: 32px !important;
+    display: block !important;
+}
+
+/* Specific Background Colors */
+/* Facebook */
+body #page-container .et_pb_social_media_follow li.et-social-facebook a.icon,
+.et-social-facebook a.icon {
+    background-color: #3b5998 !important;
+    /* Standard FB Blue */
+}
+
+/* X / Twitter */
+body #page-container .et_pb_social_media_follow li.et-social-twitter a.icon,
+.et-social-twitter a.icon {
+    background-color: #000000 !important;
+    /* X Black */
 }
 
 /* Hide Text and Bullets Aggressively */
@@ -136,21 +164,24 @@ body .et_pb_social_media_follow li span,
     display: none !important;
 }
 
-/* Clean List Style */
+/* Clean List Style & Spacing */
 body #page-container .et_pb_social_media_follow li,
 body .et_pb_social_media_follow li,
 .et_pb_social_media_follow li {
     list-style: none !important;
     display: inline-block !important;
-    margin: 0 5px !important;
+    margin: 0 4px !important;
+    /* Slight spacing between icons */
     padding: 0 !important;
 }
 
-/* Center Alignment */
+/* Center Alignment Container */
 body #page-container .et_pb_social_media_follow,
 body .et_pb_social_media_follow,
 .et_pb_social_media_follow {
     text-align: center !important;
-    padding: 0 !important;
+    padding: 20px 0 0 0 !important;
+    /* Approx spacing from logo based on screenshot visual */
     margin: 0 auto !important;
+    width: 100% !important;
 }
