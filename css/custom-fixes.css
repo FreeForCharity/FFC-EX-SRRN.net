@@ -230,11 +230,23 @@ body #page-container .et_pb_text_3 {
     /* Ensure square corners */
 }
 
-/* Fallback: Add pseudo-border via box-shadow just in case */
-/* Specific check: if border fails, this might show */
-/* body #page-container .et_pb_text_3 {
-    box-shadow: inset 0 0 0 20px #1aa99e !important;
-} */
+/* 7. Fix Missing "Making a Difference" Teal Bar */
+/* Visual Audit revealed background was White (invisible white text) */
+body #page-container .et_pb_section_4,
+body #page-container .et_pb_fullwidth_header_0 {
+    background-color: #1aa99e !important;
+    /* Teal Background */
+    position: relative !important;
+    z-index: 5 !important;
+    /* Ensure visibility */
+    display: block !important;
+}
+
+/* Ensure text inside is visible */
+body #page-container .et_pb_fullwidth_header_0 .et_pb_module_header {
+    color: #ffffff !important;
+    text-align: center !important;
+}
 
 /* Cleanup - Remove border if it accidentally applied to 'Who We Are' (likely .et_pb_text_2) */
 body #page-container .et_pb_text_2 {
