@@ -254,46 +254,67 @@ body #page-container .et_pb_social_media_follow li a.icon::before,
 }
 
 /* ==========================================================================
-   12. About Us Page Fixes
+   12. About Us Page Fixes (Refined)
    ========================================================================== */
 
-/* Fix Board & Testimonial Background Colors (Force White) */
+/* Fix Board & Testimonial Background Colors (Force White & Remove Teal Overlay) */
 .page-id-294 .et_pb_section_5,
-/* Board Section Identifier */
 .page-id-294 .et_pb_section_6,
-/* Testimonials Section Identifier */
-.et_pb_section_5.et_pb_section,
-.et_pb_section_6.et_pb_section {
+.et_pb_section_5,
+.et_pb_section_6 {
     background-color: #ffffff !important;
+    background-image: none !important;
+}
+
+/* Ensure Inner Modules also are white if they inherited teal */
+.et_pb_section_5 .et_pb_module,
+.et_pb_section_6 .et_pb_module {
+    background-color: transparent !important;
 }
 
 /* Fix Misplaced Circle Graphic */
+/* Reset parent container to relative to trap the absolute image */
+.et_pb_section_0 {
+    position: relative !important;
+    z-index: 1 !important;
+}
+
 img[src*="SRRN-Circle-Design-Teal.png"] {
-    top: -50px !important;
-    /* Adjust as needed or reset */
+    top: 0 !important;
+    left: 0 !important;
     position: absolute !important;
     visibility: visible !important;
     display: block !important;
     max-width: 100% !important;
+    z-index: 0 !important;
+    opacity: 1 !important;
+    transform: none !important;
 }
 
-/* Restore Testimonial Quotation Icons */
+/* Restore Testimonial Quotation Icons (Force Display) */
 .et_pb_testimonial_portrait:before {
     font-family: 'ETmodules' !important;
     content: "\e07e" !important;
-    /* Quotation Mark Icon */
+    /* Quotation Mark */
     position: absolute !important;
     top: 50% !important;
     left: 50% !important;
     transform: translate(-50%, -50%) !important;
     font-size: 32px !important;
     color: #ffffff !important;
+    background-color: transparent !important;
+    display: block !important;
+    opacity: 1 !important;
+    width: auto !important;
+    height: auto !important;
     visibility: visible !important;
 }
 
+/* Ensure the circle background behind the icon is teal */
 .et_pb_testimonial_portrait {
     background-color: #1aa99e !important;
-    /* Ensure Teal Background for icon circle */
+    border-radius: 50% !important;
+    overflow: hidden !important;
 }
 
 
