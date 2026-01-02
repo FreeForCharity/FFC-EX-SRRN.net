@@ -253,6 +253,50 @@ body #page-container .et_pb_social_media_follow li a.icon::before,
     display: block !important;
 }
 
+/* ==========================================================================
+   12. About Us Page Fixes
+   ========================================================================== */
+
+/* Fix Board & Testimonial Background Colors (Force White) */
+.page-id-294 .et_pb_section_5,
+/* Board Section Identifier */
+.page-id-294 .et_pb_section_6,
+/* Testimonials Section Identifier */
+.et_pb_section_5.et_pb_section,
+.et_pb_section_6.et_pb_section {
+    background-color: #ffffff !important;
+}
+
+/* Fix Misplaced Circle Graphic */
+img[src*="SRRN-Circle-Design-Teal.png"] {
+    top: -50px !important;
+    /* Adjust as needed or reset */
+    position: absolute !important;
+    visibility: visible !important;
+    display: block !important;
+    max-width: 100% !important;
+}
+
+/* Restore Testimonial Quotation Icons */
+.et_pb_testimonial_portrait:before {
+    font-family: 'ETmodules' !important;
+    content: "\e07e" !important;
+    /* Quotation Mark Icon */
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    font-size: 32px !important;
+    color: #ffffff !important;
+    visibility: visible !important;
+}
+
+.et_pb_testimonial_portrait {
+    background-color: #1aa99e !important;
+    /* Ensure Teal Background for icon circle */
+}
+
+
 /* Ensure list items have spacing */
 body #page-container .et_pb_social_media_follow li,
 .et_pb_social_media_follow li {
