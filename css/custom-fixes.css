@@ -272,11 +272,12 @@ body #page-container .et_pb_social_media_follow li a.icon::before,
     background-color: transparent !important;
 }
 
-/* Fix Misplaced Circle Graphic */
-/* Reset parent container to relative to trap the absolute image */
+/* Fix Misplaced Circle Graphic (Force Visible Dimensions) */
 .et_pb_section_0 {
     position: relative !important;
     z-index: 1 !important;
+    overflow: visible !important;
+    /* Allow circle to overflow if needed */
 }
 
 img[src*="SRRN-Circle-Design-Teal.png"] {
@@ -285,13 +286,20 @@ img[src*="SRRN-Circle-Design-Teal.png"] {
     position: absolute !important;
     visibility: visible !important;
     display: block !important;
-    max-width: 100% !important;
+    width: 100% !important;
+    /* Force width */
+    height: auto !important;
+    /* Force height */
+    max-width: none !important;
+    /* Override constraint */
     z-index: 0 !important;
     opacity: 1 !important;
     transform: none !important;
+    pointer-events: none !important;
+    /* Don't block clicks */
 }
 
-/* Restore Testimonial Quotation Icons (Force Display) */
+/* Restore Testimonial Quotation Icons (Force Dimensions) */
 .et_pb_testimonial_portrait:before {
     font-family: 'ETmodules' !important;
     content: "\e07e" !important;
@@ -305,9 +313,13 @@ img[src*="SRRN-Circle-Design-Teal.png"] {
     background-color: transparent !important;
     display: block !important;
     opacity: 1 !important;
-    width: auto !important;
-    height: auto !important;
+    width: 32px !important;
+    /* Force Width */
+    height: 32px !important;
+    /* Force Height */
+    line-height: 32px !important;
     visibility: visible !important;
+    z-index: 10 !important;
 }
 
 /* Ensure the circle background behind the icon is teal */
