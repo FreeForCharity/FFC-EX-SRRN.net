@@ -1,4 +1,14 @@
-/* Fix for 0-height YouTube iframes in Divi and generic embeds */
+/* FORCE LOAD ETMODULES FONT GLOBALLY TO FIX SUBPAGE ICONS */
+@font-face {
+    font-family: 'ETmodules';
+    src: url('/FFC-EX-SRRN.net/assets/themes/Divi/core/admin/fonts/modules/all/modules.eot');
+    src: url('/FFC-EX-SRRN.net/assets/themes/Divi/core/admin/fonts/modules/all/modules.eot?#iefix') format('embedded-opentype'),
+        url('/FFC-EX-SRRN.net/assets/themes/Divi/core/admin/fonts/modules/all/modules.woff') format('woff'),
+        url('/FFC-EX-SRRN.net/assets/themes/Divi/core/admin/fonts/modules/all/modules.ttf') format('truetype'),
+        url('/FFC-EX-SRRN.net/assets/themes/Divi/core/admin/fonts/modules/all/modules.svg#ETmodules') format('svg');
+    font-weight: 400;
+    font-style: normal;
+}/* Fix for 0-height YouTube iframes in Divi and generic embeds */
 .et_pb_video_box iframe,
 .et_pb_video_box embed,
 .et_pb_video_box object,
