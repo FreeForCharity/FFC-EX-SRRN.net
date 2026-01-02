@@ -8,7 +8,9 @@
         url('/FFC-EX-SRRN.net/assets/themes/Divi/core/admin/fonts/modules/all/modules.svg#ETmodules') format('svg');
     font-weight: 400;
     font-style: normal;
-}/* Fix for 0-height YouTube iframes in Divi and generic embeds */
+}
+
+/* Fix for 0-height YouTube iframes in Divi and generic embeds */
 .et_pb_video_box iframe,
 .et_pb_video_box embed,
 .et_pb_video_box object,
@@ -248,9 +250,9 @@ body #page-container .et_pb_text_3 {
 html body #page-container .et_pb_section_4,
 html body #page-container .et_pb_fullwidth_header_0,
 html body #page-container .et_pb_fullwidth_header_0 .et_pb_fullwidth_header_container {
-    background: #1aa99e !important;
-    background-color: #1aa99e !important;
-    /* Teal Background */
+    background: #7ebec5 !important;
+    background-color: #7ebec5 !important;
+    /* Live site Lighter Teal */
     position: relative !important;
     z-index: 5 !important;
     display: block !important;
@@ -271,6 +273,33 @@ html body #page-container .et_pb_fullwidth_header_0 .et_pb_module_header {
 html body #page-container .et_pb_section_4::before,
 html body #page-container .et_pb_section_4::after {
     background: transparent !important;
+}
+
+/* 8. Fix Invisible Training Tracker Numbers */
+.percent-value {
+    color: #1aa99e !important;
+    /* Dark Teal */
+    font-size: 32px !important;
+    font-weight: 700 !important;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    line-height: 1.2em !important;
+}
+
+/* 9. Force Restore Teal Feather Graphic */
+/* Target by filename structure since class names might vary */
+img[src*="Feather-Teal"],
+img[src*="feather-teal"] {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    width: auto !important;
+    max-width: 100% !important;
+    height: auto !important;
+    /* Ensure it isn't hidden by parent overflow */
+    position: relative !important;
+    z-index: 10 !important;
 }
 
 /* Cleanup - Remove border if it accidentally applied to 'Who We Are' (likely .et_pb_text_2) */
