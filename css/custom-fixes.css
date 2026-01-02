@@ -320,11 +320,19 @@ body #page-container .et_pb_testimonial_portrait:before,
     z-index: 10 !important;
 }
 
-/* Ensure the circle background behind the icon is teal */
+/* Ensure the circle background behind the icon is teal & has size */
 .et_pb_testimonial_portrait {
     background-color: #1aa99e !important;
     border-radius: 50% !important;
     overflow: hidden !important;
+    width: 90px !important;
+    /* Force standard size */
+    height: 90px !important;
+    display: block !important;
+    float: left !important;
+    margin-right: 30px !important;
+    position: relative !important;
+    /* For absolute pseudo-element */
 }
 
 
