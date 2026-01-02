@@ -156,52 +156,91 @@ body #page-container .fluid-width-video-wrapper iframe {
     font-weight: 900 !important;
 }
 
-/* 4. Social Icons - Simple White on Transparent */
+/* Cleanup - Remove border if it accidentally applied to 'Who We Are' (likely .et_pb_text_2) */
+body #page-container .et_pb_text_2 {
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* 10. Floating Donate Now Button (Custom Injection) */
+.custom-donate-button-wrapper {
+    position: fixed !important;
+    bottom: 35.95px !important;
+    right: 76.75px !important;
+    z-index: 99999 !important;
+    display: block !important;
+}
+
+.custom-donate-button {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 56px !important;
+    height: 56px !important;
+    background-color: #1aa99e !important;
+    border-radius: 50% !important;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3) !important;
+    transition: transform 0.3s ease !important;
+    text-decoration: none !important;
+}
+
+.custom-donate-button:hover {
+    transform: scale(1.1);
+}
+
+.custom-donate-button .icon {
+    font-family: 'ETmodules' !important;
+    color: #ffffff !important;
+    font-size: 24px !important;
+    line-height: 1 !important;
+}
+
+/* 11. Social Icons - Restore Colored Squares (Live Site Match) */
 body #page-container .et_pb_social_media_follow li a.icon,
 body .et_pb_social_media_follow li a.icon,
 .et_pb_social_media_follow li a.icon {
-    background-color: transparent !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 32px !important;
+    height: 32px !important;
+    border-radius: 3px !important;
+    font-size: 16px !important;
     color: #ffffff !important;
-    font-size: 24px !important;
-    width: auto !important;
-    height: auto !important;
-    border-radius: 0 !important;
-}
-
-body #page-container .et_pb_social_media_follow li a.icon::before,
-.et_pb_social_media_follow li a.icon::before {
-    color: #ffffff !important;
-    font-family: 'ETmodules' !important;
-    /* Force correct font */
-}
-
-/* Hide Text and Bullets Aggressively */
-body #page-container .et_pb_social_media_follow li span,
-body .et_pb_social_media_follow li span,
-.et_pb_social_media_follow li span {
-    display: none !important;
-}
-
-/* Clean List Style & Spacing */
-body #page-container .et_pb_social_media_follow li,
-body .et_pb_social_media_follow li,
-.et_pb_social_media_follow li {
-    list-style: none !important;
-    display: inline-block !important;
-    margin: 0 4px !important;
-    /* Slight spacing between icons */
+    text-decoration: none !important;
+    /* Reset margins/paddings */
+    margin: 0 !important;
     padding: 0 !important;
 }
 
-/* Center Alignment Container */
-body #page-container .et_pb_social_media_follow,
-body .et_pb_social_media_follow,
-.et_pb_social_media_follow {
-    text-align: center !important;
-    padding: 20px 0 0 0 !important;
-    /* Approx spacing from logo based on screenshot visual */
-    margin: 0 auto !important;
-    width: 100% !important;
+/* Facebook Blue */
+body #page-container .et_pb_social_media_follow li a.icon[href*="facebook"],
+.et_pb_social_media_follow li a.icon[href*="facebook"] {
+    background-color: #3b5998 !important;
+}
+
+/* X / Twitter Black */
+body #page-container .et_pb_social_media_follow li a.icon[href*="twitter"],
+.et_pb_social_media_follow li a.icon[href*="twitter"],
+body #page-container .et_pb_social_media_follow li a.icon[href*="x.com"],
+.et_pb_social_media_follow li a.icon[href*="x.com"] {
+    background-color: #000000 !important;
+}
+
+/* Force Icon Font */
+body #page-container .et_pb_social_media_follow li a.icon::before,
+.et_pb_social_media_follow li a.icon::before {
+    font-family: 'ETmodules' !important;
+    color: #ffffff !important;
+    line-height: 1 !important;
+    font-size: 16px !important;
+}
+
+/* Ensure list items have spacing */
+body #page-container .et_pb_social_media_follow li,
+.et_pb_social_media_follow li {
+    margin: 0 5px !important;
+    display: inline-block !important;
 }
 
 /* 5. Fix Training Tracker (Number Counters) */
