@@ -222,10 +222,16 @@ body #page-container .et_pb_number_counter .et_pb_number_counter_title {
 }
 
 /* Tracker Number Font Fix */
+/* Tracker Number Font Fix - Correct Color and Size */
 body #page-container .et_pb_number_counter .percent-value {
-    font-size: 50px !important;
-    font-weight: bold !important;
-    color: #333 !important;
+    font-size: 32px !important;
+    font-weight: 700 !important;
+    color: #1aa99e !important;
+    /* Live site Teal */
+    visibility: visible !important;
+    opacity: 1 !important;
+    line-height: 1.2em !important;
+    display: block !important;
 }
 
 /* 6. Guiding Principles Box Fix (Specific Module) */
@@ -247,7 +253,7 @@ body #page-container .et_pb_text_3 {
 /* 7. Fix Missing "Making a Difference" Teal Bar */
 /* Visual Audit revealed background was White (invisible white text) */
 /* FORCEFUL Override using html specificity and background shorthand */
-html body #page-container .et_pb_section_4,
+html body #page-container div.et_pb_section_4,
 html body #page-container .et_pb_fullwidth_header_0,
 html body #page-container .et_pb_fullwidth_header_0 .et_pb_fullwidth_header_container {
     background: #7ebec5 !important;
@@ -276,16 +282,7 @@ html body #page-container .et_pb_section_4::after {
 }
 
 /* 8. Fix Invisible Training Tracker Numbers */
-.percent-value {
-    color: #1aa99e !important;
-    /* Dark Teal */
-    font-size: 32px !important;
-    font-weight: 700 !important;
-    display: block !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-    line-height: 1.2em !important;
-}
+/* 8. Fix Invisible Training Tracker Numbers - Handled by Rule 5 above with High Specificity */
 
 /* 9. Force Restore Teal Feather Graphic */
 /* Target by filename structure since class names might vary */
