@@ -162,7 +162,7 @@ body #page-container .et_pb_text_2 {
     box-shadow: none !important;
 }
 
-/* 10. Floating Donate Now Button (Custom Injection) */
+/* 10. Floating Donate Now Button (Custom Injection - Text + Icon) */
 .custom-donate-button-wrapper {
     position: fixed !important;
     bottom: 35.95px !important;
@@ -175,24 +175,38 @@ body #page-container .et_pb_text_2 {
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
-    width: 56px !important;
-    height: 56px !important;
     background-color: #1aa99e !important;
-    border-radius: 50% !important;
+    border-radius: 50px !important;
+    /* Pill shape */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3) !important;
     transition: transform 0.3s ease !important;
     text-decoration: none !important;
+    padding: 12px 24px !important;
+    min-width: 160px !important;
+    height: auto !important;
 }
 
 .custom-donate-button:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
 .custom-donate-button .icon {
-    font-family: 'ETmodules' !important;
+    font-family: sans-serif !important;
+    /* Simple $ sign */
     color: #ffffff !important;
-    font-size: 24px !important;
+    font-size: 20px !important;
+    font-weight: bold !important;
+    margin-right: 8px !important;
+}
+
+.custom-donate-button .label {
+    color: #ffffff !important;
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    font-family: 'Roboto', Helvetica, Arial, Lucida, sans-serif !important;
     line-height: 1 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
 }
 
 /* 11. Social Icons - Restore Colored Squares (Live Site Match) */
