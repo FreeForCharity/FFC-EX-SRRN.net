@@ -299,11 +299,11 @@ img[src*="SRRN-Circle-Design-Teal.png"] {
     /* Don't block clicks */
 }
 
-/* Restore Testimonial Quotation Icons (Force Dimensions) */
+/* Restore Testimonial Quotation Icons (Force Dimensions & Specificity) */
+body #page-container .et_pb_testimonial_portrait:before,
 .et_pb_testimonial_portrait:before {
     font-family: 'ETmodules' !important;
     content: "\e07e" !important;
-    /* Quotation Mark */
     position: absolute !important;
     top: 50% !important;
     left: 50% !important;
@@ -314,9 +314,7 @@ img[src*="SRRN-Circle-Design-Teal.png"] {
     display: block !important;
     opacity: 1 !important;
     width: 32px !important;
-    /* Force Width */
     height: 32px !important;
-    /* Force Height */
     line-height: 32px !important;
     visibility: visible !important;
     z-index: 10 !important;
