@@ -468,3 +468,23 @@ img[src*="SRRN-Circle-Design-Teal"] {
 .et_pb_toggle_title {
     cursor: pointer !important;
 }
+
+/* FINAL FIX Round 2: Logo Layout Conflict */
+img[src*="SRRN-Circle-Design-Teal"] {
+    position: relative !important; /* Force flow layout to expand parent */
+    width: 480px !important;
+    max-width: 100% !important;
+    height: auto !important;
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    left: auto !important;
+    top: auto !important;
+    margin: 0 auto !important; /* Center it */
+}
+
+/* Ensure parent wrapper doesn't collapse */
+.et_pb_image_wrap:has(img[src*="SRRN-Circle-Design-Teal"]) {
+    width: auto !important;
+    display: block !important;
+}
