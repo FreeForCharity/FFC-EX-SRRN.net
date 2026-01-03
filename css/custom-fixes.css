@@ -443,3 +443,28 @@ body #page-container .et_pb_text_2 {
     border: none !important;
     box-shadow: none !important;
 }
+/* FINAL FIXES: Logo & Toggles */
+img[src*="SRRN-Circle-Design-Teal"] {
+    width: 480px !important;
+    max-width: 100% !important;
+    height: auto !important;
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+.et_pb_toggle_open .et_pb_toggle_content {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    height: auto !important;
+    padding-bottom: 20px !important;
+}
+
+.et_pb_toggle_close .et_pb_toggle_content {
+    display: none !important;
+}
+
+.et_pb_toggle_title {
+    cursor: pointer !important;
+}

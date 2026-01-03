@@ -7382,7 +7382,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 			overflow-x: hidden;
 		}
 	</style>
-	<link rel="stylesheet" href="/FFC-EX-SRRN.net/css/custom-fixes.css?v=final14">
+	<link rel="stylesheet" href="/FFC-EX-SRRN.net/css/custom-fixes.css?v=final15">
 	<script src="../custom-menu.js" defer=""></script>
 </head>
 
@@ -8779,7 +8779,41 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 			<span class="label">Donate Now</span>
 		</a>
 	</div>
-<script src="../fix_toggles.js"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    console.log("Fixing toggles (Inline)...");
+    var toggles = document.querySelectorAll('.et_pb_toggle_title');
+    
+    toggles.forEach(function(toggle) {
+        toggle.addEventListener('click', function(e) {
+            e.preventDefault();
+            var parent = this.parentElement;
+            var content = parent.querySelector('.et_pb_toggle_content');
+            
+            if (parent.classList.contains('et_pb_toggle_open')) {
+                parent.classList.remove('et_pb_toggle_open');
+                parent.classList.add('et_pb_toggle_close');
+                content.style.display = 'none';
+            } else {
+                parent.classList.remove('et_pb_toggle_close');
+                parent.classList.add('et_pb_toggle_open');
+                content.style.display = 'block';
+            }
+        });
+        
+        // Initial state check
+        var parent = toggle.parentElement;
+        var content = parent.querySelector('.et_pb_toggle_content');
+        if (parent.classList.contains('et_pb_toggle_open')) {
+             content.style.display = 'block';
+        } else {
+             content.style.display = 'none';
+        }
+    });
+});
+</script>
+
 </body>
 
 </html>
