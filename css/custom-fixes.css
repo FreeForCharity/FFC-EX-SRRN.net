@@ -509,3 +509,13 @@ img[src*="SRRN-Circle-Design-Teal"] {
 .et_pb_image_0 {
     display: block !important;
 }
+
+/* Center the feather image on home page */
+.et_pb_fullwidth_image_0 {
+    text-align: center !important;
+}
+
+.et_pb_fullwidth_image_0 img {
+    margin: 0 auto !important;
+    display: block !important;
+}
