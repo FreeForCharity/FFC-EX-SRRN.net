@@ -156,10 +156,17 @@ body #page-container .fluid-width-video-wrapper iframe {
     font-weight: 900 !important;
 }
 
-/* Cleanup - Remove border if it accidentally applied to 'Who We Are' (likely .et_pb_text_2) */
+/* Add green border frame to 'Who We Are' section (.et_pb_text_2) - matches original site */
 body #page-container .et_pb_text_2 {
-    border: none !important;
-    box-shadow: none !important;
+    border: 20px solid #1aa99e !important;
+    padding: 50px 30px !important;
+    background-color: #ffffff !important;
+    box-shadow: 0px 2px 18px 0px rgba(0, 0, 0, 0.3) !important;
+    margin-top: 20px !important;
+    display: block !important;
+    position: relative !important;
+    z-index: 10 !important;
+    border-radius: 0 !important;
 }
 
 /* 10. Floating Donate Now Button (Custom Injection - Text + Icon) */
@@ -438,11 +445,6 @@ img[src*="feather-teal"] {
     z-index: 10 !important;
 }
 
-/* Cleanup - Remove border if it accidentally applied to 'Who We Are' (likely .et_pb_text_2) */
-body #page-container .et_pb_text_2 {
-    border: none !important;
-    box-shadow: none !important;
-}
 /* FINAL FIXES: Logo & Toggles */
 img[src*="SRRN-Circle-Design-Teal"] {
     width: 480px !important;
