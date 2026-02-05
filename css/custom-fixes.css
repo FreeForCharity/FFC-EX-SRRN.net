@@ -372,10 +372,15 @@ body #page-container .et_pb_number_counter {
 }
 
 /* Tracker Title Font Fix */
-body #page-container .et_pb_number_counter .et_pb_number_counter_title {
-    font-size: 18px !important;
+body #page-container .et_pb_number_counter .et_pb_number_counter_title,
+body #page-container .et_pb_number_counter .title,
+body #page-container .et_pb_number_counter h3.title {
+    font-size: 11px !important;
+    color: #7ebec5 !important;
     padding-top: 10px !important;
     line-height: 1.3em !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
 }
 
 /* Tracker Number Font Fix */
