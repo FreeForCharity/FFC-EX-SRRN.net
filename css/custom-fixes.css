@@ -342,6 +342,17 @@ body #page-container .et_pb_testimonial_portrait:before,
     /* For absolute pseudo-element */
 }
 
+/* Individual Testimonial Boxes - Light Gray Background */
+/* Note: !important needed to override Divi theme's default testimonial styles */
+.et_pb_testimonial,
+body #page-container .et_pb_testimonial,
+.page-id-294 .et_pb_testimonial {
+    background-color: #f5f5f5 !important;
+    padding: 20px !important;
+    margin-bottom: 20px !important;
+    border-radius: 0 !important;
+}
+
 
 /* Ensure list items have spacing */
 body #page-container .et_pb_social_media_follow li,
@@ -399,7 +410,7 @@ body #page-container .et_pb_text_3 {
 /* 7. Fix Missing "Making a Difference" Teal Bar */
 /* Visual Audit revealed background was White (invisible white text) */
 /* FORCEFUL Override using html specificity and background shorthand */
-html body #page-container div.et_pb_section_4,
+/* NOTE: Removed et_pb_section_4 from this rule as testimonials section should be white */
 html body #page-container .et_pb_fullwidth_header_0,
 html body #page-container .et_pb_fullwidth_header_0 .et_pb_fullwidth_header_container {
     background: #7ebec5 !important;
@@ -419,6 +430,15 @@ html body #page-container .et_pb_fullwidth_header_0 .et_pb_module_header {
     text-align: center !important;
     z-index: 10 !important;
     position: relative !important;
+}
+
+/* Testimonials Section - White Background */
+html body #page-container div.et_pb_section_4 {
+    background-color: #ffffff !important;
+    position: relative !important;
+    z-index: 5 !important;
+    display: block !important;
+    visibility: visible !important;
 }
 
 /* Remove any masking or white overlays */
