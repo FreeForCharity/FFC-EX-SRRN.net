@@ -8792,13 +8792,16 @@ document.addEventListener('DOMContentLoaded', function() {
             var content = parent.querySelector('.et_pb_toggle_content');
             var isCurrentlyOpen = parent.classList.contains('et_pb_toggle_open');
             
-            // Close all toggles first (accordion behavior)
+            // Close all other toggles first (accordion behavior)
+            var currentToggle = this;
             toggles.forEach(function(otherToggle) {
-                var otherParent = otherToggle.parentElement;
-                var otherContent = otherParent.querySelector('.et_pb_toggle_content');
-                otherParent.classList.remove('et_pb_toggle_open');
-                otherParent.classList.add('et_pb_toggle_close');
-                otherContent.style.display = 'none';
+                if (otherToggle !== currentToggle) {
+                    var otherParent = otherToggle.parentElement;
+                    var otherContent = otherParent.querySelector('.et_pb_toggle_content');
+                    otherParent.classList.remove('et_pb_toggle_open');
+                    otherParent.classList.add('et_pb_toggle_close');
+                    otherContent.style.display = 'none';
+                }
             });
             
             // If the clicked toggle was closed, open it
