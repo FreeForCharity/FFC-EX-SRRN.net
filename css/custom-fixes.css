@@ -343,6 +343,7 @@ body #page-container .et_pb_testimonial_portrait:before,
 }
 
 /* Individual Testimonial Boxes - Light Gray Background */
+/* Note: !important needed to override Divi theme's default testimonial styles */
 .et_pb_testimonial,
 body #page-container .et_pb_testimonial,
 .page-id-294 .et_pb_testimonial {
@@ -433,7 +434,6 @@ html body #page-container .et_pb_fullwidth_header_0 .et_pb_module_header {
 
 /* Testimonials Section - White Background */
 html body #page-container div.et_pb_section_4 {
-    background: #ffffff !important;
     background-color: #ffffff !important;
     position: relative !important;
     z-index: 5 !important;
