@@ -8790,12 +8790,19 @@ document.addEventListener('DOMContentLoaded', function() {
             e.preventDefault();
             var parent = this.parentElement;
             var content = parent.querySelector('.et_pb_toggle_content');
+            var isCurrentlyOpen = parent.classList.contains('et_pb_toggle_open');
             
-            if (parent.classList.contains('et_pb_toggle_open')) {
-                parent.classList.remove('et_pb_toggle_open');
-                parent.classList.add('et_pb_toggle_close');
-                content.style.display = 'none';
-            } else {
+            // Close all toggles first (accordion behavior)
+            toggles.forEach(function(otherToggle) {
+                var otherParent = otherToggle.parentElement;
+                var otherContent = otherParent.querySelector('.et_pb_toggle_content');
+                otherParent.classList.remove('et_pb_toggle_open');
+                otherParent.classList.add('et_pb_toggle_close');
+                otherContent.style.display = 'none';
+            });
+            
+            // If the clicked toggle was closed, open it
+            if (!isCurrentlyOpen) {
                 parent.classList.remove('et_pb_toggle_close');
                 parent.classList.add('et_pb_toggle_open');
                 content.style.display = 'block';
