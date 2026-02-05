@@ -413,9 +413,9 @@ body #page-container .et_pb_text_3 {
 /* NOTE: Removed et_pb_section_4 from this rule as testimonials section should be white */
 html body #page-container .et_pb_fullwidth_header_0,
 html body #page-container .et_pb_fullwidth_header_0 .et_pb_fullwidth_header_container {
-    background: #7ebec5 !important;
-    background-color: #7ebec5 !important;
-    /* Live site Lighter Teal */
+    background: #1AA99E !important;
+    background-color: #1AA99E !important;
+    /* Vibrant Teal - matches site brand color */
     position: relative !important;
     z-index: 5 !important;
     display: block !important;
