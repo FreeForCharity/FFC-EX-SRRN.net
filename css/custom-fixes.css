@@ -157,6 +157,7 @@ body #page-container .fluid-width-video-wrapper iframe {
 }
 
 /* Add green border frame to 'Who We Are' section (.et_pb_text_2) - matches original site */
+/* IMPORTANT: Only apply to home page (page-id-6) to avoid affecting other pages */
 body.page-id-6 #page-container .et_pb_text_2 {
     border: 20px solid #1aa99e !important;
     padding: 50px 30px !important;
@@ -427,6 +428,8 @@ body #page-container .et_pb_number_counter .percent-value {
 
 /* 6. Guiding Principles Box Fix (Specific Module) */
 /* Identified via verification as .et_pb_text_3 */
+/* IMPORTANT: Only apply to About Us page (page-id-294) to avoid affecting other pages */
+body.page-id-294 #page-container .et_pb_text_3 {
 /* Only apply on home page to avoid affecting "Board of Directors" heading on about-us page */
 body.page-id-6 #page-container .et_pb_text_3 {
     border: 20px solid #1aa99e !important;
