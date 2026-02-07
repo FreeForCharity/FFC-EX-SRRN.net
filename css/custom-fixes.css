@@ -546,3 +546,34 @@ img[src*="SRRN-Circle-Design-Teal"] {
     margin: 0 auto !important;
     display: block !important;
 }
+
+/* ==========================================================================
+   13. Staff Images - Standardize Sizes on About Us Page
+   ========================================================================== */
+
+/* Ensure all staff member images are the same size with high specificity */
+body #page-container .et_pb_team_member_image img,
+body .et_pb_team_member .et_pb_team_member_image img {
+    width: 100% !important;
+    height: 350px !important;
+    object-fit: cover !important;
+    object-position: center top !important;
+    display: block !important;
+    max-width: none !important;
+}
+
+/* Ensure the image container has consistent dimensions */
+body #page-container .et_pb_team_member_image,
+body .et_pb_team_member .et_pb_team_member_image {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto 20px !important;
+    overflow: hidden !important;
+    display: block !important;
+}
+
+/* Adjust text description alignment under images */
+body #page-container .et_pb_team_member_description,
+body .et_pb_team_member .et_pb_team_member_description {
+    text-align: center !important;
+}
