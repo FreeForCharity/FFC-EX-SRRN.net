@@ -156,6 +156,13 @@ body #page-container .fluid-width-video-wrapper iframe {
     font-weight: 900 !important;
 }
 
+/* Align "Who We Are" and "Guiding Principles" rows - ensure consistent width */
+body.page-id-6 #page-container .et_pb_row_2,
+body.page-id-6 #page-container .et_pb_row_3 {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}
+
 /* Add green border frame to 'Who We Are' section (.et_pb_text_2) - matches original site */
 /* IMPORTANT: Only apply to home page (page-id-6) to avoid affecting other pages */
 body.page-id-6 #page-container .et_pb_text_2 {
@@ -164,6 +171,8 @@ body.page-id-6 #page-container .et_pb_text_2 {
     background-color: #ffffff !important;
     box-shadow: 0px 2px 18px 0px rgba(0, 0, 0, 0.3) !important;
     margin-top: 20px !important;
+    margin-left: 0px !important;
+    margin-right: 0px !important;
     display: block !important;
     position: relative !important;
     z-index: 10 !important;
@@ -435,6 +444,8 @@ body.page-id-6 #page-container .et_pb_text_3 {
     background-color: #ffffff !important;
     box-shadow: 0px 2px 18px 0px rgba(0, 0, 0, 0.3) !important;
     margin-top: 20px !important;
+    margin-left: 0px !important;
+    margin-right: 0px !important;
     /* Force border visibility and box model */
     display: block !important;
     position: relative !important;
