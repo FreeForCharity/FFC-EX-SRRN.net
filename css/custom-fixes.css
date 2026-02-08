@@ -345,30 +345,13 @@ img[src*="SRRN-Circle-Design-Teal.png"] {
     /* Don't block clicks */
 }
 
-/* Restore Testimonial Quotation Icons (Force Dimensions & Specificity) */
-body #page-container .et_pb_testimonial_portrait:before,
-.et_pb_testimonial_portrait:before {
-    font-family: 'ETmodules' !important;
-    content: "\e07e" !important;
-    position: absolute !important;
-    top: 50% !important;
-    left: 50% !important;
-    transform: translate(-50%, -50%) !important;
-    font-size: 32px !important;
-    color: #ffffff !important;
-    background-color: transparent !important;
-    display: block !important;
-    opacity: 1 !important;
-    width: 32px !important;
-    height: 32px !important;
-    line-height: 32px !important;
-    visibility: visible !important;
-    z-index: 10 !important;
-}
-
-/* Ensure the circle background behind the icon is teal & has size */
+/* Restore Testimonial Quotation Icons (Using actual quote icon image) */
 .et_pb_testimonial_portrait {
-    background-color: #1aa99e !important;
+    background-image: url('../images/quote-icon.png') !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-color: transparent !important;
     border-radius: 50% !important;
     overflow: hidden !important;
     width: 90px !important;
@@ -378,7 +361,17 @@ body #page-container .et_pb_testimonial_portrait:before,
     float: left !important;
     margin-right: 30px !important;
     position: relative !important;
-    /* For absolute pseudo-element */
+}
+
+/* Hide any child images (placeholder images) inside the portrait circle */
+.et_pb_testimonial_portrait img {
+    display: none !important;
+}
+
+/* Remove the old icon font approach */
+body #page-container .et_pb_testimonial_portrait:before,
+.et_pb_testimonial_portrait:before {
+    display: none !important;
 }
 
 /* Individual Testimonial Boxes - Light Gray Background */
