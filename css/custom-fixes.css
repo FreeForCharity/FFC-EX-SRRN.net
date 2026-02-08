@@ -353,7 +353,7 @@ img[src*="SRRN-Circle-Design-Teal.png"] {
     background-repeat: no-repeat !important;
     background-color: transparent !important;
     border-radius: 50% !important;
-    overflow: visible !important;
+    overflow: hidden !important;
     width: 90px !important;
     /* Force standard size */
     height: 90px !important;
