@@ -347,7 +347,7 @@ img[src*="SRRN-Circle-Design-Teal.png"] {
 
 /* Restore Testimonial Quotation Icons (Using actual quote icon image) */
 .et_pb_testimonial_portrait {
-    background-image: url('../images/quote-icon.png') !important;
+    background-image: url('../images/quote-icon.svg') !important;
     background-size: cover !important;
     background-position: center !important;
     background-repeat: no-repeat !important;
