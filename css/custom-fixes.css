@@ -612,3 +612,10 @@ body #page-container .et_pb_team_member_description,
 body .et_pb_team_member .et_pb_team_member_description {
     text-align: center !important;
 }
+
+/* Prevent text wrapping in Recommended Resources list items on larger screens */
+@media (min-width: 768px) {
+    .et_pb_text_3 ul li {
+        white-space: nowrap;
+    }
+}
