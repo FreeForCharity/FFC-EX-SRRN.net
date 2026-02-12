@@ -136,9 +136,11 @@ body {
 </style>	<link rel="stylesheet" href="/FFC-EX-SRRN.net/css/custom-fixes.css?v=final14">
 	<script src="../custom-menu.js" defer=""></script>
 <style>
-/* Prevent text wrapping in Recommended Resources list items */
-.et_pb_text_3 ul li {
-    white-space: nowrap;
+/* Prevent text wrapping in Recommended Resources list items on larger screens */
+@media (min-width: 768px) {
+    .et_pb_text_3 ul li {
+        white-space: nowrap;
+    }
 }
 </style>
 </head>
