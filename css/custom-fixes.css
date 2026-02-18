@@ -397,8 +397,8 @@ body #page-container .et_pb_social_media_follow li,
 /* Targeted fix for all number counters in this section */
 body #page-container .et_pb_number_counter {
     background-color: #f7f9f9 !important;
-    padding: 0px 10px 40px !important;
-    /* Match live site */
+    padding: 10px 10px 15px !important;
+    /* Reduced padding for smaller box height */
     text-align: center !important;
     margin-bottom: 20px !important;
 }
@@ -433,7 +433,8 @@ body #page-container .et_pb_number_counter .percent {
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
-    min-height: 80px !important;
+    min-height: 50px !important;
+    /* Reduced from 80px for tighter spacing */
 }
 
 body #page-container .et_pb_number_counter .percent p {
