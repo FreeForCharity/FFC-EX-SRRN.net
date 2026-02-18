@@ -428,6 +428,19 @@ body #page-container .et_pb_number_counter .percent-value {
     display: block !important;
 }
 
+/* Center the numbers vertically in the Training Tracker boxes */
+body #page-container .et_pb_number_counter .percent {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-height: 80px !important;
+}
+
+body #page-container .et_pb_number_counter .percent p {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
 /* 6. Guiding Principles Box Fix (Specific Module) */
 /* Identified via verification as .et_pb_text_3 */
 /* Only apply on home page to avoid affecting "Board of Directors" heading on about-us page */
