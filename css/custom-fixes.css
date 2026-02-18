@@ -630,3 +630,15 @@ body .et_pb_team_member .et_pb_team_member_description {
 /* Removed nowrap rule that was causing text overflow in Guiding Principles section.
    The comment referenced "Recommended Resources" which doesn't exist on the page,
    and this was incorrectly affecting the Guiding Principles bullets. */
+
+/* ==========================================================================
+   14. Superscript Vertical Alignment Fix
+   ========================================================================== */
+
+/* Adjust superscript positioning to sit closer to the text baseline */
+sup {
+    vertical-align: baseline !important;
+    position: relative !important;
+    top: -0.4em !important;
+    font-size: 0.75em !important;
+}
