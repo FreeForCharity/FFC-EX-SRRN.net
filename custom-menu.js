@@ -1,13 +1,64 @@
-// Custom Mobile Menu JavaScript - Replace Divi functionality
+// Custom Mobile Menu and Search JavaScript
 
 (function() {
     'use strict';
     
     // Wait for DOM to be ready
     if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', initMobileMenu);
+        document.addEventListener('DOMContentLoaded', function() {
+            initMobileMenu();
+            initSearch();
+        });
     } else {
         initMobileMenu();
+        initSearch();
+    }
+
+    function initSearch() {
+        const searchButtons = document.querySelectorAll('.et_pb_menu__search-button');
+        const closeButtons = document.querySelectorAll('.et_pb_menu__close-search-button');
+        const searchForms = document.querySelectorAll('.et_pb_menu__search-form');
+
+        // Toggle search container open on search button click
+        searchButtons.forEach(function(btn) {
+            btn.addEventListener('click', function(e) {
+                const menu = btn.closest('.et_pb_fullwidth_menu');
+                if (!menu) return;
+                const container = menu.querySelector('.et_pb_menu__search-container');
+                const input = menu.querySelector('.et_pb_menu__search-input');
+                if (!container) return;
+                container.classList.remove('et_pb_menu__search-container--disabled');
+                container.classList.add('et_pb_menu__search-container--visible');
+                if (input) input.focus();
+            });
+        });
+
+        // Close search container on close button click
+        closeButtons.forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                const menu = btn.closest('.et_pb_fullwidth_menu');
+                if (!menu) return;
+                const container = menu.querySelector('.et_pb_menu__search-container');
+                if (!container) return;
+                container.classList.remove('et_pb_menu__search-container--visible');
+                container.classList.add('et_pb_menu__search-container--disabled');
+            });
+        });
+
+        // Intercept form submit and redirect to Google site search
+        searchForms.forEach(function(form) {
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const input = form.querySelector('.et_pb_menu__search-input');
+                if (input && input.value.trim()) {
+                    const query = encodeURIComponent(input.value.trim());
+                    window.open(
+                        'https://www.google.com/search?q=site:freeforcharity.github.io/FFC-EX-SRRN.net+' + query,
+                        '_blank'
+                    );
+                }
+            });
+        });
     }
     
     function initMobileMenu() {
