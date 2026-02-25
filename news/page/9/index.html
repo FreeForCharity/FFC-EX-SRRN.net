@@ -146,7 +146,18 @@ img {
 body {
   overflow-x: hidden;
 }
-</style></head>
+</style><style id="salvattore-fix">
+.et_pb_blog_grid .et_pb_salvattore_content .et_pb_post{opacity:1!important}
+@media (min-width:981px){
+  .et_pb_blog_grid .et_pb_salvattore_content{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .et_pb_blog_grid .et_pb_salvattore_content .et_pb_post{margin-bottom:0!important;float:none}
+}
+@media (min-width:768px) and (max-width:980px){
+  .et_pb_blog_grid .et_pb_salvattore_content{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+  .et_pb_blog_grid .et_pb_salvattore_content .et_pb_post{margin-bottom:0!important;float:none}
+}
+</style>
+</head>
 <body class="paged wp-singular page-template-default page page-id-35 paged-9 page-paged-9 wp-theme-Divi et-tb-has-template et-tb-has-header et-tb-has-footer mec-theme-Divi et_pb_button_helper_class et_cover_background et_pb_gutter et_pb_gutters3 et_pb_pagebuilder_layout et_no_sidebar et_divi_theme et-db">
 	<div id="page-container">
 <div id="et-boc" class="et-boc">
@@ -362,14 +373,14 @@ body {
 					<input type="text" value="" name="s" id="s">
 					<input type="submit" id="searchsubmit" value="Search">
 				</div>
-			</form></div><div id="categories-3" class="fwidget et_pb_widget widget_categories"><h4 class="title">Categories</h4><form action="https://srrn.net" method="get"><label class="screen-reader-text" for="cat">Categories</label><select name="cat" id="cat" class="postform">
-	<option value="-1">Select Category</option>
-	<option class="level-0" value="207">Newsletters&nbsp;&nbsp;(11)</option>
-	<option class="level-0" value="23">Podcast&nbsp;&nbsp;(2)</option>
-	<option class="level-0" value="25">Social Media&nbsp;&nbsp;(1)</option>
-	<option class="level-0" value="208">Special Events&nbsp;&nbsp;(1)</option>
-	<option class="level-0" value="209">Trainings&nbsp;&nbsp;(1)</option>
-	<option class="level-0" value="1">Uncategorized&nbsp;&nbsp;(93)</option>
+			</form></div><div id="categories-3" class="fwidget et_pb_widget widget_categories"><h4 class="title">Categories</h4><form action="" onsubmit="return false;"><label class="screen-reader-text" for="cat">Categories</label><select name="cat" id="cat" class="postform">
+	<option value="">Select Category</option>
+	<option class="level-0" value="../../../category/newsletters/">Newsletters&nbsp;&nbsp;(11)</option>
+	<option class="level-0" value="../../../category/podcast/">Podcast&nbsp;&nbsp;(2)</option>
+	<option class="level-0" value="../../../category/social-media/">Social Media&nbsp;&nbsp;(1)</option>
+	<option class="level-0" value="../../../category/special-events/">Special Events&nbsp;&nbsp;(1)</option>
+	<option class="level-0" value="../../../category/trainings/">Trainings&nbsp;&nbsp;(1)</option>
+	<option class="level-0" value="../../../category/uncategorized/">Uncategorized&nbsp;&nbsp;(93)</option>
 </select>
 </form><script type="text/javascript">
 /* <![CDATA[ */
