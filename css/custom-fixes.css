@@ -80,16 +80,14 @@ footer .et_pb_section .et_pb_module,
     background-color: transparent !important;
 }
 
-/* Header Fixes - Prevent Menu Wrapping */
+/* Header Fixes */
 .et_pb_menu__logo {
-    max-width: 250px !important;
-    /* Reduce logo size from 398px to allow menu space */
+    max-width: 398px !important;
     width: auto !important;
 }
 
 .et_pb_menu__logo img {
-    max-height: 80px !important;
-    /* Constrain height */
+    max-height: 175px !important;
     width: auto !important;
 }
 
