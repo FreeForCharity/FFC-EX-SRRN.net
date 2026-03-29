@@ -658,12 +658,12 @@ sup {
 
 
 /* ==========================================================================
-   15. Our Partners - Resize New Partner Logo Row
+   15. Our Partners - Consistent Logo Sizing
    ========================================================================== */
 
-/* Constrain the 4 new partner logos (Partners in Change, Serenity Bay Health,
-   TRI-STAR Trust, Child & Family Services of Saginaw) so they match the
-   visual size of the existing partner logos in the row above */
+/* Constrain partner logos in both rows to a consistent max-height so they
+   appear uniform in size, matching the Foundation Sponsors section logos */
+.et_pb_row_10 .et_pb_image_wrap img,
 .et_pb_row_11 .et_pb_image_wrap img {
     max-height: 150px !important;
     width: auto !important;
@@ -672,8 +672,10 @@ sup {
     margin: 0 auto !important;
 }
 
+.et_pb_row_10 .et_pb_image_wrap,
 .et_pb_row_11 .et_pb_image_wrap {
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
+    min-height: 100px; /* Prevents cell collapse for small/horizontal logos */
 }
