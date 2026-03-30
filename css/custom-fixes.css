@@ -679,3 +679,21 @@ sup {
     justify-content: center !important;
     min-height: 100px; /* Prevents cell collapse for small/horizontal logos */
 }
+
+/* Michigan Health Endowment Fund logo — full-width row, centered and properly scaled */
+.et_pb_row_9b {
+    text-align: center;
+}
+
+.et_pb_row_9b .et_pb_image_wrap img {
+    max-width: 600px !important;
+    width: 100% !important;
+    height: auto !important;
+    display: block !important;
+    margin: 0 auto !important;
+}
+
+.et_pb_row_9b .et_pb_image_wrap {
+    display: block !important;
+    text-align: center !important;
+}
