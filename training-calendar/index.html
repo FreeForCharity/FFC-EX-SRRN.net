@@ -403,7 +403,7 @@ body {
 
 <div class="static-calendar">
     <div class="calendar-header">
-        <h2>February 2026</h2>
+        <h2>March 2026</h2>
         <!-- Navigation buttons are non-functional in this static calendar -->
     </div>
     
@@ -417,16 +417,16 @@ body {
         <div class="calendar-day-header">Sat</div>
         <div class="calendar-day-header">Sun</div>
         
-        <!-- Week 1 (Jan 26 - Feb 1) -->
+        <!-- Week 1 (Feb 23 - Mar 1) -->
+        <div class="calendar-day other-month"><div class="calendar-day-number">23</div></div>
+        <div class="calendar-day other-month"><div class="calendar-day-number">24</div></div>
+        <div class="calendar-day other-month"><div class="calendar-day-number">25</div></div>
         <div class="calendar-day other-month"><div class="calendar-day-number">26</div></div>
         <div class="calendar-day other-month"><div class="calendar-day-number">27</div></div>
         <div class="calendar-day other-month"><div class="calendar-day-number">28</div></div>
-        <div class="calendar-day other-month"><div class="calendar-day-number">29</div></div>
-        <div class="calendar-day other-month"><div class="calendar-day-number">30</div></div>
-        <div class="calendar-day other-month"><div class="calendar-day-number">31</div></div>
         <div class="calendar-day"><div class="calendar-day-number">1</div></div>
         
-        <!-- Week 2 (Feb 2-8) -->
+        <!-- Week 2 (Mar 2-8) -->
         <div class="calendar-day"><div class="calendar-day-number">2</div></div>
         <div class="calendar-day has-event">
             <div class="calendar-day-number">3</div>
@@ -438,7 +438,7 @@ body {
         <div class="calendar-day"><div class="calendar-day-number">7</div></div>
         <div class="calendar-day"><div class="calendar-day-number">8</div></div>
         
-        <!-- Week 3 (Feb 9-15) -->
+        <!-- Week 3 (Mar 9-15) -->
         <div class="calendar-day"><div class="calendar-day-number">9</div></div>
         <div class="calendar-day"><div class="calendar-day-number">10</div></div>
         <div class="calendar-day"><div class="calendar-day-number">11</div></div>
@@ -447,7 +447,7 @@ body {
         <div class="calendar-day"><div class="calendar-day-number">14</div></div>
         <div class="calendar-day"><div class="calendar-day-number">15</div></div>
         
-        <!-- Week 4 (Feb 16-22) -->
+        <!-- Week 4 (Mar 16-22) -->
         <div class="calendar-day"><div class="calendar-day-number">16</div></div>
         <div class="calendar-day has-event">
             <div class="calendar-day-number">17</div>
@@ -459,26 +459,23 @@ body {
         <div class="calendar-day"><div class="calendar-day-number">21</div></div>
         <div class="calendar-day"><div class="calendar-day-number">22</div></div>
         
-        <!-- Week 5 (Feb 23 - Mar 1) -->
+        <!-- Week 5 (Mar 23-29) -->
         <div class="calendar-day"><div class="calendar-day-number">23</div></div>
         <div class="calendar-day"><div class="calendar-day-number">24</div></div>
         <div class="calendar-day"><div class="calendar-day-number">25</div></div>
         <div class="calendar-day"><div class="calendar-day-number">26</div></div>
         <div class="calendar-day"><div class="calendar-day-number">27</div></div>
         <div class="calendar-day"><div class="calendar-day-number">28</div></div>
-        <div class="calendar-day other-month"><div class="calendar-day-number">1</div></div>
+        <div class="calendar-day"><div class="calendar-day-number">29</div></div>
         
-        <!-- Week 6 (Mar 2-8) -->
+        <!-- Week 6 (Mar 30-31 and Apr 1-5) -->
+        <div class="calendar-day"><div class="calendar-day-number">30</div></div>
+        <div class="calendar-day"><div class="calendar-day-number">31</div></div>
+        <div class="calendar-day other-month"><div class="calendar-day-number">1</div></div>
         <div class="calendar-day other-month"><div class="calendar-day-number">2</div></div>
-        <div class="calendar-day other-month has-event">
-            <div class="calendar-day-number">3</div>
-            <div class="calendar-event" aria-label="Survivors of Suicide (SOS) Support Group, recurring event, first and third Tuesday of each month">Survivors of Suicide (SOS) Support Group</div>
-        </div>
+        <div class="calendar-day other-month"><div class="calendar-day-number">3</div></div>
         <div class="calendar-day other-month"><div class="calendar-day-number">4</div></div>
         <div class="calendar-day other-month"><div class="calendar-day-number">5</div></div>
-        <div class="calendar-day other-month"><div class="calendar-day-number">6</div></div>
-        <div class="calendar-day other-month"><div class="calendar-day-number">7</div></div>
-        <div class="calendar-day other-month"><div class="calendar-day-number">8</div></div>
     </div>
 </div>
 </div>
@@ -654,7 +651,7 @@ var et_pb_box_shadow_elements = [];
 		var calendarEl = document.getElementById("mec-gCalendar-wrap");
 		var calendar = new FullCalendar.Calendar(calendarEl, {
             initialView: "dayGridMonth",
-			initialDate: "2025-12-01",
+			initialDate: "2026-03-01",
 			editable: false,
 			selectable: false,
 			businessHours: false,
