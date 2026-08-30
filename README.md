@@ -40,7 +40,7 @@ cd FFC-EX-SRRN.net
 
 2. Install Node.js dependencies:
 ```bash
-npm install
+pnpm install
 ```
 
 ## Usage
@@ -147,16 +147,16 @@ To complete the conversion of the remaining SRRN.net pages:
 
 ```bash
 # Install dependencies
-npm install
+pnpm install
 
 # Verify current status
-npm run verify
+pnpm run verify
 
 # Scrape all missing pages (requires network access to srrn.net)
-npm run scrape:all
+pnpm run scrape:all
 
 # OR run the complete conversion workflow
-npm run convert
+pnpm run convert
 ```
 
 See [CONVERSION_GUIDE.md](CONVERSION_GUIDE.md) for detailed instructions.

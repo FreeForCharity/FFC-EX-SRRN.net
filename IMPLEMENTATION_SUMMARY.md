@@ -58,7 +58,7 @@ This repository now contains a **complete, production-ready framework** for conv
 
 **Blocker:** srrn.net is not accessible from the automated environment (DNS resolution fails).
 
-**Solution:** Execute `npm run convert` from any environment with network access to srrn.net.
+**Solution:** Execute `pnpm run convert` from any environment with network access to srrn.net.
 
 ## 📊 Current Statistics
 
@@ -81,16 +81,16 @@ When you have network access to srrn.net:
 # 1. Clone and setup
 git clone https://github.com/FreeForCharity/FFC-EX-SRRN.net.git
 cd FFC-EX-SRRN.net
-npm install
+pnpm install
 
 # 2. Run complete conversion
-npm run convert
+pnpm run convert
 
 # 3. Verify results
-npm run verify
+pnpm run verify
 
 # 4. Test locally
-npm run serve
+pnpm run serve
 # Visit http://localhost:8000
 
 # 5. Commit and deploy
@@ -166,12 +166,12 @@ FFC-EX-SRRN.net/
 
 | Command | Purpose | Status |
 |---------|---------|--------|
-| `npm run verify` | Check page status | ✅ Working |
-| `npm run scrape:all` | Download all pages | ⏳ Needs network |
-| `npm run placeholder` | Create placeholders | ✅ Complete |
-| `npm run repair` | Fix layouts | ✅ Ready |
-| `npm run serve` | Test locally | ✅ Working |
-| `npm run convert` | Complete workflow | ⏳ Needs network |
+| `pnpm run verify` | Check page status | ✅ Working |
+| `pnpm run scrape:all` | Download all pages | ⏳ Needs network |
+| `pnpm run placeholder` | Create placeholders | ✅ Complete |
+| `pnpm run repair` | Fix layouts | ✅ Ready |
+| `pnpm run serve` | Test locally | ✅ Working |
+| `pnpm run convert` | Complete workflow | ⏳ Needs network |
 
 ## 💡 Key Features
 
@@ -192,10 +192,10 @@ FFC-EX-SRRN.net/
 
 ## 🎉 Conclusion
 
-The framework is **complete and ready for use**. Only one manual step remains: running `npm run convert` from an environment with access to srrn.net. All other requirements from the original issue have been fully addressed.
+The framework is **complete and ready for use**. Only one manual step remains: running `pnpm run convert` from an environment with access to srrn.net. All other requirements from the original issue have been fully addressed.
 
 ---
 
 **Created:** 2025-12-29  
 **Status:** Framework Complete, Content Pending  
-**Next Action:** `npm run convert` (requires srrn.net access)
+**Next Action:** `pnpm run convert` (requires srrn.net access)

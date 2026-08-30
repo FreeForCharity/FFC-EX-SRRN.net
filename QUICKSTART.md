@@ -36,7 +36,7 @@ cd FFC-EX-SRRN.net
 
 2. **Install Node.js dependencies:**
 ```bash
-npm install
+pnpm install
 ```
 
 3. **Set up GitHub authentication** (choose ONE option):

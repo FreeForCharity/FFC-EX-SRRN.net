@@ -34,10 +34,10 @@ From the repository root:
 
 ```bash
 # Install dependencies (if not already done)
-npm install
+pnpm install
 
 # Run the comprehensive scraper
-npm run scrape:all
+pnpm run scrape:all
 
 # This will:
 # - Scrape all 11 identified pages
@@ -50,7 +50,7 @@ npm run scrape:all
 
 ```bash
 # Check that all pages were downloaded
-npm run verify
+pnpm run verify
 
 # Expected output: "Found: 11/11"
 ```
@@ -59,7 +59,7 @@ npm run verify
 
 ```bash
 # Fix responsive layouts and common issues
-npm run repair
+pnpm run repair
 
 # This will:
 # - Add responsive video wrappers
@@ -201,10 +201,10 @@ node scripts/identify_and_scrape.js \
 **Someone with network access to srrn.net needs to:**
 
 1. Clone this repository
-2. Run `npm install`
-3. Run `npm run scrape:all`
-4. Run `npm run repair`
-5. Run `npm run verify`
+2. Run `pnpm install`
+3. Run `pnpm run scrape:all`
+4. Run `pnpm run repair`
+5. Run `pnpm run verify`
 6. Commit and push the changes
 
 ## Contact

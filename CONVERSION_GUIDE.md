@@ -38,7 +38,7 @@ If you have network access to https://srrn.net, use the automated scraping scrip
 cd /path/to/FFC-EX-SRRN.net
 
 # 2. Ensure dependencies are installed
-npm install
+pnpm install
 
 # 3. Run the comprehensive scraper
 node scripts/scrape_all_pages.js
