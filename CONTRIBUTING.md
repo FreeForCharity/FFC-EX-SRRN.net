@@ -170,7 +170,7 @@ Here are areas where contributions are especially welcome:
 
 2. **Install dependencies:**
    ```bash
-   npm install
+   pnpm install
    ```
 
 3. **Create a test branch:**

@@ -113,18 +113,18 @@ Ping: No address associated with hostname
 
 1. **Run Complete Scraping Workflow**
    ```bash
-   npm run convert
+   pnpm run convert
    ```
 
 2. **Verify Results**
    ```bash
-   npm run verify
+   pnpm run verify
    # Should show 11/11 real content
    ```
 
 3. **Test Locally**
    ```bash
-   npm run serve
+   pnpm run serve
    # Visit http://localhost:8000
    ```
 
@@ -220,4 +220,4 @@ For questions or to report issues:
 
 **Last Updated:** 2025-12-29  
 **Status:** Framework Complete, Awaiting Network Access  
-**Next Action:** Run `npm run convert` from environment with srrn.net access
+**Next Action:** Run `pnpm run convert` from environment with srrn.net access

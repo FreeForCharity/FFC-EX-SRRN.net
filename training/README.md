@@ -8,7 +8,7 @@ This directory currently contains a placeholder page.
 ## How to Replace
 Run the following command when you have network access to srrn.net:
 ```bash
-npm run scrape:all
+pnpm run scrape:all
 ```
 
 This will download the real content and replace this placeholder.

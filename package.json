@@ -2,6 +2,7 @@
   "name": "static-site-conversion-toolkit",
   "version": "1.0.0",
   "description": "Tools for converting dynamic websites to static sites hosted on GitHub Pages",
+  "packageManager": "pnpm@10.34.5",
   "scripts": {
     "scrape": "node ./scripts/identify_and_scrape.js",
     "scrape:all": "node ./scripts/scrape_all_pages.js",
@@ -11,7 +12,7 @@
     "repair": "node ./scripts/repair_site.js .",
     "deploy": "python3 ./scripts/github_push.py",
     "serve": "python3 -m http.server 8000",
-    "convert": "npm run scrape:all && npm run repair && npm run verify"
+    "convert": "pnpm run scrape:all && pnpm run repair && pnpm run verify"
   },
   "keywords": [
     "static-site",

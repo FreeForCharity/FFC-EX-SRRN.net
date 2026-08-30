@@ -62,26 +62,26 @@ FFC-EX-SRRN.net/
 
 ### Installation
 ```bash
-npm install
+pnpm install
 ```
 
 ### Available npm Scripts
 
 | Command | Purpose | When to Use |
 |---------|---------|-------------|
-| `npm run scrape` | Single page scraper | Scraping individual URLs |
-| `npm run scrape:all` | All pages scraper | Full site scraping (requires network access to srrn.net) |
-| `npm run discover` | URL discovery | Finding additional pages to scrape |
-| `npm run verify` | Page verification | Checking which pages exist locally |
-| `npm run placeholder` | Create placeholders | Testing site structure without content |
-| `npm run repair` | Apply responsive fixes | After scraping, before deployment |
-| `npm run serve` | Local server | Testing site locally (http://localhost:8000) |
-| `npm run convert` | Complete workflow | Full scrape + repair + verify |
+| `pnpm run scrape` | Single page scraper | Scraping individual URLs |
+| `pnpm run scrape:all` | All pages scraper | Full site scraping (requires network access to srrn.net) |
+| `pnpm run discover` | URL discovery | Finding additional pages to scrape |
+| `pnpm run verify` | Page verification | Checking which pages exist locally |
+| `pnpm run placeholder` | Create placeholders | Testing site structure without content |
+| `pnpm run repair` | Apply responsive fixes | After scraping, before deployment |
+| `pnpm run serve` | Local server | Testing site locally (http://localhost:8000) |
+| `pnpm run convert` | Complete workflow | Full scrape + repair + verify |
 
 ### Testing Locally
 ```bash
 # Start local server
-npm run serve
+pnpm run serve
 
 # Visit in browser
 open http://localhost:8000
@@ -116,7 +116,7 @@ python3 ./scripts/github_push.py "./dist" "owner/repo-name"
 1. The repair script uses JSDOM to manipulate HTML
 2. Add your repair logic in the `processHtmlFile()` function
 3. Update the statistics tracking if needed
-4. Test with `npm run repair`
+4. Test with `pnpm run repair`
 
 Example repair pattern:
 ```javascript
@@ -132,7 +132,7 @@ function myCustomRepair(document) {
 ### Verifying Conversion Status
 ```bash
 # Check which pages exist and their sizes
-npm run verify
+pnpm run verify
 
 # Expected output: "Found: 11/11" when all pages are downloaded
 ```
@@ -230,14 +230,14 @@ Use conventional commit messages:
 ## Testing Guidelines
 
 ### Before Making Changes
-1. **Run verification**: `npm run verify` to understand current state
-2. **Test locally**: `npm run serve` to see the site in action
+1. **Run verification**: `pnpm run verify` to understand current state
+2. **Test locally**: `pnpm run serve` to see the site in action
 3. **Check documentation**: Read relevant .md files
 
 ### After Making Changes
 1. **Test the specific script**: Run the modified script with test data
 2. **Verify no breakage**: Ensure existing functionality still works
-3. **Test locally**: Use `npm run serve` to verify visual changes
+3. **Test locally**: Use `pnpm run serve` to verify visual changes
 4. **Update documentation**: If behavior changes, update relevant .md files
 
 ### No Automated Tests
@@ -298,7 +298,7 @@ When adding functionality that requires server-side processing:
 ### Script Fails with "Module not found"
 ```bash
 # Ensure dependencies are installed
-npm install
+pnpm install
 ```
 
 ### "Cannot resolve host" during scraping
@@ -326,7 +326,7 @@ python3 -m http.server 8080
 
 1. **Always test scripts manually** before committing - there are no automated tests
 2. **Keep documentation in sync** - Update .md files when changing behavior
-3. **Use npm scripts** - Don't call scripts directly (use `npm run` commands)
+3. **Use pnpm scripts** - Don't call scripts directly (use `pnpm run` commands)
 4. **Preserve deployment focus** - Remember GitHub Pages is the sole deployment method
 5. **Check git status** before committing - Ensure .gitignore is working (no node_modules, dist/, etc.)
 6. **Provide clear output** - Use emoji and formatting for script output
@@ -380,9 +380,9 @@ Use this as a reference when implementing similar features in converted sites.
 ## Summary for Quick Onboarding
 
 **When working on this repository:**
-1. Run `npm install` first
-2. Use `npm run verify` to check current state
-3. Test locally with `npm run serve`
+1. Run `pnpm install` first
+2. Use `pnpm run verify` to check current state
+3. Test locally with `pnpm run serve`
 4. Read relevant documentation before making changes
 5. Remember: GitHub Pages is the only deployment target
 6. Test manually - there are no automated tests
