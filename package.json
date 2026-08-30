@@ -25,7 +25,7 @@
   "license": "MIT",
   "dependencies": {
     "website-scraper": "^5.3.1",
-    "jsdom": "^23.0.1"
+    "jsdom": "^30.0.1"
   },
   "engines": {
     "node": ">=14.0.0"
