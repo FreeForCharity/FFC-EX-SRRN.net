@@ -326,7 +326,7 @@ python3 -m http.server 8080
 
 1. **Always test scripts manually** before committing - there are no automated tests
 2. **Keep documentation in sync** - Update .md files when changing behavior
-3. **Use npm scripts** - Don't call scripts directly (use `pnpm run` commands)
+3. **Use pnpm scripts** - Don't call scripts directly (use `pnpm run` commands)
 4. **Preserve deployment focus** - Remember GitHub Pages is the sole deployment method
 5. **Check git status** before committing - Ensure .gitignore is working (no node_modules, dist/, etc.)
 6. **Provide clear output** - Use emoji and formatting for script output
