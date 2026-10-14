@@ -4,6 +4,7 @@
   "description": "Tools for converting dynamic websites to static sites hosted on GitHub Pages",
   "packageManager": "pnpm@10.34.5",
   "scripts": {
+    "audit:high": "pnpm audit --prod --audit-level high",
     "scrape": "node ./scripts/identify_and_scrape.js",
     "scrape:all": "node ./scripts/scrape_all_pages.js",
     "discover": "node ./scripts/discover_urls.js",
